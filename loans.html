@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loan Products - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="services.css" />
+    <script>
+        // Toggle navigation menu on mobile
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Loan Products</h2>
+        <p>Discover our loan products tailored to meet your financial needs with flexible repayment options.</p>
+
+        <section class="services-grid">
+            <article class="service-card">
+                <h3>Personal Loan</h3>
+                <p>Quick and easy personal loans with competitive interest rates and flexible terms.</p>
+                <a href="personalloan.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Business Loan</h3>
+                <p>Support your business growth with our affordable business loan options and expert advice.</p>
+                <a href="businessloan.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Wakulima Loan</h3>
+                <p>Support your agricultural needs with our Wakulima loans offering competitive rates and flexible plans.</p>
+                <a href="wakulimaloan.html" class="cta-button">Learn More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Goodway Sacco Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>

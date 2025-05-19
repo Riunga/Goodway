@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Other Services - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="services.css" />
+    <script>
+        // Toggle navigation menu on mobile
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Other Services</h2>
+        <p>Explore our additional services designed to support your financial growth and well-being.</p>
+
+        <section class="services-grid">
+            <article class="service-card">
+                <h3>Investment Opportunities</h3>
+                <p>Grow your wealth with our diverse investment options designed to maximize your returns safely.</p>
+                <a href="investment.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Financial Advice</h3>
+                <p>Get expert guidance to make informed financial decisions and achieve your personal and business goals.</p>
+                <a href="financialadvice.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Agency Banking</h3>
+                <p>Access banking services through our network of agents including Cooperative, Equity, KCB, Family Bank, and M-Pesa.</p>
+                <a href="agencybanking.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Insurance</h3>
+                <p>Protect yourself and your assets with our comprehensive insurance products tailored to your needs.</p>
+                <a href="insurance.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Bill Payments</h3>
+                <p>Conveniently pay your utility bills and other services through our secure bill payment solutions.</p>
+                <a href="billpayments.html" class="cta-button">Learn More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Goodway Sacco Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>

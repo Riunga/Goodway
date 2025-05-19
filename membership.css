@@ -1,0 +1,252 @@
+/* Membership page styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+
+/* Reset and base styles */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(90deg, #2e7d32, #1b4d1b);
+    color: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-bottom: 3px solid #ff9800;
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .logo h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #ff9800;
+    color: #2e7d32;
+}
+
+/* Footer styles */
+footer {
+    background: linear-gradient(90deg, #ff9800, #2e7d32);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    border-top: 4px solid #ffffff;
+    letter-spacing: 0.05em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+footer .footer-content p {
+    margin: 5px 0;
+}
+
+footer .footer-link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+    margin-top: 120px; /* to clear fixed header */
+    margin-bottom: 130px; /* to clear fixed footer */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+/* Membership intro section with background image */
+.membership-intro {
+    position: relative;
+    background-image: url('images/about-us.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1000px rgba(46, 125, 50, 0.2); /* green overlay */
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.membership-intro h2 {
+font-size: 2.8rem;
+margin-bottom: 15px;
+font-weight: 700;
+position: relative;
+z-index: 2;
+}
+
+.membership-intro p {
+font-size: 1.3rem;
+line-height: 1.5;
+position: relative;
+z-index: 2;
+}
+
+/* Membership content layout */
+.membership-content.container {
+    display: flex;
+    gap: 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Form container */
+.membership-form-container {
+    flex: 1 1 40%;
+    background: white;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+#membership-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#membership-form label {
+    font-weight: 700;
+    color: #2e7d32;
+    font-size: 1rem;
+}
+
+#membership-form input[type="text"],
+#membership-form input[type="email"],
+#membership-form input[type="tel"],
+#membership-form select,
+#membership-form input[type="file"] {
+    padding: 12px 15px;
+    border: 2px solid #2e7d32;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#membership-form input[type="text"]:focus,
+#membership-form input[type="email"]:focus,
+#membership-form input[type="tel"]:focus,
+#membership-form select:focus,
+#membership-form input[type="file"]:focus {
+    border-color: #ff9800;
+    outline: none;
+}
+
+#membership-form button[type="submit"] {
+    background-color: #2e7d32;
+    color: white;
+    font-weight: 700;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    width: 160px;
+    align-self: flex-start;
+}
+
+#membership-form button[type="submit"]:hover {
+    background-color: #ff9800;
+    color: #2e7d32;
+}
+
+/* Description box */
+.membership-description {
+    flex: 1 1 30%;
+    background-color: #dcedc8;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+    color: #33691e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Image container */
+.membership-image {
+    flex: 1 1 30%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.membership-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .membership-content.container {
+        flex-direction: column;
+    }
+
+    .membership-form-container,
+    .membership-description,
+    .membership-image {
+        flex: 1 1 100%;
+        margin-bottom: 25px;
+    }
+
+    #membership-form button[type="submit"] {
+        width: 100%;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="about.css" />
+    <script>
+        // Toggle navigation menu on mobile
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+    </script>
+    <style>
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2e7d32;
+            line-height: 1.6;
+        }
+        main h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ff9800;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        main h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+            border-bottom: 3px solid #ff9800;
+            padding-bottom: 5px;
+        }
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        main ul {
+            list-style-type: disc;
+            padding-left: 40px;
+            font-size: 1.1rem;
+        }
+        main ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="services.html">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About Goodway Sacco Society</h2>
+        <p>Goodway Sacco Society stands as a premier member-owned financial cooperative, dedicated to empowering our members through innovative, sustainable financial solutions that foster community growth and economic prosperity.</p>
+        <h3>Our Mission</h3>
+        <p>To provide accessible, affordable, and dependable financial services that elevate the quality of life for our members and positively impact their communities.</p>
+        <h3>Our Vision</h3>
+        <p>To be the foremost Sacco society, celebrated for excellence, innovation, and an unwavering commitment to member satisfaction.</p>
+        <h3>Our Core Values</h3>
+        <ul>
+            <li><strong>Integrity:</strong> We uphold the highest standards of honesty, transparency, and accountability in all our endeavors.</li>
+            <li><strong>Member-Centric:</strong> Our members' needs and aspirations guide every decision we make.</li>
+            <li><strong>Innovation:</strong> We embrace forward-thinking approaches to continuously enhance our services and offerings.</li>
+            <li><strong>Community Engagement:</strong> We actively contribute to the social and economic development of the communities we serve.</li>
+            <li><strong>Excellence:</strong> We strive for superior quality and continuous improvement in all aspects of our work.</li>
+        </ul>
+        <h3>Our Team</h3>
+        <p>Our dedicated and professional team fosters a culture of trust, transparency, and growth, ensuring every member receives exceptional service and support. Join us and become part of a thriving community that values your financial well-being and success.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,312 @@
+/* Header styles */
+header {
+    background: linear-gradient(90deg, #2e7d32, #1b4d1b);
+    color: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-bottom: 3px solid #ff9800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Navigation styles */
+nav {
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active {
+    color: #ff9800;
+}
+
+/* Responsive navigation - hamburger menu */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #2e7d32;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 12px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 1.6rem;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Homepage hero sliding feature */
+.hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #000;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.7);
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0;
+    transition: all 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide.active {
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide1 {
+    background-image: url('images/Money-cash.png');
+}
+
+.slide2 {
+    background-image: url('images/shutterstock_1272443683.jpg');
+}
+
+.slide3 {
+    background-image: url('images/istockphoto.jpg');
+}
+
+.slide-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px 60px;
+    border-radius: 12px;
+    max-width: 700px;
+    animation: fadeInUp 1s ease forwards;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.slide-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+}
+
+.slide-content p {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.cta-button {
+    background: #ff9800;
+    color: #ffffff;
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 40px;
+    display: inline-block;
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 20px rgba(255,152,0,0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: #e67e22;
+    box-shadow: 0 8px 25px rgba(230,126,34,0.9);
+}
+
+/* About Us Section improvements */
+.about-us-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+}
+
+.about-us-section h2 {
+    font-size: 2.8rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-us-section p {
+    font-size: 1.3rem;
+    color: #555555;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Testimonials font style */
+.testimonials-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 40px auto 60px auto;
+}
+
+.testimonials-section h2 {
+    font-size: 2.8rem;
+    color: #2e7d32;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.testimonial {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(46,125,50,0.15);
+    font-style: normal;
+    font-size: 1.3rem;
+    color: #2e7d32;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(46,125,50,0.3);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial span {
+    display: block;
+    font-weight: 700;
+    color: #558b2f;
+}
+
+/* Footer styles matching contact.css and services.css */
+footer {
+    background: linear-gradient(90deg, #ff9800, #2e7d32);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    border-top: 4px solid #ffffff;
+    letter-spacing: 0.05em;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-description,
+.footer-contact {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.footer-link {
+    color: #ffcc80;
+    text-decoration: none;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    text-decoration: underline;
+}

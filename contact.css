@@ -1,0 +1,223 @@
+/* Header styles matching homepage */
+header {
+    background: linear-gradient(90deg, #2e7d32, #1b4d1b);
+    color: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-bottom: 3px solid #ff9800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Navigation styles */
+nav {
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active {
+    color: #ff9800;
+}
+
+/* Responsive navigation - hamburger menu */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #2e7d32;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 12px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 1.6rem;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Main content styles */
+main {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2e7d32;
+}
+
+main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+main p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Contact form styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2e7d32;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #2e7d32;
+    border-radius: 8px;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    border-color: #ff9800;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(46,125,50,0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover,
+.contact-form button[type="submit"]:focus {
+    background-color: #558b2f;
+    box-shadow: 0 8px 25px rgba(85,139,47,0.9);
+}
+
+/* Social media section */
+.social-media {
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.social-media h3 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-media ul li a {
+    color: #2e7d32;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid #2e7d32;
+    padding: 10px 15px;
+    border-radius: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-media ul li a:hover,
+.social-media ul li a:focus {
+    background-color: #ff9800;
+    color: white;
+    border-color: #ff9800;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        max-width: 100%;
+        margin: 20px;
+        padding: 0 10px;
+    }
+
+    .social-media ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Footer styles matching services.css */
+footer {
+    background: linear-gradient(90deg, #ff9800, #2e7d32);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    border-top: 4px solid #ffffff;
+    letter-spacing: 0.05em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Products & Services - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="services.css" />
+    <script>
+        // Toggle navigation menu on mobile
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Our Products & Services</h2>
+        <p>At Goodway Sacco Society, we offer a comprehensive range of financial products and services designed to meet the diverse needs of our members. Our offerings include savings accounts, loan products, investment opportunities, and tailored financial advice to help you achieve your goals.</p>
+        <p>We are committed to providing excellent customer service and innovative solutions that empower our members to build a secure financial future.</p>
+
+        <section class="services-grid">
+            <article class="service-card">
+                <img src="images/savings-icon.png" alt="Savings Account" class="service-icon" />
+                <h3>Savings Accounts</h3>
+                <p>Secure your future with our flexible savings accounts offering competitive interest rates and easy access.</p>
+                <a href="savings.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <img src="images/loan-icon.png" alt="Loan Products" class="service-icon" />
+                <h3>Loan Products</h3>
+                <p>Access affordable loans tailored to your needs, with flexible repayment options and quick approval.</p>
+                <a href="loans.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <img src="images/others-icon.png" alt="Other Services" class="service-icon" />
+                <h3>Other Services</h3>
+                <p>Explore our additional services including investment opportunities and expert financial advice tailored to your needs.</p>
+                <a href="otherservices.html" class="cta-button">Learn More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>

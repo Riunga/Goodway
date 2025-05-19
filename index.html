@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goodway Sacco Society</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="slider">
+            <div class="slide slide1 active">
+                <div class="slide-content">
+                    <h2>Welcome to Goodway Sacco Society</h2>
+                    <p>Your trusted partner in financial services.</p>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="slide-content">
+                    <h2>Secure Your Future</h2>
+                    <p>Join us and benefit from our savings plans.</p>
+                </div>
+            </div>
+            <div class="slide slide3">
+                <div class="slide-content">
+                    <h2>Loans Made Easy</h2>
+                    <p>Flexible loan options tailored for you.</p>
+                </div>
+            </div>
+        </div>
+        <a href="services.html" class="cta-button">Explore Our Services</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us-section">
+        <div class="container">
+            <h2>About Goodway Sacco Society</h2>
+            <p>Goodway Sacco Society is dedicated to providing reliable and innovative financial services to our members. We strive to empower our community through savings, loans, and investment opportunities tailored to your needs.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What Our Members Say</h2>
+            <div class="testimonial">
+                <p>"Goodway Sacco has helped me save for my children's education. Their services are trustworthy and efficient."</p>
+                <span>- Jane Doe</span>
+            </div>
+            <div class="testimonial">
+                <p>"The loan process was smooth and flexible. I highly recommend Goodway Sacco to anyone looking for financial support."</p>
+                <span>- John Smith</span>
+            </div>
+            <div class="testimonial">
+                <p>"Excellent customer service and great investment options. I feel secure with Goodway Sacco."</p>
+                <span>- Mary Johnson</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+            <p class="footer-description">Goodway Sacco Society is committed to empowering our members through innovative financial solutions and exceptional service.</p>
+            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>

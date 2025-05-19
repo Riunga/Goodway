@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Savings Products - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="services.css" />
+    <script>
+        // Toggle navigation menu on mobile
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Savings Products</h2>
+        <p>Explore our range of savings products designed to help you grow your wealth securely and conveniently.</p>
+
+        <section class="services-grid">
+            <article class="service-card">
+                <h3>Regular Savings Account</h3>
+                <p>A flexible savings account with competitive interest rates and easy access to your funds.</p>
+                <a href="regularsavings.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Fixed Deposit Account</h3>
+                <p>Earn higher interest rates by locking your funds for a fixed period with guaranteed returns.</p>
+                <a href="fixeddeposit.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Children's Savings Account</h3>
+                <p>Start saving for your child's future with special benefits and easy account management.</p>
+                <a href="childrensavings.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Joint Savings Account</h3>
+                <p>Save together with a joint account designed for families and partners with shared financial goals.</p>
+                <a href="jointsavings.html" class="cta-button">Learn More</a>
+            </article>
+            <article class="service-card">
+                <h3>Business Savings Account</h3>
+                <p>Manage your business finances efficiently with our tailored business savings account options.</p>
+                <a href="businesssavings.html" class="cta-button">Learn More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Goodway Sacco Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>

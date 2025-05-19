@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>News - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="news.css" />
+    <script>
+        // Toggle navigation menu on mobile
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+    </script>
+    <style>
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2e7d32;
+            line-height: 1.6;
+        }
+        main h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ff9800;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        main h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+            border-bottom: 3px solid #ff9800;
+            padding-bottom: 5px;
+        }
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        main ul {
+            list-style-type: none;
+            padding-left: 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        main ul li {
+            background-color: #f0f8f5;
+            border: 2px solid #2e7d32;
+            border-radius: 12px;
+            padding: 15px 20px;
+            flex: 1 1 250px;
+            box-shadow: 0 6px 15px rgba(46,125,50,0.2);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        main ul li:hover {
+            background-color: #ff9800;
+            border-color: #ff9800;
+            color: white;
+            cursor: pointer;
+        }
+        main ul li a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: block;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Products & Services</a></li>
+                <li><a href="News.html" class="active">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Latest News & Updates</h2>
+        <p>Stay informed with the latest developments, announcements, and opportunities at Goodway Sacco Society. We are committed to keeping our members up-to-date and engaged.</p>
+
+        <section>
+            <h3>Careers</h3>
+            <ul>
+                <li><a href="careers.html">Current Openings: Financial Analyst, Customer Service Representative, IT Specialist</a></li>
+                <li><a href="internships.html">Internship Programs for young professionals</a></li>
+                <li><a href="careers.html">Apply online or visit our office for more information</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>News</h3>
+            <ul>
+                <li><a href="news-details.html">Launch of new savings products tailored for youth and women</a></li>
+                <li><a href="agm.html">Upcoming Annual General Meeting scheduled for July 2025</a></li>
+                <li><a href="community.html">Community outreach programs and financial literacy workshops</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Updates</h3>
+            <ul>
+                <li><a href="portal.html">New online portal for easier account management</a></li>
+                <li><a href="loan-changes.html">Changes in loan application procedures</a></li>
+                <li><a href="holiday-schedule.html">Holiday schedule for the upcoming festive season</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>

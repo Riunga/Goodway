@@ -1,0 +1,217 @@
+/* Header styles matching homepage */
+header {
+    background: linear-gradient(90deg, #2e7d32, #1b4d1b);
+    color: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-bottom: 3px solid #ff9800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Navigation styles */
+nav {
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active {
+    color: #ff9800;
+}
+
+/* Responsive navigation - hamburger menu */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #2e7d32;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 12px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 1.6rem;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Main content styles */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2e7d32;
+}
+
+main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ff6f00;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #ff9800;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+main p.intro-text {
+    font-size: 1.4rem;
+    line-height: 1.9;
+    color: #444444;
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    font-style: normal;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    padding: 25px 35px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+    font-weight: 500;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.03em;
+    border: 1px solid #ffb74d;
+}
+
+/* Services grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 25px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #2e7d32;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Call to action button */
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background-color: #ff9800;
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: #e67e22;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        max-width: 100%;
+        margin: 20px;
+        padding: 0 10px;
+    }
+}
+
+footer {
+    background: linear-gradient(90deg, #ff9800, #2e7d32);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    border-top: 4px solid #ffffff;
+    letter-spacing: 0.05em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
