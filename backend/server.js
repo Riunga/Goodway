@@ -35,6 +35,19 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// Sample job postings data
+const jobPostings = [
+  { id: 1, title: 'Financial Analyst', description: 'Analyze financial data and prepare reports.' },
+  { id: 2, title: 'Customer Service Representative', description: 'Assist customers with inquiries and support.' },
+  { id: 3, title: 'IT Specialist', description: 'Manage IT infrastructure and support systems.' }
+];
+
+// Sample news data
+const newsItems = [
+  { id: 1, title: 'Launch of new savings products tailored for youth and women', content: 'Goodway Sacco Society is excited to announce new savings products...' },
+  { id: 2, title: 'Upcoming Annual General Meeting scheduled for July 2025', content: 'The AGM will be held on July 15, 2025 at our headquarters...' },
+  { id: 3, title: 'Community outreach programs and financial literacy workshops', content: 'We are committed to supporting our community through various programs...' }
+];
 
 // Membership form endpoint with file uploads
 app.post('/api/membership', upload.fields([
@@ -98,6 +111,16 @@ app.post('/api/contact', (req, res) => {
       return res.status(200).json({ message: 'Contact form submitted successfully' });
     }
   });
+});
+
+// New API endpoint for job postings
+app.get('/api/jobs', (req, res) => {
+  res.json(jobPostings);
+});
+
+// New API endpoint for news items
+app.get('/api/news', (req, res) => {
+  res.json(newsItems);
 });
 
 app.listen(port, () => {

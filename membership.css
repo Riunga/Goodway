@@ -73,10 +73,8 @@ footer {
     box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
     border-top: 4px solid #ffffff;
     letter-spacing: 0.05em;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
+    position: static; /* changed from fixed */
+    width: 100%;
     margin: 0;
     box-sizing: border-box;
     z-index: 1000;
