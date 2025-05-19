@@ -9,19 +9,26 @@ header {
     flex-wrap: wrap;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     border-bottom: 3px solid #ff9800;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .logo h1 {
     margin: 0;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #ffffff;
 }
 
 /* Navigation styles */
 nav {
-    padding: 0 20px;
+    padding: 0;
 }
 
 nav ul {
@@ -29,25 +36,27 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
+    gap: 25px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover,
-nav ul li a:focus,
 nav ul li a.active {
-    color: #ff9800;
+    background-color: #ff9800;
+    color: #2e7d32;
 }
 
 /* Responsive navigation - hamburger menu */

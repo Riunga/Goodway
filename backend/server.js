@@ -24,14 +24,17 @@ if (!fs.existsSync('uploads')) {
   fs.mkdirSync('uploads');
 }
 
-// Configure nodemailer transporter (use your email service credentials)
+/// Configure nodemailer transporter with company email SMTP settings
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'goodwaysacco.co.ke',
+  port: 465,
+  secure: true, // true for port 465, false for other ports
   auth: {
-    user: 'your-email@gmail.com', // replace with your email
-    pass: 'your-email-password'   // replace with your email password or app password
+    user: 'no-reply@goodwaysacco.co.ke',
+    pass: 'cPanel@goodWay'
   }
 });
+
 
 // Membership form endpoint with file uploads
 app.post('/api/membership', upload.fields([
@@ -55,7 +58,7 @@ app.post('/api/membership', upload.fields([
 
   // Send notification email
   const mailOptions = {
-    from: 'your-email@gmail.com',
+    from: 'no-reply@goodwaysacco.co.ke',
     to: 'admin@goodwaysacco.co.ke',
     subject: 'New Membership Form Submission',
     text: emailText
@@ -80,7 +83,7 @@ app.post('/api/contact', (req, res) => {
 
   // Send notification email
   const mailOptions = {
-    from: 'your-email@gmail.com',
+    from: 'no-reply@goodwaysacco.co.ke',
     to: 'admin@goodwaysacco.co.ke',
     subject: 'New Contact Form Submission',
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`

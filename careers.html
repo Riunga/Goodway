@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Careers - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="services.css" />
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: #f9f9f9;
+            color: #2e7d32;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            max-width: 900px;
+            margin: 100px auto 40px auto;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(46,125,50,0.15);
+        }
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ff9800;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 3px solid #2e7d32;
+            padding-bottom: 10px;
+        }
+        section h3 {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        /* Modal popup styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .modal-content {
+            background-color: #fff3e0;
+            margin: 15% auto;
+            padding: 20px 30px;
+            border: 2px solid #ff9800;
+            border-radius: 12px;
+            max-width: 500px;
+            box-shadow: 0 8px 30px rgba(255,152,0,0.7);
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #2e7d32;
+        }
+        .close-btn {
+            margin-top: 15px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .close-btn:hover {
+            background-color: #e67e22;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+        // Modal popup logic
+        function showModal() {
+            document.getElementById('breakingNewsModal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('breakingNewsModal').style.display = 'none';
+        }
+        window.onload = function() {
+            setTimeout(showModal, 1000); // Show popup after 1 second
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Products & Services</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Careers at Goodway Sacco Society</h2>
+        <p>Explore current job openings and internship opportunities to join our team and grow your career.</p>
+        <section>
+            <h3>Current Openings</h3>
+            <ul>
+                <li>Financial Analyst</li>
+                <li>Customer Service Representative</li>
+                <li>IT Specialist</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Internship Programs</h3>
+            <p>We offer internship programs for young professionals to gain valuable experience in the financial sector.</p>
+        </section>
+        <section>
+            <h3>How to Apply</h3>
+            <p>Apply online or visit our office for more information.</p>
+        </section>
+    </main>
+
+    <!-- Modal popup for breaking news -->
+    <div id="breakingNewsModal" class="modal">
+        <div class="modal-content">
+            <p>Breaking News: New career opportunities available now! Apply today.</p>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>
