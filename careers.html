@@ -130,10 +130,8 @@
         <p>Explore current job openings and internship opportunities to join our team and grow your career.</p>
         <section>
             <h3>Current Openings</h3>
-            <ul>
-                <li>Financial Analyst</li>
-                <li>Customer Service Representative</li>
-                <li>IT Specialist</li>
+            <ul id="job-list">
+                <!-- Job postings will be dynamically loaded here -->
             </ul>
         </section>
         <section>
@@ -143,6 +141,7 @@
         <section>
             <h3>How to Apply</h3>
             <p>Apply online or visit our office for more information.</p>
+            <p><a href="job-application.html" style="color: #27ae60; font-weight: 700; text-decoration: underline;">Click here to apply online</a></p>
         </section>
     </main>
 
@@ -154,7 +153,32 @@
         </div>
     </div>
 
-    <footer>
+    <script>
+        async function loadJobs() {
+            try {
+                const response = await fetch('http://localhost:3001/api/jobs');
+                if (!response.ok) {
+                    throw new Error('Failed to load jobs');
+                }
+                const jobs = await response.json();
+                const jobList = document.getElementById('job-list');
+                jobList.innerHTML = '';
+                jobs.forEach(job => {
+                    const li = document.createElement('li');
+                    li.textContent = job.title;
+                    jobList.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error loading jobs:', error);
+            }
+        }
+
+        window.onload = function() {
+            loadJobs();
+        }
+    </script>
+
+    <footer style="position: relative; bottom: 0; width: 100%;">
         <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
     </footer>
 </body>

@@ -15,20 +15,17 @@
         // Fetch and render careers dynamically
         async function loadCareers() {
             try {
-                // For demo, static data; replace with API if available
-                const careers = [
-                    { id: 1, title: 'Financial Analyst', url: 'careers.html' },
-                    { id: 2, title: 'Customer Service Representative', url: 'careers.html' },
-                    { id: 3, title: 'IT Specialist', url: 'careers.html' },
-                    { id: 4, title: 'Internship Programs for young professionals', url: 'internships.html' },
-                    { id: 5, title: 'Apply online or visit our office for more information', url: 'careers.html' }
-                ];
+                const response = await fetch('http://localhost:3001/api/jobs');
+                if (!response.ok) {
+                    throw new Error('Failed to load careers');
+                }
+                const careers = await response.json();
                 const careersList = document.getElementById('careers-list');
                 careersList.innerHTML = '';
                 careers.forEach(item => {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
-                    a.href = item.url;
+                    a.href = 'job-application.html?jobId=' + item.id;
                     a.textContent = item.title;
                     li.appendChild(a);
                     careersList.appendChild(li);
@@ -42,6 +39,9 @@
         async function loadNews() {
             try {
                 const response = await fetch('http://localhost:3001/api/news');
+                if (!response.ok) {
+                    throw new Error('Failed to load news');
+                }
                 const newsItems = await response.json();
                 const newsList = document.getElementById('news-list');
                 newsList.innerHTML = '';
@@ -171,27 +171,25 @@
     </header>
 
     <main>
-        <h2>Latest News & Updates</h2>
+        <h2>Goodway Sacco Society</h2>
         <p>Stay informed with the latest developments, announcements, and opportunities at Goodway Sacco Society. We are committed to keeping our members up-to-date and engaged.</p>
 
-        <section>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('careers')">Careers</button>
+            <button class="tab-button" onclick="showTab('news')">News & Updates</button>
+        </div>
+
+        <section id="careers" class="tab-content" style="display: block;">
             <h3>Careers</h3>
             <ul id="careers-list">
-                <!-- Careers items will be dynamically loaded here -->
+                <!-- Careers and internships will be dynamically loaded here -->
             </ul>
         </section>
 
-        <section>
-            <h3>News</h3>
+        <section id="news" class="tab-content" style="display: none;">
+            <h3>News & Updates</h3>
             <ul id="news-list">
-                <!-- News items will be dynamically loaded here -->
-            </ul>
-        </section>
-
-        <section>
-            <h3>Updates</h3>
-            <ul id="updates-list">
-                <!-- Updates items will be dynamically loaded here -->
+                <!-- News and updates will be dynamically loaded here -->
             </ul>
         </section>
     </main>
@@ -199,5 +197,18 @@
     <footer>
         <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.style.display = (tab.id === tabId) ? 'block' : 'none';
+            });
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.toggle('active', button.textContent.toLowerCase().includes(tabId));
+            });
+        }
+    </script>
 </body>
 </html>

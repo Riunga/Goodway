@@ -1,53 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>News Details - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="news.css" />
-    <script>
-        function toggleMenu() {
-            const navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News Details - Goodway Sacco Society</title>
+  <link rel="stylesheet" href="news.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #2e7d32;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ff9800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: 700;
+      border: 2px solid #2e7d32;
+      padding: 8px 15px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    a.back-link:hover {
+      background-color: #ff9800;
+      color: white;
+      border-color: #ff9800;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Goodway Sacco Society</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Products & Services</a></li>
-                <li><a href="News.html">News</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="membership.html">Membership</a></li>
-            </ul>
-        </nav>
-    </header>
+  <a href="news.html" class="back-link">&larr; Back to News</a>
+  <h1 id="newsTitle">Loading...</h1>
+  <p id="newsContent"></p>
 
-    <main>
-        <h2>Launch of New Savings Products</h2>
-        <p>Goodway Sacco Society is excited to announce the launch of new savings products tailored specifically for youth and women. These products offer competitive interest rates and flexible terms to help our members achieve their financial goals.</p>
-        <section>
-            <h3>Product Features</h3>
-            <ul>
-                <li>Higher interest rates for youth and women</li>
-                <li>Flexible deposit and withdrawal options</li>
-                <li>Easy account management through our online portal</li>
-            </ul>
-        </section>
-        <section>
-            <h3>How to Open an Account</h3>
-            <p>Visit any of our branches or apply online through our website to open a new savings account.</p>
-        </section>
-    </main>
+  <script>
+    async function loadNewsDetails() {
+      const params = new URLSearchParams(window.location.search);
+      const newsId = params.get('id');
+      if (!newsId) {
+        document.getElementById('newsTitle').textContent = 'News ID not specified.';
+        return;
+      }
+      try {
+        const response = await fetch('http://localhost:3001/api/news');
+        if (!response.ok) {
+          throw new Error('Failed to load news');
+        }
+        const newsItems = await response.json();
+        const newsItem = newsItems.find(item => item.id === parseInt(newsId));
+        if (!newsItem) {
+          document.getElementById('newsTitle').textContent = 'News not found.';
+          document.getElementById('newsContent').textContent = '';
+          return;
+        }
+        document.getElementById('newsTitle').textContent = newsItem.title;
+        document.getElementById('newsContent').textContent = newsItem.content;
+      } catch (error) {
+        document.getElementById('newsTitle').textContent = 'Error loading news.';
+        document.getElementById('newsContent').textContent = error.message;
+      }
+    }
 
-    <footer>
-        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-    </footer>
+    window.onload = loadNewsDetails;
+  </script>
 </body>
 </html>

@@ -1,4 +1,13 @@
-/* Header styles matching homepage */
+/* General styles for news.html page */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #2e7d32;
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background: linear-gradient(90deg, #2e7d32, #1b4d1b);
     color: #ffffff;
@@ -10,13 +19,12 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     border-bottom: 3px solid #ff9800;
     font-family: 'Montserrat', sans-serif;
-    width: 100vw;
-    margin: 0;
-    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 .logo h1 {
@@ -26,21 +34,12 @@ header {
     color: #ffffff;
 }
 
-/* Navigation styles */
-nav {
-    padding: 0;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     gap: 25px;
-}
-
-nav ul li {
-    margin: 0;
 }
 
 nav ul li a {
@@ -59,7 +58,143 @@ nav ul li a.active {
     color: #2e7d32;
 }
 
-/* Responsive navigation - hamburger menu */
+main {
+    max-width: 900px;
+    margin: 120px auto 40px auto;
+    padding: 0 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(46,125,50,0.15);
+}
+
+main h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ff9800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 3px solid #2e7d32;
+    padding-bottom: 10px;
+}
+
+main p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.tab-button {
+    background-color: #f0f8f5;
+    border: 2px solid #2e7d32;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2e7d32;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #ff9800;
+    border-color: #ff9800;
+    color: white;
+}
+
+.tab-button.active {
+    background-color: #ff9800;
+    border-color: #ff9800;
+    color: white;
+}
+
+.tab-content {
+    padding: 0 20px 40px 20px;
+}
+
+.tab-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2e7d32;
+    border-bottom: 3px solid #ff9800;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.tab-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tab-content ul li {
+    background-color: #f0f8f5;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(46,125,50,0.2);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.tab-content ul li:hover {
+    background-color: #ff9800;
+    border-color: #ff9800;
+    color: white;
+    cursor: pointer;
+}
+
+.tab-content ul li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+footer {
+    background: linear-gradient(90deg, #ff9800, #2e7d32);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    border-top: 4px solid #ffffff;
+    letter-spacing: 0.05em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: 120px; /* increased spacing between header and content */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -86,41 +221,13 @@ nav ul li a.active {
         -webkit-user-select: none;
         user-select: none;
     }
-}
 
-/* Main content styles */
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2e7d32;
-}
+    main {
+        margin: 120px 10px 40px 10px;
+        padding: 0 10px;
+    }
 
-main h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-main p {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-/* Footer styles matching services.css */
-footer {
-    background: linear-gradient(90deg, #ff9800, #2e7d32);
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    font-weight: 600;
-    font-size: 1.1rem;
-    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
-    border-top: 4px solid #ffffff;
-    letter-spacing: 0.05em;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    .tab-content ul {
+        grid-template-columns: 1fr;
+    }
 }
