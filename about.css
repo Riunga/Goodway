@@ -2,7 +2,7 @@
 header {
     background: linear-gradient(90deg, #2e7d32, #1b4d1b);
     color: #ffffff;
-    padding: 15px 40px;
+    padding: 20px 50px; /* Increased padding for better visibility */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -91,7 +91,7 @@ nav ul li a.active {
 /* Main content styles */
 main {
     max-width: 900px;
-    margin: 140px auto 40px auto; /* increased top margin for spacing below fixed header */
+    margin: 100px auto 40px auto; /* increased top margin for spacing below fixed header */
     padding: 0 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #2e7d32;

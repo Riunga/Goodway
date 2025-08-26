@@ -15,7 +15,7 @@ body {
 header {
     background: linear-gradient(90deg, #2e7d32, #1b4d1b);
     color: #ffffff;
-    padding: 15px 40px;
+    padding: 20px 50px; /* Increased padding for better visibility */
     display: flex;
     align-items: center;
     justify-content: space-between;
