@@ -55,20 +55,17 @@ const newsItems = [
 // Newsletter subscribers list
 const newsletterSubscribers = [];
 
-// Membership form endpoint with file uploads
 app.post('/api/membership', upload.fields([
-  { name: 'idCardFront', maxCount: 1 },
-  { name: 'idCardBack', maxCount: 1 },
-  { name: 'passportImage', maxCount: 1 },
-  { name: 'signatureImage', maxCount: 1 }
+  { name: 'idFrontUpload', maxCount: 1 },
+  { name: 'idBackUpload', maxCount: 1 },
+  { name: 'passportUpload', maxCount: 1 },
+  { name: 'signatureUpload', maxCount: 1 }
 ]), (req, res) => {
-  const { name, email, phone, employment, gender, maritalStatus } = req.body;
+  const { fullName, email, phone, employment, gender, maritalStatus } = req.body;
   const files = req.files;
 
-  // Here you can add code to save data and files to a database or storage
-
   // Compose email text
-  let emailText = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nEmployment: ${employment}\nGender: ${gender}\nMarital Status: ${maritalStatus}\nFiles:\n`;
+  let emailText = `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nEmployment: ${employment}\nGender: ${gender}\nMarital Status: ${maritalStatus}\nFiles:\n`;
   if (files) {
     for (const field in files) {
       emailText += `${field}: ${files[field][0].originalname}\n`;

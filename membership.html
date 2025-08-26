@@ -31,7 +31,7 @@
         </section>
         <section class="membership-content container">
             <div class="membership-form-container">
-                <form id="membership-form" action="#" method="post" enctype="multipart/form-data">
+<form id="membership-form" action="/api/membership" method="post" enctype="multipart/form-data">
                     <label for="fullName">Full Name</label>
                     <input type="text" id="fullName" name="fullName" required />
 
@@ -67,10 +67,21 @@
                         <option value="widowed">Widowed</option>
                     </select>
 
-                    <label for="idUpload">Upload ID/Passport</label>
-                    <input type="file" id="idUpload" name="idUpload" accept=".jpg,.jpeg,.png,.pdf" required />
+<label for="idFrontUpload">Upload ID Front</label>
+<input type="file" id="idFrontUpload" name="idFrontUpload" accept=".jpg,.jpeg,.png,.pdf" required />
 
-                    <label for="signatureUpload">Upload Signature</label>
+<label for="idBackUpload">Upload ID Back</label>
+<input type="file" id="idBackUpload" name="idBackUpload" accept=".jpg,.jpeg,.png,.pdf" required />
+
+<label for="terms">
+    <input type="checkbox" id="terms" name="terms" required />
+    I agree to the <a href="terms.html" target="_blank">terms and conditions</a>
+</label>
+
+<label for="passportUpload">Upload Passport</label>
+<input type="file" id="passportUpload" name="passportUpload" accept=".jpg,.jpeg,.png,.pdf" required />
+
+<label for="signatureUpload">Upload Signature</label>
                     <input type="file" id="signatureUpload" name="signatureUpload" accept=".jpg,.jpeg,.png,.pdf" required />
 
                     <button type="submit">Submit</button>
@@ -89,5 +100,6 @@
             <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
         </div>
     </footer>
+<script src="membership-form-validation-v4.js"></script>
 </body>
 </html>

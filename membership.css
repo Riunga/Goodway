@@ -231,6 +231,33 @@ z-index: 2;
     border-radius: 12px;
 }
 
+/* Styles for the terms and conditions checkbox */
+#membership-form label[for="terms"] {
+    font-weight: 700;
+    color: #2e7d32;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#membership-form input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+    transform: scale(1.2);
+}
+
+#membership-form label[for="terms"] a {
+    color: #ff9800;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+#membership-form label[for="terms"] a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .membership-content.container {
