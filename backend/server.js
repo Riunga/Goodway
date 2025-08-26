@@ -10,11 +10,17 @@ const jwt = require('jsonwebtoken');
 const { router: authRouter, authenticateRole } = require('./auth');
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Use auth router
+app.use('/api/auth', authRouter);
+
+// Serve static files
+app.use(express.static(path.join(__dirname, '../')));
 
 // Set up multer for file uploads
 const upload = multer({
@@ -27,34 +33,18 @@ if (!fs.existsSync('uploads')) {
   fs.mkdirSync('uploads');
 }
 
-/// Configure nodemailer transporter with company email SMTP settings
+// Configure nodemailer transporter with company email SMTP settings
 const transporter = nodemailer.createTransport({
   host: 'goodwaysacco.co.ke',
   port: 465,
-  secure: true, // true for port 465, false for other ports
+  secure: true,
   auth: {
     user: 'no-reply@goodwaysacco.co.ke',
     pass: 'cPanel@goodWay'
   }
 });
 
-// Sample job postings data
-const jobPostings = [
-  { id: 1, title: 'Financial Analyst', description: 'Analyze financial data and prepare reports.' },
-  { id: 2, title: 'Customer Service Representative', description: 'Assist customers with inquiries and support.' },
-  { id: 3, title: 'IT Specialist', description: 'Manage IT infrastructure and support systems.' }
-];
-
-// Sample news data with scheduling and status
-const newsItems = [
-  { id: 1, title: 'Launch of new savings products tailored for youth and women', content: 'Goodway Sacco Society is excited to announce new savings products...', publishDate: new Date('2025-01-01T00:00:00Z'), status: 'published' },
-  { id: 2, title: 'Upcoming Annual General Meeting scheduled for July 2025', content: 'The AGM will be held on July 15, 2025 at our headquarters...', publishDate: new Date('2025-07-01T00:00:00Z'), status: 'scheduled' },
-  { id: 3, title: 'Community outreach programs and financial literacy workshops', content: 'We are committed to supporting our community through various programs...', publishDate: new Date('2025-02-15T00:00:00Z'), status: 'published' }
-];
-
-// Newsletter subscribers list
-const newsletterSubscribers = [];
-
+// Membership form submission endpoint
 app.post('/api/membership', upload.fields([
   { name: 'idFrontUpload', maxCount: 1 },
   { name: 'idBackUpload', maxCount: 1 },
@@ -64,7 +54,6 @@ app.post('/api/membership', upload.fields([
   const { fullName, email, phone, employment, gender, maritalStatus } = req.body;
   const files = req.files;
 
-  // Compose email text
   let emailText = `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nEmployment: ${employment}\nGender: ${gender}\nMarital Status: ${maritalStatus}\nFiles:\n`;
   if (files) {
     for (const field in files) {
@@ -72,12 +61,17 @@ app.post('/api/membership', upload.fields([
     }
   }
 
-  // Send notification email
+  const attachments = Object.keys(files).map(field => ({
+      filename: files[field][0].originalname,
+      path: files[field][0].path // Path to the uploaded file
+  }));
+
   const mailOptions = {
-    from: 'no-reply@goodwaysacco.co.ke',
-    to: 'admin@goodwaysacco.co.ke',
-    subject: 'New Membership Form Submission',
-    text: emailText
+      from: 'no-reply@goodwaysacco.co.ke',
+      to: 'admin@goodwaysacco.co.ke',
+      subject: 'New Membership Form Submission',
+      text: emailText,
+      attachments: attachments // Attach the files
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -91,252 +85,183 @@ app.post('/api/membership', upload.fields([
   });
 });
 
-// Contact form endpoint
-app.post('/api/contact', (req, res) => {
-  const { name, email, message } = req.body;
-
-  // Here you can add code to save data to a database
-
-  // Send notification email
-  const mailOptions = {
-    from: 'no-reply@goodwaysacco.co.ke',
-    to: 'admin@goodwaysacco.co.ke',
-    subject: 'New Contact Form Submission',
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Error sending email:', error);
-      return res.status(500).json({ message: 'Failed to send email' });
-    } else {
-      console.log('Email sent:', info.response);
-      return res.status(200).json({ message: 'Contact form submitted successfully' });
-    }
-  });
-});
-
-// New API endpoint to fetch contacts/inquiries
-const contacts = [
-  { id: 1, name: 'John Doe', email: 'john@example.com', message: 'I would like to know more about your savings plans.' },
-  { id: 2, name: 'Jane Smith', email: 'jane@example.com', message: 'How can I apply for a loan?' },
-  { id: 3, name: 'Bob Johnson', email: 'bob@example.com', message: 'Is there a membership fee?' }
+// In-memory storage for jobs (in a real app, this would be a database)
+let jobs = [
+    { id: 1, title: 'Software Engineer', description: 'Develop and maintain software applications' },
+    { id: 2, title: 'Product Manager', description: 'Manage product development and strategy' }
 ];
 
-app.get('/api/contacts', authenticateRole('admin'), (req, res) => {
-  res.json(contacts);
-});
-
-// New API endpoint to receive job applications with CV upload
-const jobApplications = [];
-
-app.post('/api/job-applications', upload.single('cvUpload'), (req, res) => {
-  const { applicantName, applicantEmail, jobSelect, coverLetter } = req.body;
-  const cvFile = req.file;
-
-  if (!applicantName || !applicantEmail || !jobSelect || !coverLetter || !cvFile) {
-    return res.status(400).json({ message: 'All fields including CV upload are required.' });
-  }
-
-  // Save application data (in-memory for now)
-  const newApplication = {
-    id: jobApplications.length ? jobApplications[jobApplications.length - 1].id + 1 : 1,
-    name: applicantName,
-    email: applicantEmail,
-    jobId: parseInt(jobSelect),
-    coverLetter,
-    cvFilename: cvFile.filename,
-    originalCvName: cvFile.originalname,
-    uploadDate: new Date(),
-    status: 'pending' // initial status
-  };
-
-  jobApplications.push(newApplication);
-
-  // TODO: Optionally send notification email or save to database
-
-  res.status(201).json({ message: 'Job application submitted successfully', applicationId: newApplication.id });
-});
-
-// Admin endpoint to get all job applications with optional status filter
-app.get('/api/admin/job-applications', authenticateRole('admin'), (req, res) => {
-  const { status } = req.query;
-  let filteredApplications = jobApplications;
-  if (status) {
-    filteredApplications = jobApplications.filter(app => app.status === status);
-  }
-  res.json(filteredApplications);
-});
-
-// Admin endpoint to update application status
-app.put('/api/admin/job-applications/:id/status', authenticateRole('admin'), express.json(), (req, res) => {
-  const applicationId = parseInt(req.params.id);
-  const { status } = req.body;
-  const validStatuses = ['pending', 'reviewed', 'accepted', 'rejected'];
-  if (!validStatuses.includes(status)) {
-    return res.status(400).json({ message: 'Invalid status value' });
-  }
-  const application = jobApplications.find(app => app.id === applicationId);
-  if (!application) {
-    return res.status(404).json({ message: 'Application not found' });
-  }
-  application.status = status;
-  res.json({ message: 'Application status updated', application });
-});
-
-// New API endpoint for job postings
+// Route for jobs
 app.get('/api/jobs', (req, res) => {
-  res.json(jobPostings);
+    res.json(jobs);
 });
 
-// Create a new job posting
-app.post('/api/jobs', authenticateRole('admin'), express.json(), (req, res) => {
-  const { title, description, publishDate, status } = req.body;
-  if (!title || !description) {
-    return res.status(400).json({ message: 'Title and description are required' });
-  }
-  const newJob = {
-    id: jobPostings.length ? jobPostings[jobPostings.length - 1].id + 1 : 1,
-    title,
-    description,
-    publishDate: publishDate ? new Date(publishDate) : new Date(),
-    status: status || 'published'
-  };
-  jobPostings.push(newJob);
-  res.status(201).json(newJob);
+// POST endpoint for jobs
+app.post('/api/jobs', authenticateRole('admin'), (req, res) => {
+    try {
+        const { title, description } = req.body;
+        
+        if (!title || !description) {
+            return res.status(400).json({ message: 'Title and description are required' });
+        }
+
+        const newJob = {
+            id: Date.now(),
+            title,
+            description,
+            createdAt: new Date().toISOString()
+        };
+
+        jobs.push(newJob);
+        
+        res.status(201).json({ 
+            message: 'Job created successfully', 
+            job: newJob 
+        });
+    } catch (error) {
+        console.error('Error creating job:', error);
+        res.status(500).json({ message: 'Failed to create job' });
+    }
 });
 
-// Update a job posting
-app.put('/api/jobs/:id', authenticateRole('admin'), express.json(), (req, res) => {
-  const jobId = parseInt(req.params.id);
-  const { title, description, publishDate, status } = req.body;
-  const job = jobPostings.find(j => j.id === jobId);
-  if (!job) {
-    return res.status(404).json({ message: 'Job not found' });
-  }
-  if (title) job.title = title;
-  if (description) job.description = description;
-  if (publishDate) job.publishDate = new Date(publishDate);
-  if (status) job.status = status;
-  res.json(job);
+// PUT endpoint for jobs
+app.put('/api/jobs/:id', authenticateRole('admin'), (req, res) => {
+    try {
+        const jobId = parseInt(req.params.id);
+        const { title, description } = req.body;
+        
+        if (!title || !description) {
+            return res.status(400).json({ message: 'Title and description are required' });
+        }
+
+        const jobIndex = jobs.findIndex(job => job.id === jobId);
+        
+        if (jobIndex === -1) {
+            return res.status(404).json({ message: 'Job not found' });
+        }
+
+        jobs[jobIndex] = { ...jobs[jobIndex], title, description };
+        
+        res.json({ 
+            message: 'Job updated successfully', 
+            job: jobs[jobIndex] 
+        });
+    } catch (error) {
+        console.error('Error updating job:', error);
+        res.status(500).json({ message: 'Failed to update job' });
+    }
 });
 
-// Delete a job posting
+// DELETE endpoint for jobs
 app.delete('/api/jobs/:id', authenticateRole('admin'), (req, res) => {
-  const jobId = parseInt(req.params.id);
-  const index = jobPostings.findIndex(j => j.id === jobId);
-  if (index === -1) {
-    return res.status(404).json({ message: 'Job not found' });
-  }
-  jobPostings.splice(index, 1);
-  res.status(204).send();
+    try {
+        const jobId = parseInt(req.params.id);
+        const jobIndex = jobs.findIndex(job => job.id === jobId);
+        
+        if (jobIndex === -1) {
+            return res.status(404).json({ message: 'Job not found' });
+        }
+
+        jobs.splice(jobIndex, 1);
+        
+        res.json({ message: 'Job deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting job:', error);
+        res.status(500).json({ message: 'Failed to delete job' });
+    }
 });
 
-// New API endpoint for news items with scheduled publishing
-app.get('/api/news', (req, res) => {
-  const now = new Date();
-  const publishedNews = newsItems.filter(item => item.status === 'published' && item.publishDate <= now);
-  res.json(publishedNews);
+// In-memory storage for contacts (in a real app, this would be a database)
+let contacts = [
+    { id: 1, name: 'John Doe', email: 'john@example.com', message: 'Interested in membership' },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', message: 'Question about loans' }
+];
+
+// Route for contacts
+app.get('/api/contacts', authenticateRole('admin'), (req, res) => {
+    res.json(contacts);
 });
 
-// Create a new news item
-app.post('/api/news', authenticateRole('admin'), express.json(), (req, res) => {
-  const { title, content, publishDate, status } = req.body;
-  if (!title || !content) {
-    return res.status(400).json({ message: 'Title and content are required' });
-  }
-  const newNews = {
-    id: newsItems.length ? newsItems[newsItems.length - 1].id + 1 : 1,
-    title,
-    content,
-    publishDate: publishDate ? new Date(publishDate) : new Date(),
-    status: status || 'published'
-  };
-  newsItems.push(newNews);
-  res.status(201).json(newNews);
-});
-
-// Newsletter subscription endpoint
-app.post('/api/newsletter/subscribe', (req, res) => {
-  const { email } = req.body;
-  if (!email) {
-    return res.status(400).json({ message: 'Email is required' });
-  }
-  if (newsletterSubscribers.includes(email)) {
-    return res.status(400).json({ message: 'Email already subscribed' });
-  }
-  newsletterSubscribers.push(email);
-  res.status(201).json({ message: 'Subscribed successfully' });
-});
-
-// Newsletter unsubscription endpoint
-app.post('/api/newsletter/unsubscribe', (req, res) => {
-  const { email } = req.body;
-  const index = newsletterSubscribers.indexOf(email);
-  if (index === -1) {
-    return res.status(400).json({ message: 'Email not found in subscribers' });
-  }
-  newsletterSubscribers.splice(index, 1);
-  res.status(200).json({ message: 'Unsubscribed successfully' });
-});
-
-// Function to send newsletter emails (to be called by a scheduler or admin action)
-function sendNewsletter(subject, content) {
-  newsletterSubscribers.forEach(email => {
-    const mailOptions = {
-      from: 'no-reply@goodwaysacco.co.ke',
-      to: email,
-      subject: subject,
-      text: content
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error(`Error sending newsletter to ${email}:`, error);
-      } else {
-        console.log(`Newsletter sent to ${email}:`, info.response);
-      }
-    });
-  });
-}
-
-// Use auth router for authentication routes
-app.use('/api/auth', authRouter);
-
-// Middleware to extract user from JWT token for general use
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ message: 'Missing authorization header' });
-  const token = authHeader.split(' ')[1];
-  if (!token) return res.status(401).json({ message: 'Missing token' });
-  try {
-    const payload = jwt.verify(token, SECRET_KEY);
-    req.user = payload;
-    next();
-  } catch (err) {
-    return res.status(401).json({ message: 'Invalid token' });
-  }
-}
-
-// Example of protecting a route with authentication (any logged-in user)
-app.get('/api/profile', authenticateToken, (req, res) => {
-  res.json({ message: `Welcome, ${req.user.username}`, user: req.user });
-});
-
-// Example protected admin route
-app.get('/api/admin/dashboard', authenticateRole('admin'), (req, res) => {
-  res.json({ message: `Welcome to admin dashboard, ${req.user.username}` });
-});
-
-// New protected dashboard stats endpoint
+// Admin dashboard stats endpoint
 app.get('/api/admin/dashboard/stats', authenticateRole('admin'), (req, res) => {
-  // Sample statistics data
+  // Mock data for dashboard stats
   const stats = {
-    totalJobs: jobPostings.length,
-    totalNews: newsItems.length,
-    totalMembershipApplications: 42, // Placeholder, replace with real data
-    totalContacts: 15 // Placeholder, replace with real data
+    totalMembers: 1250,
+    activeLoans: 342,
+    pendingApplications: 28,
+    totalSavings: 12500000
   };
   res.json(stats);
+});
+
+// Route for news
+app.get('/api/news', (req, res) => {
+    const news = [
+        { id: 1, title: 'New online portal for easier account management' },
+        { id: 2, title: 'Changes in loan application procedures' }
+    ];
+    res.json(news);
+});
+
+// POST endpoint for news with file uploads
+app.post('/api/news', authenticateRole('admin'), upload.fields([
+  { name: 'image', maxCount: 1 },
+  { name: 'video', maxCount: 1 }
+]), (req, res) => {
+  try {
+    const { title, content, date } = req.body;
+    const files = req.files;
+
+    // Validate required fields
+    if (!title || !content || !date) {
+      return res.status(400).json({ message: 'Title, content, and date are required' });
+    }
+
+    // Process uploaded files
+    const newsItem = {
+      id: Date.now(),
+      title,
+      content,
+      date,
+      createdAt: new Date().toISOString()
+    };
+
+    if (files && files.image) {
+      newsItem.image = {
+        filename: files.image[0].originalname,
+        path: files.image[0].path,
+        mimetype: files.image[0].mimetype
+      };
+    }
+
+    if (files && files.video) {
+      newsItem.video = {
+        filename: files.video[0].originalname,
+        path: files.video[0].path,
+        mimetype: files.video[0].mimetype
+      };
+    }
+
+    // Here you would typically save to a database
+    // For now, we'll just return the created news item
+    console.log('New news item created:', newsItem);
+    
+    res.status(201).json({ 
+      message: 'News created successfully', 
+      news: newsItem 
+    });
+  } catch (error) {
+    console.error('Error creating news:', error);
+    res.status(500).json({ message: 'Failed to create news' });
+  }
+});
+
+app.get('/careers', (req, res) => {
+    res.sendFile(path.join(__dirname, '../careers.html'));
+});
+
+app.get('/news', (req, res) => {
+    res.sendFile(path.join(__dirname, '../news.html'));
 });
 
 app.listen(port, () => {

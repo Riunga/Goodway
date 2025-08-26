@@ -206,7 +206,15 @@
 
   <section id="news-management" style="margin-top: 40px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); max-width: 600px;">
     <h2>Manage News</h2>
-    <form id="newsForm">
+    <form id="newsForm" enctype="multipart/form-data">
+      <label for="newsDate">Date</label>
+      <input type="date" id="newsDate" name="newsDate" required style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+      
+      <label for="newsImage">Upload Image</label>
+      <input type="file" id="newsImage" name="newsImage" accept="image/*" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+      
+      <label for="newsVideo">Upload Video</label>
+      <input type="file" id="newsVideo" name="newsVideo" accept="video/*" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
       <label for="newsTitle">Title</label><br />
       <input type="text" id="newsTitle" name="newsTitle" required style="width: 100%; padding: 8px; margin-bottom: 10px;" /><br />
       <label for="newsContent">Content</label><br />
@@ -289,20 +297,29 @@
 
       const title = document.getElementById('newsTitle').value.trim();
       const content = document.getElementById('newsContent').value.trim();
+      const date = document.getElementById('newsDate').value;
+      const imageFile = document.getElementById('newsImage').files[0];
+      const videoFile = document.getElementById('newsVideo').files[0];
 
-      if (!title || !content) {
-        newsError.textContent = 'Title and content are required.';
+      if (!title || !content || !date) {
+        newsError.textContent = 'Title, content, and date are required.';
         return;
       }
 
       try {
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('content', content);
+        formData.append('date', date);
+        if (imageFile) formData.append('image', imageFile);
+        if (videoFile) formData.append('video', videoFile);
+
         const response = await fetch('http://localhost:3001/api/news', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token
           },
-          body: JSON.stringify({ title, content })
+          body: formData
         });
 
         if (!response.ok) {
