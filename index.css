@@ -334,3 +334,87 @@ footer {
 .footer-link:focus {
     text-decoration: underline;
 }
+/* History Timeline Styles */
+.history-timeline-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.history-timeline-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.history-timeline-section h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.timeline {
+    position: relative;
+    margin-left: 40px;
+    padding-left: 20px;
+    border-left: 3px solid #2e7d32;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -80px;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4caf50;
+    background-color: #e8f5e9;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 70px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .timeline {
+        margin-left: 20px;
+        padding-left: 10px;
+        border-left-width: 2px;
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+    }
+
+    .timeline-year {
+        left: -60px;
+        padding: 6px 12px;
+        font-size: 1.2rem;
+        width: 60px;
+    }
+}

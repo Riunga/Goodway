@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Regular Savings - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #2e7d32;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 40px;
+            font-weight: 700;
+            font-size: 2.8rem;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .product:nth-child(odd) .text {
+            background-color: #2e7d32;
+            color: white;
+            padding: 30px;
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .product:nth-child(odd) .image {
+            flex: 1 1 50%;
+            background-size: cover;
+            background-position: center;
+        }
+        .product:nth-child(even) .text {
+            background-color: #8bc34a;
+            color: white;
+            padding: 30px;
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .product:nth-child(even) .image {
+            flex: 1 1 50%;
+            background-size: cover;
+            background-position: center;
+        }
+        .product h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .product p.description {
+            flex-grow: 1;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .open-account-btn {
+            align-self: flex-start;
+            padding: 10px 20px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .open-account-btn:hover {
+            background-color: white;
+            color: #2e7d32;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product {
+                flex-direction: column;
+            }
+            .product .text, .product .image {
+                flex: 1 1 100%;
+            }
+            .product .image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regular Savings Products</h1>
+
+        <div class="product">
+            <div class="text">
+                <h2>Salary Accounts</h2>
+                <p class="description">[Description placeholder for Salary Accounts]</p>
+                <a href="/membership.html" class="open-account-btn">Open Account</a>
+            </div>
+            <div class="image" style="background-image: url('images/salary-account.jpg');"></div>
+        </div>
+
+        <div class="product">
+            <div class="image" style="background-image: url('images/premium-savings.jpg');"></div>
+            <div class="text">
+                <h2>Premium Saving Accounts</h2>
+                <p class="description">[Description placeholder for Premium Saving Accounts]</p>
+                <a href="/membership.html" class="open-account-btn">Open Account</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="text">
+                <h2>Joint Accounts</h2>
+                <p class="description">[Description placeholder for Joint Accounts]</p>
+                <a href="/membership.html" class="open-account-btn">Open Account</a>
+            </div>
+            <div class="image" style="background-image: url('images/joint-accounts.jpg');"></div>
+        </div>
+
+        <div class="product">
+            <div class="image" style="background-image: url('images/group-accounts.jpg');"></div>
+            <div class="text">
+                <h2>Group or Organization Accounts</h2>
+                <p class="description">[Description placeholder for Group or Organization Accounts]</p>
+                <a href="/membership.html" class="open-account-btn">Open Account</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

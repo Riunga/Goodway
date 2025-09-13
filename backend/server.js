@@ -12,6 +12,12 @@ const { router: authRouter, authenticateRole } = require('./auth');
 const app = express();
 const port = process.env.PORT || 3001;
 
+// Logging middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -262,6 +268,14 @@ app.get('/careers', (req, res) => {
 
 app.get('/news', (req, res) => {
     res.sendFile(path.join(__dirname, '../news.html'));
+});
+
+app.get('/regular-savings', (req, res) => {
+    res.sendFile(path.join(__dirname, '../regular-savings.html'));
+});
+
+app.get('/membership', (req, res) => {
+    res.sendFile(path.join(__dirname, '../membership.html'));
 });
 
 app.listen(port, () => {
