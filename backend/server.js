@@ -25,9 +25,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Use auth router
 app.use('/api/auth', authRouter);
 
-// Serve static files
-app.use(express.static(path.join(__dirname, '../')));
-
 // Set up multer for file uploads
 const upload = multer({
   dest: 'uploads/',
@@ -262,6 +259,7 @@ app.post('/api/news', authenticateRole('admin'), upload.fields([
   }
 });
 
+// Specific routes for HTML files (must come before static file serving)
 app.get('/careers.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../careers.html'));
 });
@@ -270,7 +268,7 @@ app.get('/news.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../news.html'));
 });
 
-// Add routes for /news and /careers (without .html extension)
+// Routes for /news and /careers (without .html extension)
 app.get('/news', (req, res) => {
     res.sendFile(path.join(__dirname, '../news.html'));
 });
@@ -279,6 +277,7 @@ app.get('/careers', (req, res) => {
     res.sendFile(path.join(__dirname, '../careers.html'));
 });
 
+// Additional HTML file routes
 app.get('/regular-savings.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../regular-savings.html'));
 });
@@ -294,6 +293,9 @@ app.get('/fixeddeposit.html', (req, res) => {
 app.get('/membership', (req, res) => {
     res.sendFile(path.join(__dirname, '../membership.html'));
 });
+
+// Serve static files (must come last)
+app.use(express.static(path.join(__dirname, '../')));
 
 app.listen(port, () => {
   console.log(`Goodway backend service listening at http://localhost:${port}`);
