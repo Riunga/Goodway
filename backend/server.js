@@ -106,7 +106,7 @@ app.get('/api/jobs', (req, res) => {
 app.post('/api/jobs', authenticateRole('admin'), (req, res) => {
     try {
         const { title, description } = req.body;
-        
+
         if (!title || !description) {
             return res.status(400).json({ message: 'Title and description are required' });
         }
@@ -119,10 +119,10 @@ app.post('/api/jobs', authenticateRole('admin'), (req, res) => {
         };
 
         jobs.push(newJob);
-        
-        res.status(201).json({ 
-            message: 'Job created successfully', 
-            job: newJob 
+
+        res.status(201).json({
+            message: 'Job created successfully',
+            job: newJob
         });
     } catch (error) {
         console.error('Error creating job:', error);
@@ -135,22 +135,22 @@ app.put('/api/jobs/:id', authenticateRole('admin'), (req, res) => {
     try {
         const jobId = parseInt(req.params.id);
         const { title, description } = req.body;
-        
+
         if (!title || !description) {
             return res.status(400).json({ message: 'Title and description are required' });
         }
 
         const jobIndex = jobs.findIndex(job => job.id === jobId);
-        
+
         if (jobIndex === -1) {
             return res.status(404).json({ message: 'Job not found' });
         }
 
         jobs[jobIndex] = { ...jobs[jobIndex], title, description };
-        
-        res.json({ 
-            message: 'Job updated successfully', 
-            job: jobs[jobIndex] 
+
+        res.json({
+            message: 'Job updated successfully',
+            job: jobs[jobIndex]
         });
     } catch (error) {
         console.error('Error updating job:', error);
@@ -163,13 +163,13 @@ app.delete('/api/jobs/:id', authenticateRole('admin'), (req, res) => {
     try {
         const jobId = parseInt(req.params.id);
         const jobIndex = jobs.findIndex(job => job.id === jobId);
-        
+
         if (jobIndex === -1) {
             return res.status(404).json({ message: 'Job not found' });
         }
 
         jobs.splice(jobIndex, 1);
-        
+
         res.json({ message: 'Job deleted successfully' });
     } catch (error) {
         console.error('Error deleting job:', error);
@@ -251,10 +251,10 @@ app.post('/api/news', authenticateRole('admin'), upload.fields([
     // Here you would typically save to a database
     // For now, we'll just return the created news item
     console.log('New news item created:', newsItem);
-    
-    res.status(201).json({ 
-      message: 'News created successfully', 
-      news: newsItem 
+
+    res.status(201).json({
+      message: 'News created successfully',
+      news: newsItem
     });
   } catch (error) {
     console.error('Error creating news:', error);
@@ -268,6 +268,15 @@ app.get('/careers.html', (req, res) => {
 
 app.get('/news.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../news.html'));
+});
+
+// Add routes for /news and /careers (without .html extension)
+app.get('/news', (req, res) => {
+    res.sendFile(path.join(__dirname, '../news.html'));
+});
+
+app.get('/careers', (req, res) => {
+    res.sendFile(path.join(__dirname, '../careers.html'));
 });
 
 app.get('/regular-savings.html', (req, res) => {
