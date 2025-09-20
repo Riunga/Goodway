@@ -262,16 +262,24 @@ app.post('/api/news', authenticateRole('admin'), upload.fields([
   }
 });
 
-app.get('/careers', (req, res) => {
+app.get('/careers.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../careers.html'));
 });
 
-app.get('/news', (req, res) => {
+app.get('/news.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../news.html'));
 });
 
-app.get('/regular-savings', (req, res) => {
+app.get('/regular-savings.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../regular-savings.html'));
+});
+
+app.get('/childrensavings.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../childrensavings.html'));
+});
+
+app.get('/fixeddeposit.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../fixeddeposit.html'));
 });
 
 app.get('/membership', (req, res) => {
