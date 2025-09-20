@@ -4,133 +4,428 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Children's Savings - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="services.css" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #2e7d32;
+        /* Professional Children's Savings Styling */
+        .savings-hero {
+            background: linear-gradient(135deg, #e91e63, #f48fb1);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
         }
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
+
+        .savings-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .savings-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        .savings-container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
-        h1 {
-            text-align: center;
-            color: #2e7d32;
-            margin-bottom: 40px;
-            font-weight: 700;
-            font-size: 2.8rem;
+
+        .savings-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
         }
-        .product {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            border-radius: 8px;
+
+        .savings-image {
+            position: relative;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        .product:nth-child(odd) .text {
-            background-color: #2e7d32;
-            color: white;
-            padding: 30px;
-            flex: 1 1 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+
+        .savings-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
         }
-        .product:nth-child(odd) .image {
-            flex: 1 1 50%;
-            background-size: cover;
-            background-position: center;
+
+        .savings-details {
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .product:nth-child(even) .text {
-            background-color: #8bc34a;
-            color: white;
-            padding: 30px;
-            flex: 1 1 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+
+        .savings-subtitle {
+            color: #e91e63;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .product:nth-child(even) .image {
-            flex: 1 1 50%;
-            background-size: cover;
-            background-position: center;
+
+        .savings-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
         }
-        .product h2 {
-            margin-top: 0;
-            font-size: 1.8rem;
+
+        .savings-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #e91e63;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 5px solid #f48fb1;
+            padding-left: 15px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            background: #fce4ec;
+            padding: 15px 20px;
             margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #e91e63;
+            display: flex;
+            align-items: center;
         }
-        .product p.description {
-            flex-grow: 1;
-            font-size: 1rem;
+
+        .feature-item::before {
+            content: "🌟";
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .account-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .account-card {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #e91e63;
+            transition: transform 0.3s ease;
+        }
+
+        .account-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .account-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e91e63, #f48fb1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .account-title {
+            color: #e91e63;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .account-desc {
+            color: #666;
+            font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 20px;
         }
-        .open-account-btn {
-            align-self: flex-start;
-            padding: 10px 20px;
-            border: 2px solid white;
-            background: transparent;
+
+        .benefits-section {
+            background: linear-gradient(135deg, #f8bbd9, #fce4ec);
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .benefits-section h2 {
+            color: #e91e63;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #e91e63;
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e91e63, #f48fb1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
             color: white;
+        }
+
+        .benefit-title {
+            color: #e91e63;
             font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .benefit-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+
+        .cta-section h2 {
+            color: #e91e63;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e91e63, #f48fb1);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+            display: inline-flex;
+            align-items: center;
         }
-        .open-account-btn:hover {
-            background-color: white;
-            color: #2e7d32;
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #c2185b, #e91e63);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
         }
-        /* Responsive */
+
+        .btn-secondary {
+            background: transparent;
+            color: #e91e63;
+            padding: 15px 30px;
+            border: 2px solid #e91e63;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #e91e63;
+            color: white;
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
-            .product {
+            .savings-hero h1 {
+                font-size: 2rem;
+            }
+
+            .savings-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .savings-details {
+                padding: 25px;
+            }
+
+            .account-types {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
                 flex-direction: column;
-            }
-            .product .text, .product .image {
-                flex: 1 1 100%;
-            }
-            .product .image {
-                height: 200px;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Children's Savings Products</h1>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Products & Services</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="product">
-            <div class="text">
-                <h2>Junior Savings Account</h2>
-                <p class="description">A special savings account designed for children under 18 years old. Parents or guardians can open and manage the account, teaching children the value of saving from an early age with attractive interest rates.</p>
-                <a href="/membership.html" class="open-account-btn">Open Account</a>
+    <!-- Hero Section -->
+    <section class="savings-hero">
+        <div class="savings-container">
+            <h1>Children's Savings Account</h1>
+            <p>Building a brighter future for your children with our specialized savings solutions</p>
+        </div>
+    </section>
+
+    <main class="savings-container">
+        <div class="savings-content">
+            <div class="savings-image">
+                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2210&q=80" alt="Children's Savings" />
             </div>
-            <div class="image" style="background-image: url('images/junior-savings.jpg');"></div>
+
+            <div class="savings-details">
+                <div class="savings-subtitle">Future-Focused Banking</div>
+                <div class="savings-description">
+                    Our Children's Savings Accounts are specially designed to help parents and guardians build a secure financial future for their children. With competitive interest rates, educational benefits, and flexible contribution options, we're here to support you in creating lasting financial security for the next generation.
+                </div>
+
+                <div class="savings-section">
+                    <div class="section-title">Account Benefits</div>
+                    <ul class="features-list">
+                        <li class="feature-item">Higher interest rates than regular savings</li>
+                        <li class="feature-item">No monthly maintenance fees</li>
+                        <li class="feature-item">Parental control and monitoring</li>
+                        <li class="feature-item">Educational resources and financial literacy</li>
+                        <li class="feature-item">Gift contributions from family members</li>
+                        <li class="feature-item">Automatic transfers and standing orders</li>
+                        <li class="feature-item">Special birthday and holiday bonuses</li>
+                        <li class="feature-item">Transition to youth account at age 18</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div class="product">
-            <div class="image" style="background-image: url('images/education-savings.jpg');"></div>
-            <div class="text">
-                <h2>Children's Education Savings</h2>
-                <p class="description">Plan ahead for your child's education with our dedicated education savings account. Enjoy competitive interest rates and flexible deposit options to build a secure future for your child's academic journey.</p>
-                <a href="/membership.html" class="open-account-btn">Open Account</a>
+        <!-- Account Types Section -->
+        <div class="savings-section">
+            <div class="section-title">Choose the Right Account for Your Child</div>
+            <div class="account-types">
+                <div class="account-card">
+                    <div class="account-icon">👶</div>
+                    <div class="account-title">Junior Savings (0-12 years)</div>
+                    <div class="account-desc">Perfect for young children with parental control. Special educational benefits and higher interest rates to maximize growth.</div>
+                </div>
+                <div class="account-card">
+                    <div class="account-icon">🎓</div>
+                    <div class="account-title">Education Savings (13-17 years)</div>
+                    <div class="account-desc">Designed for teenagers with financial education focus. Includes budgeting tools and financial literacy resources.</div>
+                </div>
+                <div class="account-card">
+                    <div class="account-icon">🎁</div>
+                    <div class="account-title">Gift Savings Account</div>
+                    <div class="account-desc">Allow family and friends to contribute to your child's future. Perfect for birthdays, holidays, and special occasions.</div>
+                </div>
+                <div class="account-card">
+                    <div class="account-icon">💰</div>
+                    <div class="account-title">Goal-Oriented Savings</div>
+                    <div class="account-desc">Save for specific goals like university, first car, or business startup with milestone tracking and rewards.</div>
+                </div>
             </div>
         </div>
 
-        <div class="product">
-            <div class="text">
-                <h2>Gift Savings Account</h2>
-                <p class="description">Give the gift of financial responsibility with our children's gift savings account. Family members can contribute to help children learn about saving while earning interest on their deposits.</p>
-                <a href="/membership.html" class="open-account-btn">Open Account</a>
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <h2>Why Choose Our Children's Savings?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">📚</div>
+                    <div class="benefit-title">Financial Education</div>
+                    <div class="benefit-desc">Access to age-appropriate financial literacy programs and educational resources</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Goal Tracking</div>
+                    <div class="benefit-desc">Set and track savings goals with visual progress indicators and milestone celebrations</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👨‍👩‍👧‍👦</div>
+                    <div class="benefit-title">Family Banking</div>
+                    <div class="benefit-desc">Multiple family members can contribute and monitor the account's progress</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <div class="benefit-title">Secure Future</div>
+                    <div class="benefit-desc">Build substantial savings with competitive rates and compound interest benefits</div>
+                </div>
             </div>
-            <div class="image" style="background-image: url('images/gift-savings.jpg');"></div>
         </div>
-    </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Start Building Their Future Today</h2>
+            <p>Give your children the gift of financial security with our specialized children's savings accounts. Start small, dream big!</p>
+            <div class="cta-buttons">
+                <a href="membership.html" class="btn-primary">Open Account Now →</a>
+                <a href="contact.html" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
+            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+        </div>
+    </footer>
 </body>
 </html>

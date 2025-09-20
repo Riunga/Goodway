@@ -5,6 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Loan Products - Goodway Sacco Society</title>
     <link rel="stylesheet" href="services.css" />
+    <style>
+        /* Professional Loan Products Styling */
+        .loans-hero {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .loans-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .loans-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        .loans-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .loan-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #2e7d32;
+        }
+
+        .loan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .loan-card h3 {
+            color: #2e7d32;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .loan-card .loan-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .loan-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .loan-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f5f7fa;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .loan-cta {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .loan-cta:hover {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+        }
+
+        .loan-stats {
+            background: linear-gradient(135deg, #f0f8ff, #e8f5e8);
+            padding: 50px 20px;
+            margin: 50px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .stat-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .loans-hero h1 {
+                font-size: 2rem;
+            }
+
+            .loan-card {
+                padding: 25px;
+            }
+
+            .loan-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
     <script>
         // Toggle navigation menu on mobile
         function toggleMenu() {
@@ -30,31 +200,92 @@
         </nav>
     </header>
 
-    <main>
-        <h2>Loan Products</h2>
-        <p>Discover our loan products tailored to meet your financial needs with flexible repayment options.</p>
+    <!-- Hero Section -->
+    <section class="loans-hero">
+        <div class="loans-container">
+            <h1>Loan Products</h1>
+            <p>Flexible financing solutions tailored to your needs with competitive rates and quick approval</p>
+        </div>
+    </section>
 
-        <section class="services-grid">
-            <article class="service-card">
-                <h3>Personal Loan</h3>
-                <p>Quick and easy personal loans with competitive interest rates and flexible terms.</p>
-                <a href="personalloan.html" class="cta-button">Learn More</a>
-            </article>
-            <article class="service-card">
-                <h3>Business Loan</h3>
-                <p>Support your business growth with our affordable business loan options and expert advice.</p>
-                <a href="businessloan.html" class="cta-button">Learn More</a>
-            </article>
-            <article class="service-card">
-                <h3>Wakulima Loan</h3>
-                <p>Support your agricultural needs with our Wakulima loans offering competitive rates and flexible plans.</p>
-                <a href="wakulimaloan.html" class="cta-button">Learn More</a>
-            </article>
-        </section>
+    <main class="loans-container">
+        <!-- Personal Loan -->
+        <div class="loan-card">
+            <div class="loan-icon">💰</div>
+            <h3>Personal Loan</h3>
+            <p>Quick and easy personal loans designed to meet your individual financial needs with flexible repayment options and competitive interest rates.</p>
+
+            <div class="loan-features">
+                <div class="feature-item">Flexible repayment terms up to 24 months</div>
+                <div class="feature-item">Competitive interest rates</div>
+                <div class="feature-item">Quick processing and disbursement</div>
+                <div class="feature-item">No hidden charges</div>
+            </div>
+
+            <a href="personalloan.html" class="loan-cta">Learn More →</a>
+        </div>
+
+        <!-- Business Loan -->
+        <div class="loan-card">
+            <div class="loan-icon">🏢</div>
+            <h3>Business Loan</h3>
+            <p>Support your business growth with our comprehensive business loan solutions, designed for entrepreneurs and established businesses alike.</p>
+
+            <div class="loan-features">
+                <div class="feature-item">Loan terms up to 36 months</div>
+                <div class="feature-item">Flexible collateral options</div>
+                <div class="feature-item">Business advisory support</div>
+                <div class="feature-item">Fast approval process</div>
+            </div>
+
+            <a href="businessloan.html" class="loan-cta">Learn More →</a>
+        </div>
+
+        <!-- Wakulima Loan -->
+        <div class="loan-card">
+            <div class="loan-icon">🌾</div>
+            <h3>Wakulima Loan</h3>
+            <p>Specialized agricultural financing for farmers with repayment schedules aligned to harvest cycles and competitive rates for farming operations.</p>
+
+            <div class="loan-features">
+                <div class="feature-item">Harvest-cycle aligned repayments</div>
+                <div class="feature-item">Agricultural advisory services</div>
+                <div class="feature-item">Flexible loan amounts</div>
+                <div class="feature-item">Farm equipment financing</div>
+            </div>
+
+            <a href="wakulimaloan.html" class="loan-cta">Learn More →</a>
+        </div>
+
+        <!-- Loan Statistics -->
+        <div class="loan-stats">
+            <h2 style="color: #2e7d32; margin-bottom: 40px;">Our Loan Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">KSh 150M+</div>
+                    <div class="stat-label">Loans Disbursed</div>
+                    <div class="stat-desc">Empowering dreams across Kenya</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Happy Borrowers</div>
+                    <div class="stat-desc">Success stories nationwide</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Approval Rate</div>
+                    <div class="stat-desc">Quick and efficient processing</div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2023 Goodway Sacco Society. All rights reserved.</p>
+        <div class="footer-content">
+            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
+            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+        </div>
     </footer>
 </body>
 </html>

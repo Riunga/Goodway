@@ -5,13 +5,285 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Products & Services - Goodway Sacco Society</title>
     <link rel="stylesheet" href="services.css" />
-    <script>
-        // Toggle navigation menu on mobile
-        function toggleMenu() {
-            const navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
+    <style>
+        /* Professional Services Page Styling */
+        .services-hero {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 50px;
         }
-    </script>
+
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .services-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .services-intro {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #4caf50;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: center;
+            padding: 0 30px;
+        }
+
+        .service-features {
+            padding: 0 30px 20px;
+        }
+
+        .service-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li::before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .service-cta {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            margin: 20px auto 30px;
+            display: flex;
+            width: fit-content;
+        }
+
+        .service-cta:hover {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+        }
+
+        .services-benefits {
+            background: linear-gradient(135deg, #f0f8ff, #e8f5e8);
+            padding: 50px 20px;
+            margin: 50px 0;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .services-benefits h2 {
+            color: #2e7d32;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #4caf50;
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .benefit-title {
+            color: #2e7d32;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .benefit-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2e7d32;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary:hover {
+            background: #f5f7fa;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2e7d32;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,42 +295,173 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html" class="active">Products & Services</a></li>
-                <li><a href="news.html">News</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/careers">Careers</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="membership.html">Membership</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2>Our Products & Services</h2>
-        <p>At Goodway Sacco Society, we offer a comprehensive range of financial products and services designed to meet the diverse needs of our members. Our offerings include savings accounts, loan products, investment opportunities, and tailored financial advice to help you achieve your goals.</p>
-        <p>We are committed to providing excellent customer service and innovative solutions that empower our members to build a secure financial future.</p>
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="services-container">
+            <h1>Products & Services</h1>
+            <p>Comprehensive financial solutions designed to meet all your banking needs with competitive rates and exceptional service</p>
+        </div>
+    </section>
 
-        <section class="services-grid">
-            <article class="service-card">
-                <img src="images/savings-icon.png" alt="Savings Account" class="service-icon" />
+    <main class="services-container">
+        <div class="services-intro">
+            <p>At Goodway Sacco Society, we are committed to providing our members with innovative, accessible, and comprehensive financial products and services. Our diverse portfolio is carefully designed to support your financial journey at every stage, from basic savings to complex investment strategies. With competitive rates, flexible terms, and personalized service, we're here to help you achieve your financial goals.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💰</div>
                 <h3>Savings Accounts</h3>
-                <p>Secure your future with our flexible savings accounts offering competitive interest rates and easy access.</p>
-                <a href="savings.html" class="cta-button">Learn More</a>
-            </article>
-            <article class="service-card">
-                <img src="images/loan-icon.png" alt="Loan Products" class="service-icon" />
+                <p>Build your financial future with our range of savings products offering competitive interest rates, flexible access, and secure growth opportunities.</p>
+                <div class="service-features">
+                    <ul>
+                        <li>Regular Savings Account</li>
+                        <li>Children's Savings Account</li>
+                        <li>Fixed Deposit Account</li>
+                        <li>Premium Savings Options</li>
+                    </ul>
+                </div>
+                <a href="savings.html" class="service-cta">Explore Savings →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏦</div>
                 <h3>Loan Products</h3>
-                <p>Access affordable loans tailored to your needs, with flexible repayment options and quick approval.</p>
-                <a href="loans.html" class="cta-button">Learn More</a>
-            </article>
-            <article class="service-card">
-                <img src="images/others-icon.png" alt="Other Services" class="service-icon" />
-                <h3>Other Services</h3>
-                <p>Explore our additional services including investment opportunities and expert financial advice tailored to your needs.</p>
-                <a href="otherservices.html" class="cta-button">Learn More</a>
-            </article>
-        </section>
+                <p>Access affordable financing solutions tailored to your personal, business, and agricultural needs with flexible repayment options.</p>
+                <div class="service-features">
+                    <ul>
+                        <li>Personal Loans</li>
+                        <li>Business Loans</li>
+                        <li>Wakulima Agricultural Loans</li>
+                        <li>Emergency Loans</li>
+                    </ul>
+                </div>
+                <a href="loans.html" class="service-cta">Explore Loans →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Investment Services</h3>
+                <p>Grow your wealth through our carefully curated investment opportunities with expert guidance and competitive returns.</p>
+                <div class="service-features">
+                    <ul>
+                        <li>Fixed Income Investments</li>
+                        <li>Money Market Funds</li>
+                        <li>Government Securities</li>
+                        <li>Portfolio Management</li>
+                    </ul>
+                </div>
+                <a href="otherservices.html" class="service-cta">Explore Investments →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔒</div>
+                <h3>Insurance Services</h3>
+                <p>Protect what matters most with our comprehensive insurance products designed to provide peace of mind and financial security.</p>
+                <div class="service-features">
+                    <ul>
+                        <li>Life Insurance</li>
+                        <li>Health Insurance</li>
+                        <li>Property Insurance</li>
+                        <li>Business Insurance</li>
+                    </ul>
+                </div>
+                <a href="otherservices.html" class="service-cta">Explore Insurance →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h3>Digital Banking</h3>
+                <p>Experience modern banking convenience with our comprehensive digital services accessible anytime, anywhere.</p>
+                <div class="service-features">
+                    <ul>
+                        <li>Mobile Banking App</li>
+                        <li>Internet Banking</li>
+                        <li>Agency Banking Network</li>
+                        <li>ATM Services</li>
+                    </ul>
+                </div>
+                <a href="otherservices.html" class="service-cta">Explore Digital →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <h3>Financial Advisory</h3>
+                <p>Get personalized financial guidance from our team of experts to help you make informed decisions and achieve your goals.</p>
+                <div class="service-features">
+                    <ul>
+                        <li>Investment Planning</li>
+                        <li>Retirement Planning</li>
+                        <li>Tax Planning</li>
+                        <li>Business Advisory</li>
+                    </ul>
+                </div>
+                <a href="otherservices.html" class="service-cta">Get Advice →</a>
+            </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="services-benefits">
+            <h2>Why Choose Goodway Sacco Society?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <div class="benefit-title">Competitive Rates</div>
+                    <div class="benefit-desc">Enjoy some of the best interest rates and returns in the market across all our products</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-title">Quick Processing</div>
+                    <div class="benefit-desc">Fast approval and processing times for loans, accounts, and other services</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <div class="benefit-title">Secure & Reliable</div>
+                    <div class="benefit-desc">Your funds and information are protected by industry-leading security measures</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <div class="benefit-title">Digital Access</div>
+                    <div class="benefit-desc">Convenient access to all services through our digital platforms and mobile app</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👨‍💼</div>
+                    <div class="benefit-title">Expert Support</div>
+                    <div class="benefit-desc">Professional guidance and support from our experienced financial advisors</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌍</div>
+                    <div class="benefit-title">Wide Network</div>
+                    <div class="benefit-desc">Extensive branch and agent network for convenient access across the region</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Join thousands of satisfied members who trust Goodway Sacco Society for their financial needs</p>
+            <div class="cta-buttons">
+                <a href="membership.html" class="btn-primary">Become a Member →</a>
+                <a href="contact.html" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+        <div class="footer-content">
+            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
+            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -4,133 +4,471 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fixed Deposit - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="services.css" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #2e7d32;
+        /* Professional Fixed Deposit Styling */
+        .savings-hero {
+            background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
         }
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
+
+        .savings-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .savings-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        .savings-container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
-        h1 {
-            text-align: center;
-            color: #2e7d32;
-            margin-bottom: 40px;
-            font-weight: 700;
-            font-size: 2.8rem;
+
+        .savings-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
         }
-        .product {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            border-radius: 8px;
+
+        .savings-image {
+            position: relative;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        .product:nth-child(odd) .text {
-            background-color: #2e7d32;
-            color: white;
-            padding: 30px;
-            flex: 1 1 50%;
+
+        .savings-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .savings-details {
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .savings-subtitle {
+            color: #3f51b5;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .savings-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .savings-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #3f51b5;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 5px solid #5c6bc0;
+            padding-left: 15px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            background: #e8eaf6;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #3f51b5;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
-        .product:nth-child(odd) .image {
-            flex: 1 1 50%;
-            background-size: cover;
-            background-position: center;
+
+        .feature-item::before {
+            content: "💎";
+            margin-right: 15px;
+            font-size: 1.2rem;
         }
-        .product:nth-child(even) .text {
-            background-color: #8bc34a;
-            color: white;
+
+        .deposit-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .deposit-card {
+            background: linear-gradient(135deg, #c5cae9, #e8eaf6);
             padding: 30px;
-            flex: 1 1 50%;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #3f51b5;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .deposit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .deposit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+        }
+
+        .deposit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: white;
         }
-        .product:nth-child(even) .image {
-            flex: 1 1 50%;
-            background-size: cover;
-            background-position: center;
+
+        .deposit-title {
+            color: #3f51b5;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
-        .product h2 {
-            margin-top: 0;
-            font-size: 1.8rem;
+
+        .deposit-rate {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3f51b5;
+            margin: 15px 0;
+        }
+
+        .deposit-term {
+            color: #666;
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
-        .product p.description {
-            flex-grow: 1;
-            font-size: 1rem;
+
+        .deposit-desc {
+            color: #666;
+            font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 20px;
         }
-        .open-account-btn {
-            align-self: flex-start;
-            padding: 10px 20px;
-            border: 2px solid white;
-            background: transparent;
-            color: white;
+
+        .calculator-section {
+            background: linear-gradient(135deg, #e8eaf6, #c5cae9);
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .calculator-section h2 {
+            color: #3f51b5;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calc-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .calc-label {
+            color: #3f51b5;
             font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .calc-value {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #c5cae9, #e8eaf6);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+
+        .cta-section h2 {
+            color: #3f51b5;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(63, 81, 181, 0.3);
+            display: inline-flex;
+            align-items: center;
         }
-        .open-account-btn:hover {
-            background-color: white;
-            color: #2e7d32;
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #303f9f, #3f51b5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(63, 81, 181, 0.4);
         }
-        /* Responsive */
+
+        .btn-secondary {
+            background: transparent;
+            color: #3f51b5;
+            padding: 15px 30px;
+            border: 2px solid #3f51b5;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #3f51b5;
+            color: white;
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
-            .product {
+            .savings-hero h1 {
+                font-size: 2rem;
+            }
+
+            .savings-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .savings-details {
+                padding: 25px;
+            }
+
+            .deposit-types {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
                 flex-direction: column;
-            }
-            .product .text, .product .image {
-                flex: 1 1 100%;
-            }
-            .product .image {
-                height: 200px;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Fixed Deposit Products</h1>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Products & Services</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="product">
-            <div class="text">
-                <h2>Short-term Fixed Deposit</h2>
-                <p class="description">Lock in your savings for 3-12 months with our short-term fixed deposit. Enjoy competitive interest rates and the security of guaranteed returns for your short-term financial goals.</p>
-                <a href="/membership.html" class="open-account-btn">Open Account</a>
+    <!-- Hero Section -->
+    <section class="savings-hero">
+        <div class="savings-container">
+            <h1>Fixed Deposit Account</h1>
+            <p>Maximize your returns with our guaranteed fixed deposit solutions</p>
+        </div>
+    </section>
+
+    <main class="savings-container">
+        <div class="savings-content">
+            <div class="savings-image">
+                <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Fixed Deposit" />
             </div>
-            <div class="image" style="background-image: url('images/short-term-fd.jpg');"></div>
+
+            <div class="savings-details">
+                <div class="savings-subtitle">Guaranteed Returns</div>
+                <div class="savings-description">
+                    Our Fixed Deposit Accounts offer you the perfect opportunity to grow your savings with guaranteed returns and competitive interest rates. Whether you're planning for short-term goals or long-term financial security, our fixed deposit options provide the stability and growth you need.
+                </div>
+
+                <div class="savings-section">
+                    <div class="section-title">Account Features</div>
+                    <ul class="features-list">
+                        <li class="feature-item">Guaranteed returns with fixed interest rates</li>
+                        <li class="feature-item">Flexible deposit terms from 3 months to 5 years</li>
+                        <li class="feature-item">Higher interest rates than regular savings</li>
+                        <li class="feature-item">Compound interest options available</li>
+                        <li class="feature-item">Minimum deposit as low as KSh 10,000</li>
+                        <li class="feature-item">No monthly maintenance fees</li>
+                        <li class="feature-item">Automatic renewal options</li>
+                        <li class="feature-item">Premature withdrawal options with penalty</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div class="product">
-            <div class="image" style="background-image: url('images/long-term-fd.jpg');"></div>
-            <div class="text">
-                <h2>Long-term Fixed Deposit</h2>
-                <p class="description">Plan for the future with our long-term fixed deposit options ranging from 1-5 years. Benefit from higher interest rates and compound growth for your long-term savings objectives.</p>
-                <a href="/membership.html" class="open-account-btn">Open Account</a>
+        <!-- Deposit Types Section -->
+        <div class="savings-section">
+            <div class="section-title">Choose Your Investment Term</div>
+            <div class="deposit-types">
+                <div class="deposit-card">
+                    <div class="deposit-icon">⚡</div>
+                    <div class="deposit-title">Short-term Fixed Deposit</div>
+                    <div class="deposit-rate">12.5%</div>
+                    <div class="deposit-term">3-12 Months</div>
+                    <div class="deposit-desc">Perfect for short-term goals with quick returns and maximum flexibility.</div>
+                </div>
+                <div class="deposit-card">
+                    <div class="deposit-icon">📈</div>
+                    <div class="deposit-title">Medium-term Fixed Deposit</div>
+                    <div class="deposit-rate">14.0%</div>
+                    <div class="deposit-term">1-3 Years</div>
+                    <div class="deposit-desc">Balanced option for medium-term planning with attractive interest rates.</div>
+                </div>
+                <div class="deposit-card">
+                    <div class="deposit-icon">🏆</div>
+                    <div class="deposit-title">Long-term Fixed Deposit</div>
+                    <div class="deposit-rate">16.5%</div>
+                    <div class="deposit-term">3-5 Years</div>
+                    <div class="deposit-desc">Maximum returns for long-term investors with the highest interest rates.</div>
+                </div>
+                <div class="deposit-card">
+                    <div class="deposit-icon">💎</div>
+                    <div class="deposit-title">Premium Fixed Deposit</div>
+                    <div class="deposit-rate">18.0%</div>
+                    <div class="deposit-term">5+ Years</div>
+                    <div class="deposit-desc">Exclusive high-yield option for substantial deposits with premium benefits.</div>
+                </div>
             </div>
         </div>
 
-        <div class="product">
-            <div class="text">
-                <h2>High-yield Fixed Deposit</h2>
-                <p class="description">Maximize your returns with our premium fixed deposit offering the highest interest rates. Perfect for investors seeking superior returns on their fixed-term investments.</p>
-                <a href="/membership.html" class="open-account-btn">Open Account</a>
+        <!-- Calculator Section -->
+        <div class="calculator-section">
+            <h2>Calculate Your Returns</h2>
+            <div class="calculator-grid">
+                <div class="calc-item">
+                    <div class="calc-label">Investment Amount</div>
+                    <div class="calc-value">KSh 100,000</div>
+                </div>
+                <div class="calc-item">
+                    <div class="calc-label">Interest Rate</div>
+                    <div class="calc-value">14.0%</div>
+                </div>
+                <div class="calc-item">
+                    <div class="calc-label">Investment Term</div>
+                    <div class="calc-value">2 Years</div>
+                </div>
+                <div class="calc-item">
+                    <div class="calc-label">Total Returns</div>
+                    <div class="calc-value">KSh 131,200</div>
+                </div>
             </div>
-            <div class="image" style="background-image: url('images/high-yield-fd.jpg');"></div>
         </div>
-    </div>
+
+        <!-- Requirements Section -->
+        <div class="savings-section">
+            <div class="section-title">Account Opening Requirements</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div>
+                    <h4 style="color: #3f51b5; margin-bottom: 15px;">Personal Accounts</h4>
+                    <ul class="features-list">
+                        <li class="feature-item">Valid National ID or Passport</li>
+                        <li class="feature-item">Recent passport-sized photographs</li>
+                        <li class="feature-item">Proof of income/source of funds</li>
+                        <li class="feature-item">KRA PIN certificate</li>
+                        <li class="feature-item">Minimum deposit of KSh 10,000</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #3f51b5; margin-bottom: 15px;">Business Accounts</h4>
+                    <ul class="features-list">
+                        <li class="feature-item">Certificate of Registration/Incorporation</li>
+                        <li class="feature-item">Business bank statements</li>
+                        <li class="feature-item">Board resolution for investment</li>
+                        <li class="feature-item">Valid IDs of authorized signatories</li>
+                        <li class="feature-item">Minimum deposit of KSh 50,000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Start Growing Your Wealth Today</h2>
+            <p>Lock in competitive interest rates and watch your money grow with our secure fixed deposit accounts.</p>
+            <div class="cta-buttons">
+                <a href="membership.html" class="btn-primary">Open Account Now →</a>
+                <a href="contact.html" class="btn-secondary">Get Quote</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
+            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+        </div>
+    </footer>
 </body>
 </html>

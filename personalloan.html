@@ -4,97 +4,379 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Personal Loan - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="services.css" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px 40px;
-            color: #2e7d32;
-            background-color: #fff;
-        }
-        h1 {
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-        h2 {
-            font-weight: 600;
-            font-size: 1rem;
-            color: #4caf50;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        .loan-header {
-            display: flex;
-            gap: 30px;
+        /* Professional Personal Loan Styling */
+        .loan-hero {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
             margin-bottom: 40px;
         }
-        .loan-header img {
-            width: 400px;
-            height: auto;
-            border-radius: 8px;
+
+        .loan-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .loan-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        .loan-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .loan-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .loan-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .loan-image img {
+            width: 100%;
+            height: 400px;
             object-fit: cover;
         }
-        .loan-description {
-            flex: 1;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .section-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            border-left: 4px solid #4caf50;
-            padding-left: 10px;
-        }
-        ul.checklist {
-            list-style: none;
-            padding-left: 0;
-        }
-        ul.checklist li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 25px;
-        }
-        ul.checklist li::before {
-            content: "✔";
+
+        .loan-image::before {
+            content: '';
             position: absolute;
+            top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(76, 175, 80, 0.1));
+            z-index: 1;
+        }
+
+        .loan-details {
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .loan-subtitle {
+            color: #4caf50;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .loan-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .loan-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 5px solid #4caf50;
+            padding-left: 15px;
+        }
+
+        .eligibility-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .eligibility-item {
+            background: #f5f7fa;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+            display: flex;
+            align-items: center;
+        }
+
+        .eligibility-item::before {
+            content: "✓";
             color: #4caf50;
             font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #4caf50;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .benefit-title {
+            color: #2e7d32;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .benefit-desc {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .loan-cta-section {
+            background: linear-gradient(135deg, #f0f8ff, #e8f5e8);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+
+        .loan-cta-section h2 {
+            color: #2e7d32;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .loan-cta-section p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #2e7d32;
+            padding: 15px 30px;
+            border: 2px solid #2e7d32;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #2e7d32;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .loan-hero h1 {
+                font-size: 2rem;
+            }
+
+            .loan-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .loan-details {
+                padding: 25px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Personal Loan</h1>
-    <h2>Individual Loan</h2>
-    <div class="loan-header">
-        <img src="images/personal-loan.jpg" alt="Personal Loan" />
-        <div class="loan-description">
-            <p>Our personal loan products are designed to meet your individual financial needs with flexible repayment options.</p>
-            <p>Loan amounts and terms depend on your income and creditworthiness.</p>
-            <p>Collateral may be required depending on the loan amount.</p>
+    <header>
+        <div class="logo">
+            <h1>Goodway Sacco Society</h1>
         </div>
-    </div>
-    <div>
-        <div class="section-title">Eligibility</div>
-        <ul class="checklist">
-            <li>Must be a member of Goodway Sacco Society for at least 6 months</li>
-            <li>Must have a stable source of income</li>
-            <li>Must meet creditworthiness criteria</li>
-        </ul>
-        <div class="section-title">Loan Term</div>
-        <p>Up to 24 months</p>
-        <div class="section-title">Benefits</div>
-        <ul>
-            <li>Flexible repayment plans</li>
-            <li>Competitive interest rates</li>
-            <li>Quick loan processing and disbursement</li>
-            <li>Access to additional financial advisory services</li>
-        </ul>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Products & Services</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="loan-hero">
+        <div class="loan-container">
+            <h1>Personal Loan</h1>
+            <p>Flexible financing for your personal needs with competitive rates and quick approval</p>
+        </div>
+    </section>
+
+    <main class="loan-container">
+        <div class="loan-content">
+            <div class="loan-image">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2226&q=80" alt="Personal Loan" />
+            </div>
+
+            <div class="loan-details">
+                <div class="loan-subtitle">Individual Financial Solution</div>
+                <div class="loan-description">
+                    Our personal loan products are designed to meet your individual financial needs with flexible repayment options and competitive interest rates. Whether you're planning a major purchase, consolidating debt, or handling unexpected expenses, we provide tailored solutions to help you achieve your goals.
+                </div>
+
+                <div class="loan-section">
+                    <div class="section-title">Loan Features</div>
+                    <ul class="eligibility-list">
+                        <li class="eligibility-item">Loan amounts from KSh 10,000 to KSh 2,000,000</li>
+                        <li class="eligibility-item">Flexible repayment terms up to 24 months</li>
+                        <li class="eligibility-item">Competitive interest rates starting from 12% per annum</li>
+                        <li class="eligibility-item">Quick processing and disbursement within 48 hours</li>
+                        <li class="eligibility-item">No hidden charges or processing fees</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eligibility Section -->
+        <div class="loan-section">
+            <div class="section-title">Eligibility Requirements</div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">👤</div>
+                    <div class="benefit-title">Membership</div>
+                    <div class="benefit-desc">Must be a member of Goodway Sacco Society for at least 6 months</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💼</div>
+                    <div class="benefit-title">Income Source</div>
+                    <div class="benefit-desc">Must have a stable source of income with proper documentation</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">Credit Score</div>
+                    <div class="benefit-desc">Must meet our creditworthiness criteria and have good repayment history</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <div class="benefit-title">Collateral</div>
+                    <div class="benefit-desc">May be required depending on loan amount and risk assessment</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="loan-section">
+            <div class="section-title">Why Choose Our Personal Loan?</div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-title">Quick Processing</div>
+                    <div class="benefit-desc">Fast approval and disbursement process</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-title">Competitive Rates</div>
+                    <div class="benefit-desc">Best interest rates in the market</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔧</div>
+                    <div class="benefit-title">Flexible Terms</div>
+                    <div class="benefit-desc">Customizable repayment schedules</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Personalized Service</div>
+                    <div class="benefit-desc">Dedicated support throughout the process</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="loan-cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Apply for a personal loan today and get the financial support you need with our easy application process.</p>
+            <div class="cta-buttons">
+                <a href="membership.html" class="btn-primary">Apply Now →</a>
+                <a href="contact.html" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
+            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
+            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+        </div>
+    </footer>
 </body>
 </html>
