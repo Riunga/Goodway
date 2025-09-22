@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About Us - Goodway Sacco Society</title>
     <link rel="stylesheet" href="about.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         // Toggle navigation menu on mobile
         function toggleMenu() {
@@ -13,43 +17,399 @@
         }
     </script>
     <style>
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #2e7d32;
-            line-height: 1.6;
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b4d1b 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
         }
-        main h2 {
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 152, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 152, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 20px;
-            color: #ff9800;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInUp 1s ease-out;
+            background: linear-gradient(45deg, #ffffff, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        main h3 {
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.2s both;
+            line-height: 1.6;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Add some decorative elements */
+        .hero-decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 152, 0, 0.1);
+            animation: floatCircle 6s ease-in-out infinite;
+        }
+
+        .hero-circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .hero-circle:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .hero-circle:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatCircle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Add some floating squares */
+        .hero-square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            animation: floatSquare 8s ease-in-out infinite;
+        }
+
+        .hero-square:nth-child(4) {
+            width: 20px;
+            height: 20px;
+            top: 30%;
+            right: 25%;
+            animation-delay: 1s;
+        }
+
+        .hero-square:nth-child(5) {
+            width: 15px;
+            height: 15px;
+            top: 70%;
+            left: 30%;
+            animation-delay: 3s;
+        }
+
+        @keyframes floatSquare {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(45deg); }
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid rgba(46, 125, 50, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff9800;
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-right: 20px;
+        }
+
+        .section-title {
             font-size: 2rem;
             font-weight: 700;
-            margin-top: 40px;
-            margin-bottom: 15px;
             color: #2e7d32;
-            border-bottom: 3px solid #ff9800;
-            padding-bottom: 5px;
+            margin: 0;
         }
-        main p {
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .content-item {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .content-item h4 {
+            color: #2e7d32;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #2e7d32, #1b4d1b);
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ff9800;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
             font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .timeline-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 60px 0;
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #2e7d32, #ff9800);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-left: 100px;
+            margin-bottom: 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #2e7d32;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: -70px;
+            top: 30px;
+            background: linear-gradient(45deg, #2e7d32, #ff9800);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 1.2rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .timeline-content h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #2e7d32;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: #2e7d32;
             margin-bottom: 20px;
         }
-        main ul {
-            list-style-type: disc;
-            padding-left: 40px;
-            font-size: 1.1rem;
+
+        .value-card h4 {
+            color: #2e7d32;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
-        main ul li {
-            margin-bottom: 10px;
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-container::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                margin-left: 60px;
+                padding: 20px;
+            }
+
+            .timeline-year {
+                left: -50px;
+                width: 60px;
+                height: 60px;
+                font-size: 1rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -70,52 +430,166 @@
         </nav>
     </header>
 
-    <main>
-        <h2>About Goodway Sacco Society</h2>
-        <p>Our Journey: From Tescom to GoodWay
-        Our story begins in 2007 when we were founded as Tescom Society in Kirinyaga County, Kenya. Our initial focus was clear and deeply rooted in the community: to empower private school employees and teachers in the region with reliable savings and credit services.</p>
-        <p>As we built trust and demonstrated our commitment, we expanded our support to serve a wider community, including local farmers, business owners, and other institutions. We grew beyond traditional banking, even handling salary and payment processing for various organizations. This period of rapid and meaningful growth was a testament to our solid financial foundation and the trust of our members.</p>
-        <p>In 2014, this growth culminated in our rebranding to GoodWay Sacco Society Limited. This name change reflects our broader mission and our evolution into a comprehensive financial partner for our diverse membership. Today, we continue to build on this legacy of trust, offering a secure and supportive path for all our members to achieve their financial goals.</p>
-        <section id="history-timeline" class="history-timeline-section">
-            <div class="container">
-                <h2>History Timeline</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2007</div>
-                        <div class="timeline-content">
-                            <h3>Started as Tescom Society</h3>
-                            <p>Registered in 2007 as Tescom Society, providing savings and credit services to private schools employees, the business community, and civil servants.</p>
-                        </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-decorations">
+            <div class="hero-circle"></div>
+            <div class="hero-circle"></div>
+            <div class="hero-circle"></div>
+            <div class="hero-square"></div>
+            <div class="hero-square"></div>
+        </div>
+        <div class="hero-content">
+            <h1>About Goodway Sacco Society</h1>
+            <p>Empowering communities through innovative financial solutions since 2007</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Our Story Section -->
+        <div class="section-card">
+            <div class="section-header">
+                <i class="fas fa-book-open section-icon"></i>
+                <h2 class="section-title">Our Story</h2>
+            </div>
+            <div class="content-grid">
+                <div class="content-item">
+                    <h4><i class="fas fa-seedling"></i> The Beginning</h4>
+                    <p>Our journey began in 2007 as Tescom Society in Kirinyaga County, Kenya. We started with a clear mission: to empower private school employees and teachers with reliable savings and credit services.</p>
+                </div>
+                <div class="content-item">
+                    <h4><i class="fas fa-chart-line"></i> Growth & Expansion</h4>
+                    <p>As trust grew, we expanded to serve farmers, business owners, and institutions. We evolved beyond traditional banking, handling salary processing and building a solid financial foundation.</p>
+                </div>
+            </div>
+            <div class="content-item" style="grid-column: 1 / -1; margin-top: 20px;">
+                <h4><i class="fas fa-flag"></i> Rebranding to GoodWay</h4>
+                <p>In 2014, our growth culminated in rebranding to GoodWay Sacco Society Limited, reflecting our broader mission and evolution into a comprehensive financial partner for diverse membership.</p>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">17+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Happy Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">SASRA</span>
+                    <span class="stat-label">Accredited</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Member Focused</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission & Vision Section -->
+        <div class="section-card">
+            <div class="content-grid">
+                <div class="content-item">
+                    <div class="section-header">
+                        <i class="fas fa-bullseye section-icon"></i>
+                        <h3 class="section-title">Our Mission</h3>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2014</div>
-                        <div class="timeline-content">
-                            <h3>Rebranded to GoodWay Sacco Society Limited</h3>
-                            <p>In 2014, the society rebranded to GoodWay Sacco Society Limited to better reflect its growing membership and expanded services. We are proud to be a SASRA accredited Sacco.</p>
-                        </div>
+                    <p>To provide accessible, affordable, and dependable financial services that elevate the quality of life for our members and positively impact their communities.</p>
+                </div>
+                <div class="content-item">
+                    <div class="section-header">
+                        <i class="fas fa-eye section-icon"></i>
+                        <h3 class="section-title">Our Vision</h3>
+                    </div>
+                    <p>To be the foremost Sacco society, celebrated for excellence, innovation, and an unwavering commitment to member satisfaction.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Timeline Section -->
+        <div class="timeline-section">
+            <div class="timeline-container">
+                <h2 style="text-align: center; color: #2e7d32; margin-bottom: 50px; font-size: 2.5rem; font-weight: 700;">Our Journey</h2>
+                <div class="timeline-item">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-content">
+                        <h3>Founded as Tescom Society</h3>
+                        <p>Started our journey in Kirinyaga County, Kenya, with a focus on providing savings and credit services to private school employees, teachers, and the local business community.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">
+                        <h3>Rebranded to GoodWay Sacco</h3>
+                        <p>Evolved into GoodWay Sacco Society Limited to better reflect our growing membership and expanded services. Achieved SASRA accreditation, marking our commitment to excellence.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>Continuing the Legacy</h3>
+                        <p>Building on our strong foundation, we continue to innovate and serve our diverse membership with modern financial solutions while maintaining our core values of trust and community engagement.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <h3>Our Mission</h3>
-        <p>To provide accessible, affordable, and dependable financial services that elevate the quality of life for our members and positively impact their communities.</p>
-        <!-- Removed duplicate Our History section as per user feedback -->
-        <h3>Our Vision</h3>
-        <p>To be the foremost Sacco society, celebrated for excellence, innovation, and an unwavering commitment to member satisfaction.</p>
+        <!-- Core Values Section -->
+        <div class="section-card">
+            <div class="section-header">
+                <i class="fas fa-gem section-icon"></i>
+                <h2 class="section-title">Our Core Values</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-shield-alt value-icon"></i>
+                    <h4>Integrity</h4>
+                    <p>We uphold the highest standards of honesty, transparency, and accountability in all our endeavors.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users value-icon"></i>
+                    <h4>Member-Centric</h4>
+                    <p>Our members' needs and aspirations guide every decision we make, ensuring personalized service.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb value-icon"></i>
+                    <h4>Innovation</h4>
+                    <p>We embrace forward-thinking approaches to continuously enhance our services and offerings.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-hands-helping value-icon"></i>
+                    <h4>Community Engagement</h4>
+                    <p>We actively contribute to the social and economic development of the communities we serve.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-star value-icon"></i>
+                    <h4>Excellence</h4>
+                    <p>We strive for superior quality and continuous improvement in all aspects of our work.</p>
+                </div>
+            </div>
+        </div>
 
-
-        <h3>Our Core Values</h3>
-        <ul>
-            <li><strong>Integrity:</strong> We uphold the highest standards of honesty, transparency, and accountability in all our endeavors.</li>
-            <li><strong>Member-Centric:</strong> Our members' needs and aspirations guide every decision we make.</li>
-            <li><strong>Innovation:</strong> We embrace forward-thinking approaches to continuously enhance our services and offerings.</li>
-            <li><strong>Community Engagement:</strong> We actively contribute to the social and economic development of the communities we serve.</li>
-            <li><strong>Excellence:</strong> We strive for superior quality and continuous improvement in all aspects of our work.</li>
-        </ul>
-        <h3>Our Team</h3>
-        <p>Our dedicated and professional team fosters a culture of trust, transparency, and growth, ensuring every member receives exceptional service and support. Join us and become part of a thriving community that values your financial well-being and success.</p>
-    </main>
+        <!-- Team Section -->
+        <div class="section-card">
+            <div class="section-header">
+                <i class="fas fa-users-cog section-icon"></i>
+                <h2 class="section-title">Our Team</h2>
+            </div>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <i class="fas fa-handshake" style="font-size: 4rem; color: #2e7d32; margin-bottom: 20px;"></i>
+                <p style="font-size: 1.3rem; color: #666; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    Our dedicated and professional team fosters a culture of trust, transparency, and growth,
+                    ensuring every member receives exceptional service and support. Join us and become part of
+                    a thriving community that values your financial well-being and success.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>

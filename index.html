@@ -3,171 +3,527 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Goodway Sacco Society</title>
+    <title>Goodway Sacco Society - Your Trusted Financial Partner</title>
+    <meta name="description" content="Goodway Sacco Society provides flexible loans, competitive savings, and comprehensive financial solutions to empower our community since 2007." />
     <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Goodway Sacco Society</h1>
+    <!-- Professional Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="images/Logo 1.png" alt="Goodway Sacco Society Logo" class="logo-image" />
+                    <div class="logo-text">
+                    <h1>Goodway Sacco</h1>
+                    <span class="tagline">Your Financial Partner</span>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="membership.html" class="nav-link">Membership</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="membership.html" class="cta-button primary">Join Now</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Products & Services</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="membership.html">Membership</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="slider">
-            <div class="slide slide1 active">
-                <div class="slide-content">
-                    <h2>Flexible Loans for Your Needs</h2>
-                    <p>Get access to affordable loans with flexible repayment terms. Whether you need a personal loan, business loan, or emergency funding, we've got you covered.</p>
-                    <a href="loans.html" class="cta-button">Explore Our Loans</a>
-                </div>
-            </div>
-            <div class="slide slide2">
-                <div class="slide-content">
-                    <h2>Join Our Growing Community</h2>
-                    <p>Become a member today and enjoy exclusive benefits, competitive savings rates, and access to our full range of financial services.</p>
-                    <a href="membership.html" class="cta-button">Join Us Today</a>
-                </div>
-            </div>
-            <div class="slide slide3">
-                <div class="slide-content">
-                    <h2>Bank with Us Anywhere</h2>
-                    <p>Access your account 24/7 using our mobile banking services. Simply dial <strong>*667*2#</strong> from your phone to check balance, transfer money, and more.</p>
-                    <a href="services.html" class="cta-button">Learn More</a>
-                </div>
-            </div>
-            <div class="slide slide4">
-                <div class="slide-content">
-                    <h2>Comprehensive Financial Solutions</h2>
-                    <p>From flexible loans and high-yield savings accounts to comprehensive insurance coverage, we offer a complete range of financial products designed to secure your future.</p>
-                    <a href="services.html" class="cta-button">Explore Our Services</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Enhanced Hero Section with Slider -->
+    <main>
+        <section class="hero-section">
+            <div class="hero-slider">
+                <div class="slider-container">
+                    <!-- Slide 1: Loans -->
+                    <div class="hero-slide active" data-slide="1">
+                        <div class="slide-background"></div>
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1 class="hero-title">Flexible Loans for Your Dreams</h1>
+                                <p class="hero-description">Get access to affordable loans with flexible repayment terms. Whether you need a personal loan, business loan, or emergency funding, we've got you covered with competitive rates and quick approval.</p>
+                                <div class="hero-actions">
+                                    <a href="loans.html" class="btn btn-primary">Explore Our Loans</a>
+                                    <a href="contact.html" class="btn btn-secondary">Get Quote</a>
+                                </div>
+                            </div>
+                            <div class="hero-visual">
+                                <div class="floating-card">
+                                    <div class="card-icon">💰</div>
+                                    <h3>Quick Approval</h3>
+                                    <p>Get your loan approved within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- About Us Section -->
-    <section id="about-us" class="about-us-section">
-        <div class="container">
-            <h2>About Goodway Sacco Society</h2>
-            <p>Goodway Sacco Society is dedicated to providing reliable and innovative financial services to our members. We strive to empower our community through savings, loans, and investment opportunities tailored to your needs.</p>
-            <div class="accreditation-badge">
-                <p><strong>🏆 SASRA Accredited Sacco</strong></p>
-                <p>We are a SASRA regulated Sacco.</p>
-            </div>
-        </div>
-    </section>
+                    <!-- Slide 2: Membership -->
+                    <div class="hero-slide" data-slide="2">
+                        <div class="slide-background"></div>
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1 class="hero-title">Join Our Growing Community</h1>
+                                <p class="hero-description">Become a member today and enjoy exclusive benefits, competitive savings rates, and access to our full range of financial services designed to secure your future.</p>
+                                <div class="hero-actions">
+                                    <a href="membership.html" class="btn btn-primary">Become a Member</a>
+                                    <a href="services.html" class="btn btn-secondary">View Benefits</a>
+                                </div>
+                            </div>
+                            <div class="hero-visual">
+                                <div class="floating-card">
+                                    <div class="card-icon">👥</div>
+                                    <h3>2,500+ Members</h3>
+                                    <p>Join our trusted community</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- History Section -->
-    <section id="history" class="about-us-section" style="margin-top: 40px;">
-        <div class="container">
-            <h2>Our History</h2>
-            <p>Our solid background in banking. Get to know about our company. Registered in 2007 as Tescom Society, in 2014 it rebranded to GoodWay Sacco Society Limited. It was started to offer savings and credit services to private schools employees, the business community, and civil servants.</p>
-        </div>
-    </section>
+                    <!-- Slide 3: Mobile Banking -->
+                    <div class="hero-slide" data-slide="3">
+                        <div class="slide-background"></div>
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1 class="hero-title">Bank with Us Anywhere</h1>
+                                <p class="hero-description">Access your account 24/7 using our mobile banking services. Simply dial <strong>*667*2#</strong> from your phone to check balance, transfer money, and manage your finances on the go.</p>
+                                <div class="hero-actions">
+                                    <a href="services.html" class="btn btn-primary">Learn More</a>
+                                    <a href="contact.html" class="btn btn-secondary">Get Help</a>
+                                </div>
+                            </div>
+                            <div class="hero-visual">
+                                <div class="floating-card">
+                                    <div class="card-icon">📱</div>
+                                    <h3>24/7 Access</h3>
+                                    <p>Bank anywhere, anytime</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- History Timeline Section -->
-    <section id="history-timeline" class="history-timeline-section">
-        <div class="container">
-            <h2>History Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2007</div>
-                    <div class="timeline-content">
-                        <h3>Started as Tescom Society</h3>
-                        <p>Registered in 2007 as Tescom Society, providing savings and credit services to private schools employees, the business community, and civil servants.</p>
+                    <!-- Slide 4: Comprehensive Services -->
+                    <div class="hero-slide" data-slide="4">
+                        <div class="slide-background"></div>
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1 class="hero-title">Comprehensive Financial Solutions</h1>
+                                <p class="hero-description">From flexible loans and high-yield savings accounts to comprehensive insurance coverage, we offer a complete range of financial products designed to secure your future and empower your dreams.</p>
+                                <div class="hero-actions">
+                                    <a href="services.html" class="btn btn-primary">Explore Services</a>
+                                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                                </div>
+                            </div>
+                            <div class="hero-visual">
+                                <div class="floating-card">
+                                    <div class="card-icon">🏆</div>
+                                    <h3>SASRA Accredited</h3>
+                                    <p>Regulated & Trusted</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2014</div>
-                    <div class="timeline-content">
-                        <h3>Rebranded to GoodWay Sacco Society Limited</h3>
-                        <p>In 2014, the society rebranded to GoodWay Sacco Society Limited to better reflect its growing membership and expanded services.</p>
+
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <button class="slider-dot active" data-slide="1" aria-label="Go to slide 1"></button>
+                    <button class="slider-dot" data-slide="2" aria-label="Go to slide 2"></button>
+                    <button class="slider-dot" data-slide="3" aria-label="Go to slide 3"></button>
+                    <button class="slider-dot" data-slide="4" aria-label="Go to slide 4"></button>
+                </div>
+
+                <!-- Slider Arrows -->
+                <button class="slider-arrow slider-arrow-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="slider-arrow slider-arrow-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Professional About Section -->
+        <section class="about-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Goodway Sacco Society</h2>
+                    <p class="section-subtitle">Empowering our community through innovative financial solutions since 2007</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-content">
+                        <p class="about-text">
+                            Goodway Sacco Society is dedicated to providing reliable and innovative financial services to our members. We strive to empower our community through savings, loans, and investment opportunities tailored to your needs.
+                        </p>
+
+                        <div class="accreditation-card">
+                            <div class="accreditation-icon">🏆</div>
+                            <div class="accreditation-content">
+                                <h3>SASRA Accredited Sacco</h3>
+                                <p>We are a SASRA regulated Sacco, ensuring the highest standards of financial security and member protection.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-visual">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">2,500+</div>
+                                <div class="stat-label">Active Members</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">KSh 150M+</div>
+                                <div class="stat-label">Loans Disbursed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">17+</div>
+                                <div class="stat-label">Years of Service</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
+        <!-- Enhanced History Section -->
+        <section class="history-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Journey</h2>
+                    <p class="section-subtitle">From humble beginnings to becoming a trusted financial partner</p>
+                </div>
+
+                <div class="history-content">
+                    <div class="history-text">
+                        <p>
+                            Our solid background in banking spans over 17 years of dedicated service. What started as Tescom Society in 2007 has evolved into Goodway Sacco Society Limited - a testament to our commitment to growth and member satisfaction.
+                        </p>
+                        <p>
+                            We were founded with a clear mission: to offer comprehensive savings and credit services to private schools employees, the business community, and civil servants. Today, we continue to honor that mission while expanding our reach and services.
+                        </p>
+                    </div>
+
+                    <div class="history-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2007</div>
+                            <div class="timeline-content">
+                                <h3>Foundation</h3>
+                                <p>Started as Tescom Society, providing essential savings and credit services to our community.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2014</div>
+                            <div class="timeline-content">
+                                <h3>Transformation</h3>
+                                <p>Rebranded to Goodway Sacco Society Limited to better reflect our growing membership and expanded services.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-content">
+                                <h3>Continued Growth</h3>
+                                <p>Serving 2,500+ members with innovative financial solutions and maintaining SASRA accreditation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Our Members Say</h2>
+                    <p class="section-subtitle">Real stories from our valued community members</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Goodway Sacco has helped me save for my children's education. Their services are trustworthy and efficient."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">Jane Doe</div>
+                                <div class="author-role">Member since 2018</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The loan process was smooth and flexible. I highly recommend Goodway Sacco to anyone looking for financial support."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">John Smith</div>
+                                <div class="author-role">Business Owner</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Excellent customer service and great investment options. I feel secure with Goodway Sacco."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <div class="author-name">Mary Johnson</div>
+                                <div class="author-role">Long-term Member</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Secure Your Financial Future?</h2>
+                    <p>Join thousands of members who trust Goodway Sacco for their financial needs.</p>
+                    <div class="cta-buttons">
+                        <a href="membership.html" class="btn btn-primary btn-large">Become a Member Today</a>
+                        <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="main-footer">
         <div class="container">
-            <h2>What Our Members Say</h2>
-            <div class="testimonial">
-                <p>"Goodway Sacco has helped me save for my children's education. Their services are trustworthy and efficient."</p>
-                <span>- Jane Doe</span>
-            </div>
-            <div class="testimonial">
-                <p>"The loan process was smooth and flexible. I highly recommend Goodway Sacco to anyone looking for financial support."</p>
-                <span>- John Smith</span>
-            </div>
-            <div class="testimonial">
-                <p>"Excellent customer service and great investment options. I feel secure with Goodway Sacco."</p>
-                <span>- Mary Johnson</span>
-            </div>
-        </div>
-    </section>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Goodway Sacco Society</h3>
+                        <p>Your trusted financial partner since 2007</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Information</h4>
+                        <p><strong>Email:</strong> <a href="mailto:info@goodwaysacco.co.ke">info@goodwaysacco.co.ke</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+254795734561">(254) 795-734-561</a></p>
+                        <p><strong>USSD:</strong> <span class="ussd-code">*667*2#</span></p>
+                    </div>
+                </div>
 
-    <!-- Portfolio/Statistics Section -->
-    <section id="portfolio" class="about-us-section" style="margin-top: 40px; background-color: #f0f8ff; padding: 50px 20px;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px; color: #2e7d32;">Our Impact in Numbers</h2>
-            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
-                <div style="text-align: center; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); min-width: 200px;">
-                    <h3 style="font-size: 2.5rem; color: #ff9800; margin-bottom: 10px;">2,500+</h3>
-                    <p style="font-size: 1.2rem; color: #2e7d32; font-weight: 600;">Active Members</p>
-                    <p style="font-size: 1rem; color: #666; margin-top: 10px;">Trusted members growing their wealth with us</p>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="loans.html">Loan Products</a></li>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="news.html">Latest News</a></li>
+                    </ul>
                 </div>
-                <div style="text-align: center; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); min-width: 200px;">
-                    <h3 style="font-size: 2.5rem; color: #ff9800; margin-bottom: 10px;">KSh 150M+</h3>
-                    <p style="font-size: 1.2rem; color: #2e7d32; font-weight: 600;">Loans Disbursed</p>
-                    <p style="font-size: 1rem; color: #666; margin-top: 10px;">Empowering dreams through flexible financing</p>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="loans.html">Personal Loans</a></li>
+                        <li><a href="businessloan.html">Business Loans</a></li>
+                        <li><a href="savings.html">Savings Accounts</a></li>
+                        <li><a href="services.html">Mobile Banking</a></li>
+                        <li><a href="services.html">Insurance</a></li>
+                        <li><a href="contact.html">Customer Support</a></li>
+                    </ul>
                 </div>
-                <div style="text-align: center; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); min-width: 200px;">
-                    <h3 style="font-size: 2.5rem; color: #ff9800; margin-bottom: 10px;">17+</h3>
-                    <p style="font-size: 1.2rem; color: #2e7d32; font-weight: 600;">Years Established</p>
-                    <p style="font-size: 1rem; color: #666; margin-top: 10px;">Serving our community since 2007</p>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="contact.html">Privacy Policy</a></li>
+                        <li><a href="about.html">Regulatory Information</a></li>
+                        <li><a href="contact.html">Complaints Procedure</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <footer>
-        <div class="footer-content">
-            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-            <p class="footer-description">Goodway Sacco Society is committed to empowering our members through innovative financial solutions and exceptional service.</p>
-            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Goodway Sacco Society. All rights reserved. | Licensed and regulated by SASRA.</p>
+                    <p class="footer-disclaimer">
+                        Goodway Sacco Society is committed to empowering our members through innovative financial solutions and exceptional service.
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Enhanced JavaScript -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
+        // Enhanced slider functionality
+        class HeroSlider {
+            constructor() {
+                this.currentSlide = 0;
+                this.slides = document.querySelectorAll('.hero-slide');
+                this.dots = document.querySelectorAll('.slider-dot');
+                this.totalSlides = this.slides.length;
+                this.autoPlayInterval = null;
+                this.autoPlayDelay = 5000;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.startAutoPlay();
+            }
+
+            bindEvents() {
+                // Dot navigation
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                // Arrow navigation
+                const prevArrow = document.querySelector('.slider-arrow-prev');
+                const nextArrow = document.querySelector('.slider-arrow-next');
+
+                if (prevArrow) prevArrow.addEventListener('click', () => this.previousSlide());
+                if (nextArrow) nextArrow.addEventListener('click', () => this.nextSlide());
+
+                // Pause on hover
+                const sliderContainer = document.querySelector('.hero-slider');
+                if (sliderContainer) {
+                    sliderContainer.addEventListener('mouseenter', () => this.pauseAutoPlay());
+                    sliderContainer.addEventListener('mouseleave', () => this.startAutoPlay());
+                }
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.previousSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
+                });
+            }
+
+            goToSlide(index) {
+                // Remove active class from current slide and dot
+                this.slides[this.currentSlide].classList.remove('active');
+                this.dots[this.currentSlide].classList.remove('active');
+
+                // Set new current slide
+                this.currentSlide = index;
+
+                // Add active class to new slide and dot
+                this.slides[this.currentSlide].classList.add('active');
+                this.dots[this.currentSlide].classList.add('active');
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+                this.goToSlide(nextIndex);
+            }
+
+            previousSlide() {
+                const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.goToSlide(prevIndex);
+            }
+
+            startAutoPlay() {
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextSlide();
+                }, this.autoPlayDelay);
+            }
+
+            pauseAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+        }
+
+        // Mobile menu functionality
+        class MobileMenu {
+            constructor() {
+                this.menuToggle = document.querySelector('.mobile-menu-toggle');
+                this.nav = document.querySelector('.main-nav');
+                this.isOpen = false;
+
+                this.init();
+            }
+
+            init() {
+                if (this.menuToggle) {
+                    this.menuToggle.addEventListener('click', () => this.toggleMenu());
+                }
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (this.isOpen && !this.nav.contains(e.target) && !this.menuToggle.contains(e.target)) {
+                        this.closeMenu();
+                    }
+                });
+            }
+
+            toggleMenu() {
+                this.isOpen ? this.closeMenu() : this.openMenu();
+            }
+
+            openMenu() {
+                this.nav.classList.add('mobile-open');
+                this.menuToggle.classList.add('active');
+                this.isOpen = true;
+            }
+
+            closeMenu() {
+                this.nav.classList.remove('mobile-open');
+                this.menuToggle.classList.remove('active');
+                this.isOpen = false;
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            new HeroSlider();
+            new MobileMenu();
+            initSmoothScrolling();
 
-        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            // Add loading animation
+            document.body.classList.add('loaded');
+        });
     </script>
 </body>
 </html>
