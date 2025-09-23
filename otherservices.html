@@ -6,26 +6,64 @@
     <title>Other Services - Goodway Sacco Society</title>
     <link rel="stylesheet" href="services.css" />
     <style>
-        /* Professional Other Services Styling */
+        /* Enhanced Other Services Styling */
         .services-hero {
-            background: linear-gradient(135deg, #ff9800, #ffb74d);
+            background: linear-gradient(135deg, #ff9800, #ffb74d, #ff5722);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            animation: heroGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            from {
+                box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+            }
+            to {
+                box-shadow: 0 0 40px rgba(255, 152, 0, 0.8);
+            }
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: -1;
         }
 
         .services-hero h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 900;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: titleBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes titleBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .services-hero p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 0;
-            opacity: 0.9;
+            opacity: 0.95;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         .services-container {
@@ -375,12 +413,6 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
-            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
-        </div>
-    </footer>
+
 </body>
 </html>

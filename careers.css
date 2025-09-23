@@ -1,0 +1,310 @@
+/* Enhanced styles for careers.html page */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #c8e6c9 100%);
+    color: #2e7d32;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: #ffffff;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    border-bottom: 3px solid #ff9800;
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    box-sizing: border-box;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #ff9800;
+    color: #2e7d32;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,152,0,0.3);
+}
+
+main {
+    max-width: 900px;
+    margin: 140px auto 40px auto;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(46,125,50,0.15);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ff9800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 3px solid #2e7d32;
+    padding-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #34495e;
+}
+
+section h3 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+a {
+    color: #27ae60;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2e7d32;
+}
+
+/* Modal popup styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    margin: 15% auto;
+    padding: 20px 30px;
+    border: 2px solid #ff9800;
+    border-radius: 15px;
+    max-width: 500px;
+    box-shadow: 0 8px 30px rgba(255,152,0,0.7);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #2e7d32;
+    animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    margin-top: 15px;
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255,152,0,0.3);
+}
+
+.close-btn:hover {
+    background: linear-gradient(135deg, #f57c00 0%, #e65100 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,152,0,0.5);
+}
+
+footer {
+    background: linear-gradient(135deg, #ff9800 0%, #2e7d32 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+    border-top: 2px solid #ffffff;
+    letter-spacing: 0.03em;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Override shared footer styles to make it compact for careers page */
+.main-footer {
+    padding: 1rem 0 !important;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: none !important; /* Hide the large footer content section */
+}
+
+.footer-bottom {
+    padding-top: 0.5rem !important;
+    border-top: none !important;
+}
+
+.footer-bottom-content p {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.2rem !important;
+}
+
+.footer-disclaimer {
+    display: none !important; /* Hide the disclaimer to save space */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: 140px; /* increased spacing between header and content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #2e7d32;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 12px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 1.6rem;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    main {
+        margin: 120px 10px 40px 10px;
+        padding: 0 10px;
+    }
+}
