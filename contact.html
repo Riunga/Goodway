@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact Us - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="shared-styles.css" />
     <link rel="stylesheet" href="contact.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,60 +15,32 @@
         .hero-section {
             background: linear-gradient(135deg, #2e7d32 0%, #1b4d1b 100%);
             color: white;
-            padding: 40px 0 30px;
+            padding: 25px 0 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 30vh;
+            min-height: 18vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             width: 100vw;
-            margin-left: calc(50% - 50vw);
-            margin-right: calc(50% - 50vw);
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(255, 152, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 152, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 120px;
         }
 
         .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
             width: 100%;
+            margin: 0;
         }
 
         .hero-content h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 800;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: slideInUp 1s ease-out;
@@ -78,22 +51,11 @@
         }
 
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 30px;
             opacity: 0.9;
             animation: slideInUp 1s ease-out 0.2s both;
-            text-align: center;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            line-height: 1.6;
         }
 
         .hero-cta {
@@ -104,7 +66,7 @@
             display: inline-block;
             background: linear-gradient(45deg, #ff9800, #f57c00);
             color: white;
-            padding: 15px 30px;
+            padding: 10px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -120,98 +82,328 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
 
-        /* Add some decorative elements */
-        .hero-decorations {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 1;
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hero-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 152, 0, 0.1);
-            animation: floatCircle 6s ease-in-out infinite;
+        .contact-container {
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .hero-circle:nth-child(1) {
-            width: 100px;
-            height: 100px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
+        .contact-info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
-        .hero-circle:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
+        .contact-info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #2e7d32;
+            transition: transform 0.3s ease;
         }
 
-        .hero-circle:nth-child(3) {
-            width: 80px;
-            height: 80px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
+        .contact-info-card:hover {
+            transform: translateY(-5px);
         }
 
-        @keyframes floatCircle {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+        .contact-info-card h3 {
+            color: #2e7d32;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
 
-        /* Add some floating squares */
-        .hero-square {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.05);
-            animation: floatSquare 8s ease-in-out infinite;
+        .contact-info-card h3 i {
+            margin-right: 10px;
+            font-size: 1.5rem;
         }
 
-        .hero-square:nth-child(4) {
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .contact-list li i {
+            margin-right: 15px;
+            color: #2e7d32;
             width: 20px;
-            height: 20px;
-            top: 30%;
-            right: 25%;
-            animation-delay: 1s;
         }
 
-        .hero-square:nth-child(5) {
-            width: 15px;
-            height: 15px;
-            top: 70%;
-            left: 30%;
-            animation-delay: 3s;
+        .working-hours .hours-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        @keyframes floatSquare {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(45deg); }
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-item.closed {
+            color: #999;
+        }
+
+        .map-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #2e7d32;
+        }
+
+        .map-section h3 {
+            color: #2e7d32;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .map-section h3 i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .google-map {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .map-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .directions-btn {
+            background: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .directions-btn:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        .contact-form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #2e7d32;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            color: #2e7d32;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2e7d32;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: #999;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            color: #2e7d32;
+            font-size: 0.8rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #1b5e20, #2e7d32);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .social-media {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .social-media h3 {
+            color: #2e7d32;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #666;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .social-link i {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        .social-link.whatsapp i { color: #25D366; }
+        .social-link.facebook i { color: #1877F2; }
+        .social-link.instagram i { color: #E4405F; }
+        .social-link.twitter i { color: #1DA1F2; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-section {
+                grid-template-columns: 1fr;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-info {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Goodway Sacco Society</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Products & Services</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html" class="active">Contact Us</a></li>
-                <li><a href="membership.html">Membership</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Include Shared Header -->
+    <div id="shared-header"></div>
+    <script>
+        fetch('shared-header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('shared-header').innerHTML = data;
+            });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -372,9 +564,15 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-    </footer>
+    <!-- Include Shared Footer -->
+    <div id="shared-footer"></div>
+    <script>
+        fetch('shared-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('shared-footer').innerHTML = data;
+            });
+    </script>
 
     <script>
         // Toggle navigation menu on mobile

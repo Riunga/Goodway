@@ -168,16 +168,36 @@ footer {
     background: linear-gradient(90deg, #ff9800, #2e7d32);
     color: #ffffff;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     font-weight: 600;
-    font-size: 1.1rem;
-    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
-    border-top: 4px solid #ffffff;
-    letter-spacing: 0.05em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    border-top: 2px solid #ffffff;
+    letter-spacing: 0.03em;
+}
+
+/* Override shared footer styles to make it compact for news page */
+.main-footer {
+    padding: 1rem 0 !important;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: none !important; /* Hide the large footer content section */
+}
+
+.footer-bottom {
+    padding-top: 0.5rem !important;
+    border-top: none !important;
+}
+
+.footer-bottom-content p {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.2rem !important;
+}
+
+.footer-disclaimer {
+    display: none !important; /* Hide the disclaimer to save space */
 }
 
 body, html {

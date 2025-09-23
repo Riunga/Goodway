@@ -1,23 +1,4 @@
-/* Header styles matching homepage */
-header {
-    background: linear-gradient(90deg, #2e7d32, #1b4d1b);
-    color: #ffffff;
-    padding: 20px 50px; /* Increased padding for better visibility */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    border-bottom: 3px solid #ff9800;
-    font-family: 'Montserrat', sans-serif;
-    width: 100vw;
-    margin: 0;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
+/* Header styles removed - using shared-styles.css instead */
 
 .logo h1 {
     margin: 0;
@@ -91,7 +72,7 @@ nav ul li a.active {
 /* Main content styles */
 main {
     max-width: 1100px;
-    margin: 140px auto 40px auto;
+    margin: 0 auto 40px auto;
     padding: 0 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #2e7d32;

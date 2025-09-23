@@ -92,11 +92,11 @@ nav ul li a.active {
 .hero-section {
     background: linear-gradient(135deg, #2e7d32 0%, #1b4d1b 100%);
     color: white;
-    padding: 120px 0 80px;
+    padding: 40px 0 30px; width: 100%;
     text-align: center;
     position: relative;
     overflow: hidden;
-    margin-top: 80px; /* Account for fixed header */
+    margin-top: 100px; /* Account for fixed header */
 }
 
 .hero-section::before {
@@ -116,7 +116,7 @@ nav ul li a.active {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 1.8rem;
     font-weight: 800;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -124,7 +124,7 @@ nav ul li a.active {
 }
 
 .hero-content p {
-    font-size: 1.3rem;
+    font-size: 0.95rem;
     margin-bottom: 30px;
     opacity: 0.9;
     animation: slideInUp 1s ease-out 0.2s both;
@@ -174,7 +174,7 @@ main {
 }
 
 main h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
     font-weight: 700;
     color: #2e7d32;
@@ -591,11 +591,11 @@ footer {
     background: linear-gradient(90deg, #ff9800, #2e7d32);
     color: #ffffff;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 0; width: 100%;
     font-weight: 600;
     font-size: 1.1rem;
     box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
-    border-top: 4px solid #ffffff;
+    border-top: 4px solid #ff9800;
     letter-spacing: 0.05em;
     margin-top: 60px;
 }
@@ -643,7 +643,7 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 
     .hero-content p {

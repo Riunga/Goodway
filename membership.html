@@ -5,23 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Membership Registration - Goodway Sacco Society</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="shared-styles.css" />
     <link rel="stylesheet" href="membership.css" />
+    <style>
+        body {
+            padding-top: 90px; /* Account for fixed header */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Goodway Sacco Society</h1>
+    <!-- Professional Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="images/Logo 1.png" alt="Goodway Sacco Society Logo" class="logo-image" />
+                    <div class="logo-text">
+                    <h1>Goodway Sacco</h1>
+                    <span class="tagline">Your Financial Partner</span>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="membership.html" class="nav-link active">Membership</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="membership.html" class="cta-button primary">Join Now</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Products & Services</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="Membership.html" class="active">Membership</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -93,11 +117,66 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-            <p class="footer-description">Goodway Sacco Society is committed to empowering our members through innovative financial solutions and exceptional service.</p>
-            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+    <!-- Professional Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Goodway Sacco Society</h3>
+                        <p>Your trusted financial partner since 2007</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Information</h4>
+                        <p><strong>Email:</strong> <a href="mailto:info@goodwaysacco.co.ke">info@goodwaysacco.co.ke</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+254795734561">(254) 795-734-561</a></p>
+                        <p><strong>USSD:</strong> <span class="ussd-code">*667*2#</span></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="loans.html">Loan Products</a></li>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="news.html">Latest News</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="loans.html">Personal Loans</a></li>
+                        <li><a href="businessloan.html">Business Loans</a></li>
+                        <li><a href="savings.html">Savings Accounts</a></li>
+                        <li><a href="services.html">Mobile Banking</a></li>
+                        <li><a href="services.html">Insurance</a></li>
+                        <li><a href="contact.html">Customer Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="contact.html">Privacy Policy</a></li>
+                        <li><a href="about.html">Regulatory Information</a></li>
+                        <li><a href="contact.html">Complaints Procedure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Goodway Sacco Society. All rights reserved. | Licensed and regulated by SASRA.</p>
+                    <p class="footer-disclaimer">
+                        Goodway Sacco Society is committed to empowering our members through innovative financial solutions and exceptional service.
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 <script src="membership-form-validation-v4.js"></script>

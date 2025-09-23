@@ -24,10 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ==============================================
-   HEADER STYLES WITH PROFESSIONAL LOGO
-   ============================================== */
-
 .main-header {
     position: fixed;
     top: 0;
@@ -48,6 +44,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 90px;
+    gap: 2rem; /* Add gap between sections */
 }
 
 .logo-section {

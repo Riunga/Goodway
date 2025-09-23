@@ -237,54 +237,50 @@
             transform: translateY(-2px);
         }
 
+        /* Streamlined Hero Section */
+        .services-hero {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         @media (max-width: 768px) {
-            .services-hero h1 {
+            .hero-content h1 {
                 font-size: 2rem;
             }
 
-            .services-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .services-details {
-                padding: 25px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .hero-content p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Goodway Sacco Society</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html" class="active">Products & Services</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="membership.html">Membership</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
+    <!-- Streamlined Professional Hero Section -->
     <section class="services-hero">
         <div class="services-container">
-            <h1>Other Services</h1>
-            <p>Comprehensive financial services designed to support your complete financial well-being</p>
+            <div class="hero-content">
+                <h1>Additional Financial Services</h1>
+                <p>Comprehensive solutions beyond traditional banking for your complete financial well-being</p>
+            </div>
         </div>
     </section>
 
