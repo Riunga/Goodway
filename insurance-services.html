@@ -1,389 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Insurance Services - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="services.css" />
-    <style>
-        /* Enhanced Insurance Services Styling */
-        .services-hero {
-            background: linear-gradient(135deg, #ff9800, #ffb74d, #ff5722);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-            animation: heroGlow 3s ease-in-out infinite alternate;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insurance Services - Goodway Sacco Society</title>
+  <!-- Shared global styles -->
+  <link rel="stylesheet" href="shared-styles.css" />
+  <!-- Page-specific styles -->
+  <style>
+    /* Enhanced Insurance Services Styling */
+    .services-hero {
+      background: linear-gradient(135deg, #ff9800, #ffb74d, #ff5722);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      animation: heroGlow 3s ease-in-out infinite alternate;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes heroGlow {
+      from { box-shadow: 0 0 20px rgba(255,152,0,0.5); }
+      to { box-shadow: 0 0 40px rgba(255,152,0,0.8); }
+    }
+    .services-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80') center/cover no-repeat;
+      opacity: 0.2; z-index: -1;
+    }
+    .services-hero h1 {
+      font-size: 4rem; margin-bottom: 20px; font-weight: 900;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      animation: titleBounce 2s ease-in-out infinite;
+    }
+    @keyframes titleBounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .services-hero p {
+      font-size: 1.5rem; opacity: 0.95; max-width: 900px;
+      margin: 0 auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
 
-        @keyframes heroGlow {
-            from {
-                box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
-            }
-            to {
-                box-shadow: 0 0 40px rgba(255, 152, 0, 0.8);
-            }
-        }
+    .services-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .services-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 50px; }
 
-        .services-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80') center/cover no-repeat;
-            opacity: 0.2;
-            z-index: -1;
-        }
+    .services-image { border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .services-image img { width: 100%; height: 400px; object-fit: cover; }
 
-        .services-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 900;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            animation: titleBounce 2s ease-in-out infinite;
-        }
+    .services-details { padding: 40px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .services-subtitle { color: #ff9800; font-size: 1.2rem; font-weight: 600; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+    .services-description { color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 40px; }
 
-        @keyframes titleBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+    .section-title { color: #ff9800; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; border-left: 5px solid #ffb74d; padding-left: 15px; }
 
-        .services-hero p {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-            opacity: 0.95;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
+    .features-list { list-style: none; padding: 0; margin: 0; }
+    .feature-item {
+      background: rgba(255,255,255,0.7);
+      padding: 10px 15px; margin-bottom: 10px;
+      border-radius: 8px; border-left: 3px solid #ff9800;
+      display: flex; align-items: center;
+      font-size: 0.9rem; color: #555;
+    }
+    .feature-item::before { content: "✓"; color: #ff9800; font-weight: bold; margin-right: 10px; }
 
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+    .service-card {
+      background: linear-gradient(135deg, #fff3e0, #ffecb3);
+      padding: 30px; border-radius: 15px; text-align: center;
+      border: 2px solid #ff9800; transition: transform 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 5px; background: linear-gradient(90deg, #ff9800, #ffb74d);
+    }
+    .service-icon {
+      width: 60px; height: 60px; background: linear-gradient(135deg, #ff9800, #ffb74d);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; font-size: 1.5rem; color: white;
+    }
+    .service-title { color: #ff9800; font-weight: 600; margin-bottom: 15px; font-size: 1.2rem; }
+    .service-desc { color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
 
-        .services-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
+    .cta-section {
+      background: linear-gradient(135deg, #fff3e0, #ffecb3);
+      padding: 50px 20px; text-align: center;
+      border-radius: 15px; margin: 50px 0;
+    }
+    .cta-section h2 { color: #ff9800; font-size: 2rem; margin-bottom: 20px; }
+    .cta-section p { color: #666; font-size: 1.1rem; margin-bottom: 30px; }
 
-        .services-image {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
+    .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9800, #ffb74d);
+      color: white; padding: 15px 30px; border-radius: 25px;
+      text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #f57c00, #ff9800);
+      transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,152,0,0.4);
+    }
+    .btn-secondary {
+      background: transparent; color: #ff9800; padding: 15px 30px;
+      border: 2px solid #ff9800; border-radius: 25px;
+      text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+    }
+    .btn-secondary:hover { background: #ff9800; color: white; transform: translateY(-2px); }
 
-        .services-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .services-details {
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .services-subtitle {
-            color: #ff9800;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .services-description {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
-
-        .services-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            color: #ff9800;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            border-left: 5px solid #ffb74d;
-            padding-left: 15px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #fff3e0, #ffecb3);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #ff9800;
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #ff9800, #ffb74d);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ff9800, #ffb74d);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .service-title {
-            color: #ff9800;
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .service-desc {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border-left: 3px solid #ff9800;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .feature-item::before {
-            content: "✓";
-            color: #ff9800;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #fff3e0, #ffecb3);
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 15px;
-            margin: 50px 0;
-        }
-
-        .cta-section h2 {
-            color: #ff9800;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ff9800, #ffb74d);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #f57c00, #ff9800);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #ff9800;
-            padding: 15px 30px;
-            border: 2px solid #ff9800;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: #ff9800;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .services-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .services-content { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Shared Header -->
+  <div id="shared-header"></div>
 
+  <!-- Hero Section -->
+  <section class="services-hero">
+    <div class="services-container">
+      <h1>Insurance Services</h1>
+      <p>Protect what matters most with our comprehensive insurance products designed to provide peace of mind and financial security</p>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="services-hero">
-        <div class="services-container">
-            <h1>Insurance Services</h1>
-            <p>Protect what matters most with our comprehensive insurance products designed to provide peace of mind and financial security</p>
+  <!-- Main Content -->
+  <main class="services-container">
+    <div class="services-content">
+      <div class="services-image">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80" alt="Insurance Services" />
+      </div>
+      <div class="services-details">
+        <div class="services-subtitle">Comprehensive Protection</div>
+        <div class="services-description">
+          Goodway Sacco Society partners with leading insurance companies to provide you with comprehensive insurance solutions. Our insurance products are designed to protect you, your family, and your assets against life's uncertainties, ensuring financial security and peace of mind.
         </div>
-    </section>
-
-    <main class="services-container">
-        <div class="services-content">
-            <div class="services-image">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80" alt="Insurance Services" />
-            </div>
-
-            <div class="services-details">
-                <div class="services-subtitle">Comprehensive Protection</div>
-                <div class="services-description">
-                    Goodway Sacco Society partners with leading insurance companies to provide you with comprehensive insurance solutions. Our insurance products are designed to protect you, your family, and your assets against life's uncertainties, ensuring financial security and peace of mind.
-                </div>
-
-                <div class="services-section">
-                    <div class="section-title">Our Insurance Partners</div>
-                    <ul class="features-list">
-                        <li class="feature-item">CIC Insurance</li>
-                        <li class="feature-item">Kenya Orient Insurance</li>
-                        <li class="feature-item">Heritage Insurance</li>
-                        <li class="feature-item">Sanlam Insurance</li>
-                        <li class="feature-item">Madison Insurance</li>
-                        <li class="feature-item">Icea Lion Insurance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Services Grid -->
         <div class="services-section">
-            <div class="section-title">Insurance Products</div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <div class="service-title">Life Insurance</div>
-                    <div class="service-desc">Protect your family's financial future with our comprehensive life insurance plans.</div>
-                    <ul class="features-list">
-                        <li class="feature-item">Term Life Insurance</li>
-                        <li class="feature-item">Whole Life Insurance</li>
-                        <li class="feature-item">Endowment Plans</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🏥</div>
-                    <div class="service-title">Health Insurance</div>
-                    <div class="service-desc">Comprehensive health coverage for you and your family with access to quality healthcare.</div>
-                    <ul class="features-list">
-                        <li class="feature-item">Medical Insurance</li>
-                        <li class="feature-item">Dental Coverage</li>
-                        <li class="feature-item">Maternity Benefits</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <div class="service-title">Property Insurance</div>
-                    <div class="service-desc">Protect your home, business, and other assets against damage, theft, and natural disasters.</div>
-                    <ul class="features-list">
-                        <li class="feature-item">Home Insurance</li>
-                        <li class="feature-item">Business Property</li>
-                        <li class="feature-item">Personal Property</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <div class="service-title">Business Insurance</div>
-                    <div class="service-desc">Comprehensive business insurance to protect your enterprise and employees.</div>
-                    <ul class="features-list">
-                        <li class="feature-item">Business Interruption</li>
-                        <li class="feature-item">Liability Insurance</li>
-                        <li class="feature-item">Workers Compensation</li>
-                    </ul>
-                </div>
-            </div>
+          <div class="section-title">Our Insurance Partners</div>
+          <ul class="features-list">
+            <li class="feature-item">CIC Insurance</li>
+            <li class="feature-item">Kenya Orient Insurance</li>
+            <li class="feature-item">Heritage Insurance</li>
+            <li class="feature-item">Sanlam Insurance</li>
+            <li class="feature-item">Madison Insurance</li>
+            <li class="feature-item">Icea Lion Insurance</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Secure Your Future Today</h2>
-            <p>Let our insurance experts help you choose the right coverage for your needs</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn-primary">Get Quote →</a>
-                <a href="services.html" class="btn-secondary">Back to Services</a>
-            </div>
+    <!-- Services Grid -->
+    <div class="services-section">
+      <div class="section-title">Insurance Products</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <div class="service-title">Life Insurance</div>
+          <div class="service-desc">Protect your family's financial future with our comprehensive life insurance plans.</div>
+          <ul class="features-list">
+            <li class="feature-item">Term Life Insurance</li>
+            <li class="feature-item">Whole Life Insurance</li>
+            <li class="feature-item">Endowment Plans</li>
+          </ul>
         </div>
-    </main>
+        <div class="service-card">
+          <div class="service-icon">🏥</div>
+          <div class="service-title">Health Insurance</div>
+          <div class="service-desc">Comprehensive health coverage for you and your family with access to quality healthcare.</div>
+          <ul class="features-list">
+            <li class="feature-item">Medical Insurance</li>
+            <li class="feature-item">Dental Coverage</li>
+            <li class="feature-item">Maternity Benefits</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <div class="service-title">Property Insurance</div>
+          <div class="service-desc">Protect your home, business, and other assets against damage, theft, and natural disasters.</div>
+          <ul class="features-list">
+            <li class="feature-item">Home Insurance</li>
+            <li class="feature-item">Business Property</li>
+            <li class="feature-item">Personal Property</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💼</div>
+          <div class="service-title">Business Insurance</div>
+          <div class="service-desc">Comprehensive business insurance to protect your enterprise and employees.</div>
+          <ul class="features-list">
+            <li class="feature-item">Business Interruption</li>
+            <li class="feature-item">Liability Insurance</li>
+            <li class="feature-item">Workers Compensation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h2>Secure Your Future Today</h2>
+      <p>Let our insurance experts help you choose the right coverage for your needs</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Get Quote →</a>
+        <a href="services.html" class="btn-secondary">Back to Services</a>
+      </div>
+    </div>
+  </main>
 
+  <!-- Shared Footer -->
+  <div id="shared-footer"></div>
+
+  <!-- Script to load shared header/footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("shared-header.html")
+        .then(res => res.text())
+        .then(data => { document.getElementById("shared-header").innerHTML = data; });
+
+      fetch("shared-footer.html")
+        .then(res => res.text())
+        .then(data => { document.getElementById("shared-footer").innerHTML = data; });
+    });
+  </script>
 </body>
 </html>

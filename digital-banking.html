@@ -1,343 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Digital Banking - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="services.css" />
-    <style>
-        /* Enhanced Digital Banking Styling */
-        .services-hero {
-            background: linear-gradient(135deg, #ff9800, #ffb74d, #ff5722);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-            animation: heroGlow 3s ease-in-out infinite alternate;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Banking - Goodway Sacco Society</title>
+  <!-- Shared global styles -->
+  <link rel="stylesheet" href="shared-styles.css" />
+  <!-- Page-specific styles -->
+  <style>
+    /* Enhanced Digital Banking Styling */
+    .services-hero {
+      background: linear-gradient(135deg, #ff9800, #ffb74d, #ff5722);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      animation: heroGlow 3s ease-in-out infinite alternate;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes heroGlow {
+      from { box-shadow: 0 0 20px rgba(255,152,0,0.5); }
+      to { box-shadow: 0 0 40px rgba(255,152,0,0.8); }
+    }
+    .services-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80') center/cover no-repeat;
+      opacity: 0.2;
+      z-index: -1;
+    }
+    .services-hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      font-weight: 900;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      animation: titleBounce 2s ease-in-out infinite;
+    }
+    @keyframes titleBounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .services-hero p {
+      font-size: 1.5rem;
+      opacity: 0.95;
+      max-width: 900px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
 
-        @keyframes heroGlow {
-            from {
-                box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
-            }
-            to {
-                box-shadow: 0 0 40px rgba(255, 152, 0, 0.8);
-            }
-        }
+    .services-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .services-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 50px; }
 
-        .services-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80') center/cover no-repeat;
-            opacity: 0.2;
-            z-index: -1;
-        }
+    .services-image { border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .services-image img { width: 100%; height: 400px; object-fit: cover; }
 
-        .services-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 900;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            animation: titleBounce 2s ease-in-out infinite;
-        }
+    .services-details { padding: 40px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .services-subtitle { color: #ff9800; font-size: 1.2rem; font-weight: 600; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+    .services-description { color: #666; font-size: 1.1rem; line-height: 1.7; margin-bottom: 40px; }
 
-        @keyframes titleBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+    .section-title { color: #ff9800; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; border-left: 5px solid #ffb74d; padding-left: 15px; }
 
-        .services-hero p {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-            opacity: 0.95;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
+    .features-list { list-style: none; padding: 0; margin: 0; }
+    .feature-item {
+      background: rgba(255,255,255,0.7);
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border-left: 3px solid #ff9800;
+      display: flex; align-items: center;
+      font-size: 0.9rem; color: #555;
+    }
+    .feature-item::before { content: "✓"; color: #ff9800; font-weight: bold; margin-right: 10px; }
 
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .cta-section {
+      background: linear-gradient(135deg, #fff3e0, #ffecb3);
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 15px;
+      margin: 50px 0;
+    }
+    .cta-section h2 { color: #ff9800; font-size: 2rem; margin-bottom: 20px; }
+    .cta-section p { color: #666; font-size: 1.1rem; margin-bottom: 30px; }
 
-        .services-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
+    .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9800, #ffb74d);
+      color: white; padding: 15px 30px; border-radius: 25px;
+      text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #f57c00, #ff9800);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255,152,0,0.4);
+    }
+    .btn-secondary {
+      background: transparent; color: #ff9800;
+      padding: 15px 30px; border: 2px solid #ff9800;
+      border-radius: 25px; text-decoration: none; font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover { background: #ff9800; color: white; transform: translateY(-2px); }
 
-        .services-image {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .services-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .services-details {
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .services-subtitle {
-            color: #ff9800;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .services-description {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
-
-        .services-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            color: #ff9800;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            border-left: 5px solid #ffb74d;
-            padding-left: 15px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #fff3e0, #ffecb3);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #ff9800;
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #ff9800, #ffb74d);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ff9800, #ffb74d);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .service-title {
-            color: #ff9800;
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .service-desc {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border-left: 3px solid #ff9800;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .feature-item::before {
-            content: "✓";
-            color: #ff9800;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #fff3e0, #ffecb3);
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 15px;
-            margin: 50px 0;
-        }
-
-        .cta-section h2 {
-            color: #ff9800;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ff9800, #ffb74d);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #f57c00, #ff9800);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #ff9800;
-            padding: 15px 30px;
-            border: 2px solid #ff9800;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: #ff9800;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-
-    </style>
+    @media(max-width:768px) {
+      .services-content { grid-template-columns: 1fr; gap: 30px; }
+      .services-details { padding: 25px; }
+      .services-hero h1 { font-size: 2.5rem; }
+      .services-hero p { font-size: 1.1rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Streamlined Professional Hero Section -->
-    <section class="services-hero">
-        <div class="services-container">
-            <div class="hero-content">
-                <h1>Digital Banking Services</h1>
-                <p>Modern banking convenience with our comprehensive digital platforms accessible anytime, anywhere</p>
-            </div>
+  <!-- Shared Header -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Section -->
+  <section class="services-hero">
+    <div class="services-container">
+      <div class="hero-content">
+        <h1>Digital Banking Services</h1>
+        <p>Modern banking convenience with our comprehensive digital platforms accessible anytime, anywhere</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="services-container">
+    <div class="services-content">
+      <div class="services-image">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80" alt="Digital Banking" />
+      </div>
+      <div class="services-details">
+        <div class="services-subtitle">Banking at Your Fingertips</div>
+        <div class="services-description">
+          Experience the future of banking with Goodway Sacco Society's digital services. Our comprehensive digital platforms provide secure, convenient, and instant access to all your banking needs, whether you're at home, work, or on the go.
         </div>
-    </section>
-
-    <main class="services-container">
-        <div class="services-content">
-            <div class="services-image">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80" alt="Digital Banking" />
-            </div>
-
-            <div class="services-details">
-                <div class="services-subtitle">Banking at Your Fingertips</div>
-                <div class="services-description">
-                    Experience the future of banking with Goodway Sacco Society's digital services. Our comprehensive digital platforms provide secure, convenient, and instant access to all your banking needs, whether you're at home, work, or on the go.
-                </div>
-
-                <div class="services-section">
-                    <div class="section-title">Digital Services</div>
-                    <ul class="features-list">
-                        <li class="feature-item">Mobile Banking App</li>
-                        <li class="feature-item">Internet Banking</li>
-                        <li class="feature-item">USSD Service (*667*2#)</li>
-                        <li class="feature-item">ATM Services</li>
-                    </ul>
-                </div>
-
-                <div class="services-section">
-                    <div class="section-title">Key Features</div>
-                    <ul class="features-list">
-                        <li class="feature-item">Deposit to your account using our paybills</li>
-                        <li class="feature-item">Real-time transaction notifications</li>
-                        <li class="feature-item">Secure online payments</li>
-                        <li class="feature-item">24/7 account access</li>
-                        <li class="feature-item">Instant fund transfers</li>
-                        <li class="feature-item">Bill payment services</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="services-section">
+          <div class="section-title">Digital Services</div>
+          <ul class="features-list">
+            <li class="feature-item">Mobile Banking App</li>
+            <li class="feature-item">Internet Banking</li>
+            <li class="feature-item">USSD Service (*667*2#)</li>
+            <li class="feature-item">ATM Services</li>
+          </ul>
         </div>
-
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Go Digital Today</h2>
-            <p>Download our app or dial *667*2# to start enjoying seamless digital banking services.</p>
-            <div class="cta-buttons">
-                <a href="membership.html" class="btn-primary">Get Started →</a>
-                <a href="contact.html" class="btn-secondary">Learn More</a>
-            </div>
+        <div class="services-section">
+          <div class="section-title">Key Features</div>
+          <ul class="features-list">
+            <li class="feature-item">Deposit to your account using our paybills</li>
+            <li class="feature-item">Real-time transaction notifications</li>
+            <li class="feature-item">Secure online payments</li>
+            <li class="feature-item">24/7 account access</li>
+            <li class="feature-item">Instant fund transfers</li>
+            <li class="feature-item">Bill payment services</li>
+          </ul>
         </div>
-    </main>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h2>Go Digital Today</h2>
+      <p>Download our app or dial *667*2# to start enjoying seamless digital banking services.</p>
+      <div class="cta-buttons">
+        <a href="membership.html" class="btn-primary">Get Started →</a>
+        <a href="contact.html" class="btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="shared-footer"></div>
+
+  <!-- Script to load shared header/footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("shared-header.html")
+        .then(res => res.text())
+        .then(data => { document.getElementById("shared-header").innerHTML = data; });
+
+      fetch("shared-footer.html")
+        .then(res => res.text())
+        .then(data => { document.getElementById("shared-footer").innerHTML = data; });
+    });
+  </script>
 </body>
 </html>

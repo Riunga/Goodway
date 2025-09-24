@@ -1,346 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Savings Products - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="services.css" />
-    <style>
-        /* Enhanced Savings Page Styling */
-        .savings-hero {
-            background: linear-gradient(135deg, #ff9800, #ffb74d, #ff5722);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-            overflow: hidden;
-            animation: heroGlow 3s ease-in-out infinite alternate;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Savings Products - Goodway Sacco Society</title>
 
-        @keyframes heroGlow {
-            from {
-                box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
-            }
-            to {
-                box-shadow: 0 0 40px rgba(255, 152, 0, 0.8);
-            }
-        }
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="shared-styles.css" />
+  <!-- Page Specific -->
+  <link rel="stylesheet" href="services.css" />
 
-        .savings-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80') center/cover no-repeat;
-            opacity: 0.2;
-            z-index: -1;
-        }
+  <style>
+    /* Enhanced Savings Page Styling */
+    .savings-hero {
+      background: linear-gradient(135deg, #4caf50, #2e7d32, #1b5e20);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 100px;
+      margin-bottom: 50px;
+      position: relative;
+      overflow: hidden;
+      animation: heroGlow 3s ease-in-out infinite alternate;
+      min-height: 200px;
+    }
 
-        .savings-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 900;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            animation: titleBounce 2s ease-in-out infinite;
-        }
+    @keyframes heroGlow {
+      from { box-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
+      to { box-shadow: 0 0 40px rgba(76, 175, 80, 0.8); }
+    }
 
-        @keyframes titleBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+    .savings-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=2126&q=80') center/cover no-repeat;
+      opacity: 0.2;
+      z-index: -1;
+    }
 
-        .savings-hero p {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-            opacity: 0.95;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
+    .savings-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 900;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      animation: titleBounce 2s ease-in-out infinite;
+    }
 
-        .savings-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    @keyframes titleBounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
-        .savings-intro {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 1.2rem;
-            color: #666;
-            line-height: 1.7;
-        }
+    .savings-hero p {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      opacity: 0.95;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
 
-        .savings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
+    .savings-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        .savings-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 5px solid #4caf50;
-        }
+    .savings-intro {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 1.2rem;
+      color: #666;
+      line-height: 1.7;
+    }
 
-        .savings-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+    .savings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
 
-        .savings-card-image {
-            height: 200px;
-            background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #4caf50;
-            position: relative;
-            overflow: hidden;
-        }
+    .savings-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 5px solid #4caf50;
+    }
 
-        .savings-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .savings-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
 
-        .savings-card-content {
-            padding: 30px;
-        }
+    .savings-card-image {
+      height: 200px;
+      background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #4caf50;
+    }
 
-        .savings-card h3 {
-            color: #2e7d32;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-align: center;
-        }
+    .savings-card-content { padding: 30px; }
 
-        .savings-card p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            text-align: center;
-        }
+    .savings-card h3 {
+      color: #2e7d32;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-align: center;
+    }
 
-        .savings-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
-        }
+    .savings-card p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      text-align: center;
+    }
 
-        .feature-item {
-            text-align: center;
-            padding: 10px;
-            background: #f5f7fa;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            color: #555;
-        }
+    .savings-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
 
-        .savings-cta {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
-        }
+    .feature-item {
+      text-align: center;
+      padding: 10px;
+      background: #f5f7fa;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
 
-        .savings-cta:hover {
-            background: linear-gradient(135deg, #1b5e20, #2e7d32);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
-        }
+    .savings-cta {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #2e7d32, #4caf50);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    }
 
-        .savings-benefits {
-            background: linear-gradient(135deg, #f0f8ff, #e8f5e8);
-            padding: 50px 20px;
-            margin: 50px 0;
-            border-radius: 20px;
-            text-align: center;
-        }
+    .savings-cta:hover {
+      background: linear-gradient(135deg, #1b5e20, #2e7d32);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+    }
 
-        .savings-benefits h2 {
-            color: #2e7d32;
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
+    .savings-benefits {
+      background: linear-gradient(135deg, #f0f8ff, #e8f5e8);
+      padding: 50px 20px;
+      margin: 50px 0;
+      border-radius: 20px;
+      text-align: center;
+    }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+    .savings-benefits h2 {
+      color: #2e7d32;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
 
-        .benefit-item {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid #4caf50;
-        }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #4caf50, #2e7d32);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.5rem;
-            color: white;
-        }
+    .benefit-item {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-left: 4px solid #4caf50;
+    }
 
-        .benefit-title {
-            color: #2e7d32;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 1.5rem;
+      color: white;
+    }
 
-        .benefit-desc {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
+    .benefit-title {
+      color: #2e7d32;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-        @media (max-width: 768px) {
-            .savings-hero h1 {
-                font-size: 2rem;
-            }
+    .benefit-desc {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
 
-            .savings-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .savings-hero h1 { font-size: 2rem; }
+      .savings-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="savings-hero">
-        <div class="savings-container">
-            <h1>Savings Products</h1>
-            <p>Build your financial future with our comprehensive range of savings solutions, designed to help you achieve your goals with competitive returns and flexible options.</p>
+  <!-- Shared Header -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Section -->
+  <section class="savings-hero">
+    <div class="savings-container">
+      <h1>Savings Products</h1>
+      <p>Build your financial future with our comprehensive range of savings solutions, designed to help you achieve your goals with competitive returns and flexible options.</p>
+    </div>
+  </section>
+
+  <main class="savings-container">
+    <div class="savings-intro">
+      <p>Discover our range of savings products designed to help you achieve your financial goals. From regular savings accounts to fixed deposits, we offer competitive interest rates and flexible terms to suit your needs.</p>
+    </div>
+
+    <div class="savings-grid">
+      <div class="savings-card">
+        <div class="savings-card-image">💰</div>
+        <div class="savings-card-content">
+          <h3>Regular Savings</h3>
+          <p>Build your savings with our flexible regular savings account. Start with any amount and enjoy competitive interest rates.</p>
+          <div class="savings-features">
+            <div class="feature-item">Minimum balance KSh 1,000</div>
+            <div class="feature-item">Monthly interest payments</div>
+            <div class="feature-item">No withdrawal restrictions</div>
+            <div class="feature-item">Mobile banking access</div>
+          </div>
+          <a href="regular-savings.html" class="savings-cta">Learn More</a>
         </div>
-    </section>
+      </div>
 
-    <main class="savings-container">
-        <div class="savings-intro">
-            <p>Discover our range of savings products designed to help you achieve your financial goals. From regular savings accounts to fixed deposits, we offer competitive interest rates and flexible terms to suit your needs.</p>
+      <div class="savings-card">
+        <div class="savings-card-image">🏦</div>
+        <div class="savings-card-content">
+          <h3>Fixed Deposit</h3>
+          <p>Maximize your returns with our fixed deposit accounts. Choose your term and enjoy higher interest rates.</p>
+          <div class="savings-features">
+            <div class="feature-item">Terms from 3-24 months</div>
+            <div class="feature-item">Higher interest rates</div>
+            <div class="feature-item">Guaranteed returns</div>
+            <div class="feature-item">Automatic renewal option</div>
+          </div>
+          <a href="fixeddeposit.html" class="savings-cta">Learn More</a>
         </div>
+      </div>
 
-        <div class="savings-grid">
-            <div class="savings-card">
-                <div class="savings-card-image">💰</div>
-                <div class="savings-card-content">
-                    <h3>Regular Savings</h3>
-                    <p>Build your savings with our flexible regular savings account. Start with any amount and enjoy competitive interest rates.</p>
-
-                    <div class="savings-features">
-                        <div class="feature-item">Minimum balance KSh 1,000</div>
-                        <div class="feature-item">Monthly interest payments</div>
-                        <div class="feature-item">No withdrawal restrictions</div>
-                        <div class="feature-item">Mobile banking access</div>
-                    </div>
-
-                    <a href="regular-savings.html" class="savings-cta">Learn More</a>
-                </div>
-            </div>
-
-            <div class="savings-card">
-                <div class="savings-card-image">🏦</div>
-                <div class="savings-card-content">
-                    <h3>Fixed Deposit</h3>
-                    <p>Maximize your returns with our fixed deposit accounts. Choose your term and enjoy higher interest rates.</p>
-
-                    <div class="savings-features">
-                        <div class="feature-item">Terms from 3-24 months</div>
-                        <div class="feature-item">Higher interest rates</div>
-                        <div class="feature-item">Guaranteed returns</div>
-                        <div class="feature-item">Automatic renewal option</div>
-                    </div>
-
-                    <a href="fixeddeposit.html" class="savings-cta">Learn More</a>
-                </div>
-            </div>
-
-            <div class="savings-card">
-                <div class="savings-card-image">👶</div>
-                <div class="savings-card-content">
-                    <h3>Children's Savings</h3>
-                    <p>Start saving for your child's future with our special children's savings account. Special benefits for young savers.</p>
-
-                    <div class="savings-features">
-                        <div class="feature-item">No minimum age limit</div>
-                        <div class="feature-item">Bonus interest rates</div>
-                        <div class="feature-item">Educational benefits</div>
-                        <div class="feature-item">Parental monitoring</div>
-                    </div>
-
-                    <a href="childrensavings.html" class="savings-cta">Learn More</a>
-                </div>
-            </div>
+      <div class="savings-card">
+        <div class="savings-card-image">👶</div>
+        <div class="savings-card-content">
+          <h3>Children's Savings</h3>
+          <p>Start saving for your child's future with our special children's savings account. Special benefits for young savers.</p>
+          <div class="savings-features">
+            <div class="feature-item">No minimum age limit</div>
+            <div class="feature-item">Bonus interest rates</div>
+            <div class="feature-item">Educational benefits</div>
+            <div class="feature-item">Parental monitoring</div>
+          </div>
+          <a href="childrensavings.html" class="savings-cta">Learn More</a>
         </div>
+      </div>
+    </div>
 
-        <div class="savings-benefits">
-            <h2>Why Choose Goodway Sacco Savings?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔒</div>
-                    <div class="benefit-title">Secure & Insured</div>
-                    <div class="benefit-desc">Your deposits are protected by SASRA insurance up to KSh 100,000 per account.</div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">📈</div>
-                    <div class="benefit-title">Competitive Returns</div>
-                    <div class="benefit-desc">Enjoy some of the best interest rates in the market with regular dividend payments.</div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
-                    <div class="benefit-title">Easy Access</div>
-                    <div class="benefit-desc">Access your account anytime through our mobile app, USSD, or branch network.</div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🎯</div>
-                    <div class="benefit-title">Flexible Options</div>
-                    <div class="benefit-desc">Choose from various savings products tailored to your financial goals and lifestyle.</div>
-                </div>
-            </div>
+    <div class="savings-benefits">
+      <h2>Why Choose Goodway Sacco Savings?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">🔒</div>
+          <div class="benefit-title">Secure & Insured</div>
+          <div class="benefit-desc">Your deposits are protected by SASRA insurance up to KSh 100,000 per account.</div>
         </div>
-    </main>
-    
+        <div class="benefit-item">
+          <div class="benefit-icon">📈</div>
+          <div class="benefit-title">Competitive Returns</div>
+          <div class="benefit-desc">Enjoy some of the best interest rates in the market with regular dividend payments.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">⚡</div>
+          <div class="benefit-title">Easy Access</div>
+          <div class="benefit-desc">Access your account anytime through our mobile app, USSD, or branch network.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🎯</div>
+          <div class="benefit-title">Flexible Options</div>
+          <div class="benefit-desc">Choose from various savings products tailored to your financial goals and lifestyle.</div>
+        </div>
+      </div>
+    </div>
+  </main>
 
+  <!-- Shared Footer -->
+  <div id="shared-footer"></div>
+
+  <script>
+    async function loadShared(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+    loadShared("shared-header", "shared-header.html").then(() => {
+      if (typeof initHeaderInteractions === "function") initHeaderInteractions();
+    });
+    loadShared("shared-footer", "shared-footer.html");
+  </script>
 </body>
 </html>

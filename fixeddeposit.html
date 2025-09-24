@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Fixed Deposit - Goodway Sacco Society</title>
+
+    <!-- Shared site styles (header/footer, global) -->
+    <link rel="stylesheet" href="shared-styles.css" />
+
+    <!-- Page-specific styles (keeps your original look) -->
     <link rel="stylesheet" href="services.css" />
+
     <style>
-        /* Professional Fixed Deposit Styling */
+        /* Page-specific inline styles (kept from your original file) */
         .savings-hero {
             background: linear-gradient(135deg, #3f51b5, #5c6bc0);
             color: white;
-            padding: 60px 20px;
+            padding: 120px 20px 60px; /* extra top padding to offset fixed header */
             text-align: center;
             margin-bottom: 40px;
         }
@@ -52,6 +58,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
+            display:block;
         }
 
         .savings-details {
@@ -314,35 +321,22 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Goodway Sacco Society</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html" class="active">Products & Services</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="membership.html">Membership</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Shared Header placeholder (injected via JS) -->
+    <div id="shared-header"></div>
 
     <!-- Hero Section -->
-    <section class="savings-hero">
+    <section class="savings-hero" aria-labelledby="fd-title">
         <div class="savings-container">
-            <h1>Fixed Deposit Account</h1>
+            <h1 id="fd-title">Fixed Deposit Account</h1>
             <p>Maximize your returns with our guaranteed fixed deposit solutions</p>
         </div>
     </section>
 
-    <main class="savings-container">
-        <div class="savings-content">
-            <div class="savings-image">
-                <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Fixed Deposit" />
+    <!-- Main content -->
+    <main class="savings-container" role="main">
+        <div class="savings-content" aria-live="polite">
+            <div class="savings-image" aria-hidden="false">
+                <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?auto=format&fit=crop&w=2340&q=80" alt="Savings / Fixed Deposit visual">
             </div>
 
             <div class="savings-details">
@@ -353,46 +347,47 @@
 
                 <div class="savings-section">
                     <div class="section-title">Account Features</div>
-                    <ul class="features-list">
+                    <ul class="features-list" aria-label="features list">
                         <li class="feature-item">Guaranteed returns with fixed interest rates</li>
                         <li class="feature-item">Flexible deposit terms from 3 months to 5 years</li>
                         <li class="feature-item">Higher interest rates than regular savings</li>
-                        <li class="feature-item">Compound interest options available</li>
                         <li class="feature-item">Minimum deposit as low as KSh 10,000</li>
                         <li class="feature-item">No monthly maintenance fees</li>
-                        <li class="feature-item">Automatic renewal options</li>
                         <li class="feature-item">Premature withdrawal options with penalty</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Deposit Types Section -->
+        <!-- Deposit types -->
         <div class="savings-section">
             <div class="section-title">Choose Your Investment Term</div>
-            <div class="deposit-types">
-                <div class="deposit-card">
+            <div class="deposit-types" role="list">
+                <div class="deposit-card" role="listitem">
                     <div class="deposit-icon">⚡</div>
                     <div class="deposit-title">Short-term Fixed Deposit</div>
                     <div class="deposit-rate">12.5%</div>
                     <div class="deposit-term">3-12 Months</div>
                     <div class="deposit-desc">Perfect for short-term goals with quick returns and maximum flexibility.</div>
                 </div>
-                <div class="deposit-card">
+
+                <div class="deposit-card" role="listitem">
                     <div class="deposit-icon">📈</div>
                     <div class="deposit-title">Medium-term Fixed Deposit</div>
                     <div class="deposit-rate">14.0%</div>
                     <div class="deposit-term">1-3 Years</div>
                     <div class="deposit-desc">Balanced option for medium-term planning with attractive interest rates.</div>
                 </div>
-                <div class="deposit-card">
+
+                <div class="deposit-card" role="listitem">
                     <div class="deposit-icon">🏆</div>
                     <div class="deposit-title">Long-term Fixed Deposit</div>
                     <div class="deposit-rate">16.5%</div>
                     <div class="deposit-term">3-5 Years</div>
                     <div class="deposit-desc">Maximum returns for long-term investors with the highest interest rates.</div>
                 </div>
-                <div class="deposit-card">
+
+                <div class="deposit-card" role="listitem">
                     <div class="deposit-icon">💎</div>
                     <div class="deposit-title">Premium Fixed Deposit</div>
                     <div class="deposit-rate">18.0%</div>
@@ -402,10 +397,10 @@
             </div>
         </div>
 
-        <!-- Calculator Section -->
-        <div class="calculator-section">
-            <h2>Calculate Your Returns</h2>
-            <div class="calculator-grid">
+        <!-- Calculator -->
+        <div class="calculator-section" aria-labelledby="calc-title">
+            <h2 id="calc-title">Calculate Your Returns</h2>
+            <div class="calculator-grid" role="region">
                 <div class="calc-item">
                     <div class="calc-label">Investment Amount</div>
                     <div class="calc-value">KSh 100,000</div>
@@ -425,7 +420,7 @@
             </div>
         </div>
 
-        <!-- Requirements Section -->
+        <!-- Requirements -->
         <div class="savings-section">
             <div class="section-title">Account Opening Requirements</div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
@@ -452,23 +447,131 @@
             </div>
         </div>
 
-        <!-- CTA Section -->
-        <div class="cta-section">
+        <!-- CTA -->
+        <div class="cta-section" role="region" aria-label="call to action">
             <h2>Start Growing Your Wealth Today</h2>
             <p>Lock in competitive interest rates and watch your money grow with our secure fixed deposit accounts.</p>
             <div class="cta-buttons">
-                <a href="membership.html" class="btn-primary">Open Account Now →</a>
-                <a href="contact.html" class="btn-secondary">Get Quote</a>
+                <a href="membership.html" class="btn-primary" aria-label="Open account">Open Account Now →</a>
+                <a href="contact.html" class="btn-secondary" aria-label="Get quote">Get Quote</a>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
-            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
-        </div>
-    </footer>
+    <!-- Shared Footer placeholder (injected via JS) -->
+    <div id="shared-footer"></div>
+
+    <!-- Load shared header + footer then initialize header interactions -->
+    <script>
+    (function () {
+        // Load a shared fragment into a placeholder div
+        async function loadFragment(id, url) {
+            try {
+                const res = await fetch(url, {cache: "no-store"});
+                if (!res.ok) throw new Error(url + ' not found (' + res.status + ')');
+                const html = await res.text();
+                document.getElementById(id).innerHTML = html;
+                return true;
+            } catch (err) {
+                console.error('Error loading fragment', url, err);
+                return false;
+            }
+        }
+
+        // After header is inserted, wire up nav behaviour (mobile toggle, dropdown mobile open, active link)
+        function initHeaderInteractions() {
+            try {
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                const navList = document.querySelector('.nav-list');
+                const navLinks = document.querySelectorAll('.nav-link');
+                const dropdownItems = document.querySelectorAll('.nav-item.dropdown, .dropdown');
+
+                // Mobile menu toggle (show/hide)
+                if (menuToggle && navList) {
+                    menuToggle.addEventListener('click', function (e) {
+                        navList.classList.toggle('mobile-open');
+                        menuToggle.classList.toggle('active');
+                    });
+                }
+
+                // Mark active link based on current page filename
+                const current = window.location.pathname.split('/').pop() || 'index.html';
+                navLinks.forEach(a => {
+                    const href = a.getAttribute('href');
+                    if (!href) return;
+                    // Check exact match or when index page
+                    if (href === current || (current === '' && href === 'index.html')) {
+                        a.classList.add('active');
+                    } else {
+                        a.classList.remove('active');
+                    }
+                });
+
+                // Dropdown: on mobile, toggle submenus on click
+                dropdownItems.forEach(item => {
+                    const link = item.querySelector('.nav-link');
+                    const submenu = item.querySelector('.dropdown-menu');
+                    if (!link || !submenu) return;
+
+                    link.addEventListener('click', function (e) {
+                        if (window.innerWidth <= 768) {
+                            // prevent navigating away when clicking About (if it has subitems)
+                            e.preventDefault();
+                            item.classList.toggle('mobile-open');
+                            // show/hide submenu
+                            if (item.classList.contains('mobile-open')) {
+                                submenu.style.display = 'block';
+                            } else {
+                                submenu.style.display = '';
+                            }
+                        }
+                    });
+                });
+
+                // Close mobile menu when clicking outside (optional)
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.header-container') && document.querySelector('.nav-list.mobile-open')) {
+                        document.querySelector('.nav-list').classList.remove('mobile-open');
+                        const mt = document.querySelector('.mobile-menu-toggle');
+                        if (mt) mt.classList.remove('active');
+                    }
+                });
+
+                // Accessibility: allow keyboard to open dropdowns on focused parent
+                dropdownItems.forEach(item => {
+                    item.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            const submenu = item.querySelector('.dropdown-menu');
+                            if (submenu) {
+                                item.classList.toggle('mobile-open');
+                                submenu.style.display = item.classList.contains('mobile-open') ? 'block' : '';
+                            }
+                        }
+                    });
+                });
+
+            } catch (err) {
+                console.error('Error initializing header interactions', err);
+            }
+        }
+
+        // load header & footer and init interactions after header is present
+        (async function () {
+            const headerLoaded = await loadFragment('shared-header', 'shared-header.html');
+            const footerLoaded = await loadFragment('shared-footer', 'shared-footer.html');
+
+            // Small delay to let DOM within header settle before init
+            if (headerLoaded) {
+                // Wait until header markup exists in DOM (some browsers may need a short tick)
+                setTimeout(initHeaderInteractions, 50);
+            }
+
+            // If fragments failed to load, log visible warning in console
+            if (!headerLoaded || !footerLoaded) {
+                console.warn('Shared header/footer failed to load. Ensure shared-header.html, shared-footer.html and shared-styles.css are on the same path as this page.');
+            }
+        })();
+    })();
+    </script>
 </body>
 </html>

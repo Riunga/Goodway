@@ -1,382 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wakulima Loan - Goodway Sacco Society</title>
-    <link rel="stylesheet" href="services.css" />
-    <style>
-        /* Professional Wakulima Loan Styling */
-        .loan-hero {
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wakulima Loan - Goodway Sacco Society</title>
+  <link rel="stylesheet" href="shared-styles.css" />
 
-        .loan-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+  <style>
+    /* Professional Wakulima Loan Styling */
+    .loan-hero {
+      background: linear-gradient(135deg, #2e7d32, #4caf50);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .loan-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .loan-hero p {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+      opacity: 0.9;
+    }
 
-        .loan-hero p {
-            font-size: 1.3rem;
-            margin-bottom: 0;
-            opacity: 0.9;
-        }
+    .loan-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .loan-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+    .loan-image {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .loan-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .loan-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(46,125,50,0.1), rgba(76,175,80,0.1));
+      z-index: 1;
+    }
 
-        .loan-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .loan-details {
+      padding: 40px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .loan-subtitle {
+      color: #4caf50;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .loan-description {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .loan-section { margin-bottom: 40px; }
 
-        .loan-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
+    .section-title {
+      color: #2e7d32;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-left: 5px solid #4caf50;
+      padding-left: 15px;
+    }
+    .eligibility-list { list-style: none; padding: 0; }
+    .eligibility-item {
+      background: #f5f7fa;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #4caf50;
+      display: flex;
+      align-items: center;
+    }
+    .eligibility-item::before {
+      content: "✓";
+      color: #4caf50;
+      font-weight: bold;
+      margin-right: 15px;
+      font-size: 1.2rem;
+    }
 
-        .loan-image {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .benefit-item {
+      background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      border: 2px solid #4caf50;
+      transition: transform 0.3s ease;
+    }
+    .benefit-item:hover { transform: translateY(-5px); }
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #ff9800, #f57c00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 1.5rem;
+      color: white;
+    }
+    .benefit-title { color: #2e7d32; font-weight: 600; margin-bottom: 10px; }
+    .benefit-desc { color: #666; font-size: 0.9rem; }
 
-        .loan-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
+    .loan-cta-section {
+      background: linear-gradient(135deg, #f0f8ff, #e8f5e8);
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 15px;
+      margin: 50px 0;
+    }
+    .loan-cta-section h2 {
+      color: #2e7d32;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .loan-cta-section p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-        .loan-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(76, 175, 80, 0.1));
-            z-index: 1;
-        }
+    .btn-primary {
+      background: linear-gradient(135deg, #2e7d32, #4caf50);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1b5e20, #2e7d32);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #2e7d32;
+      padding: 15px 30px;
+      border: 2px solid #2e7d32;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: #2e7d32;
+      color: white;
+      transform: translateY(-2px);
+    }
 
-        .loan-details {
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .loan-subtitle {
-            color: #4caf50;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .loan-description {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
-
-        .loan-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            color: #2e7d32;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            border-left: 5px solid #4caf50;
-            padding-left: 15px;
-        }
-
-        .eligibility-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .eligibility-item {
-            background: #f5f7fa;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #4caf50;
-            display: flex;
-            align-items: center;
-        }
-
-        .eligibility-item::before {
-            content: "✓";
-            color: #4caf50;
-            font-weight: bold;
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .benefit-item {
-            background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #4caf50;
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ff9800, #f57c00);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .benefit-title {
-            color: #2e7d32;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .benefit-desc {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .loan-cta-section {
-            background: linear-gradient(135deg, #f0f8ff, #e8f5e8);
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 15px;
-            margin: 50px 0;
-        }
-
-        .loan-cta-section h2 {
-            color: #2e7d32;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .loan-cta-section p {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #1b5e20, #2e7d32);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #2e7d32;
-            padding: 15px 30px;
-            border: 2px solid #2e7d32;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: #2e7d32;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .loan-hero h1 {
-                font-size: 2rem;
-            }
-
-            .loan-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .loan-details {
-                padding: 25px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .loan-hero h1 { font-size: 2rem; }
+      .loan-content { grid-template-columns: 1fr; gap: 30px; }
+      .loan-details { padding: 25px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
-    <header>
+  <!-- Professional Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-section">
         <div class="logo">
-            <h1>Goodway Sacco Society</h1>
+          <img src="images/Logo 1.png" alt="Goodway Sacco Society Logo" class="logo-image" />
+          <div class="logo-text">
+            <h1>Goodway Sacco</h1>
+            <span class="tagline">Your Financial Partner</span>
+          </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Products & Services</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="membership.html">Membership</a></li>
-            </ul>
-        </nav>
-    </header>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="membership.html" class="cta-button primary">Join Now</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="loan-hero">
-        <div class="loan-container">
-            <h1>Wakulima Loan</h1>
-            <p>Specialized agricultural financing to support farmers and boost agricultural productivity</p>
+  <!-- Hero Section -->
+  <section class="loan-hero">
+    <div class="loan-container">
+      <h1>Wakulima Loan</h1>
+      <p>Specialized agricultural financing to support farmers and boost agricultural productivity</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="loan-container">
+    <div class="loan-content">
+      <div class="loan-image">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2128&q=80" alt="Wakulima Loan" />
+      </div>
+      <div class="loan-details">
+        <div class="loan-subtitle">Agricultural Financial Solution</div>
+        <div class="loan-description">
+          Our Wakulima loan products are specifically designed to support farmers and agricultural entrepreneurs with affordable financing options tailored to their unique needs. We understand the seasonal nature of farming and provide flexible solutions that align with harvest cycles and agricultural production schedules.
         </div>
-    </section>
-
-    <main class="loan-container">
-        <div class="loan-content">
-            <div class="loan-image">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2128&q=80" alt="Wakulima Loan" />
-            </div>
-
-            <div class="loan-details">
-                <div class="loan-subtitle">Agricultural Financial Solution</div>
-                <div class="loan-description">
-                    Our Wakulima loan products are specifically designed to support farmers and agricultural entrepreneurs with affordable financing options tailored to their unique needs. We understand the seasonal nature of farming and provide flexible solutions that align with harvest cycles and agricultural production schedules.
-                </div>
-
-                <div class="loan-section">
-                    <div class="section-title">Loan Features</div>
-                    <ul class="eligibility-list">
-                        <li class="eligibility-item">Loan amounts from KSh 20,000 to KSh 5,000,000</li>
-                        <li class="eligibility-item">Flexible repayment terms up to 24 months</li>
-                        <li class="eligibility-item">Special agricultural interest rates starting from 11% per annum</li>
-                        <li class="eligibility-item">Repayment schedules aligned with harvest seasons</li>
-                        <li class="eligibility-item">Agricultural advisory and extension services included</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Eligibility Section -->
         <div class="loan-section">
-            <div class="section-title">Eligibility Requirements</div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌾</div>
-                    <div class="benefit-title">Farmer Registration</div>
-                    <div class="benefit-desc">Must be a registered farmer with a valid agricultural license</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">👤</div>
-                    <div class="benefit-title">Membership</div>
-                    <div class="benefit-desc">Must be a member of Goodway Sacco Society for at least 6 months</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">📋</div>
-                    <div class="benefit-title">Farm Plan</div>
-                    <div class="benefit-desc">Must provide a comprehensive and viable farm business plan</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔒</div>
-                    <div class="benefit-title">Collateral</div>
-                    <div class="benefit-desc">Farm assets and produce may be used as collateral</div>
-                </div>
-            </div>
+          <div class="section-title">Loan Features</div>
+          <ul class="eligibility-list">
+            <li class="eligibility-item">Loan amounts from KSh 20,000 to KSh 5,000,000</li>
+            <li class="eligibility-item">Flexible repayment terms up to 24 months</li>
+            <li class="eligibility-item">Special agricultural interest rates starting from 11% per annum</li>
+            <li class="eligibility-item">Repayment schedules aligned with harvest seasons</li>
+            <li class="eligibility-item">Agricultural advisory and extension services included</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- Benefits Section -->
-        <div class="loan-section">
-            <div class="section-title">Why Choose Our Wakulima Loan?</div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
-                    <div class="benefit-title">Seasonal Processing</div>
-                    <div class="benefit-desc">Fast approval aligned with farming seasons</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">💰</div>
-                    <div class="benefit-title">Low Interest Rates</div>
-                    <div class="benefit-desc">Special agricultural rates to support farmers</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔧</div>
-                    <div class="benefit-title">Flexible Repayment</div>
-                    <div class="benefit-desc">Payment schedules that match harvest cycles</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🎯</div>
-                    <div class="benefit-title">Expert Support</div>
-                    <div class="benefit-desc">Access to agricultural experts and advisors</div>
-                </div>
-            </div>
+    <!-- Eligibility Section -->
+    <div class="loan-section">
+      <div class="section-title">Eligibility Requirements</div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">🌾</div>
+          <div class="benefit-title">Farmer Registration</div>
+          <div class="benefit-desc">Must be a registered farmer with a valid agricultural license</div>
         </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">👤</div>
+          <div class="benefit-title">Membership</div>
+          <div class="benefit-desc">Must be a member of Goodway Sacco Society for at least 6 months</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">📋</div>
+          <div class="benefit-title">Farm Plan</div>
+          <div class="benefit-desc">Must provide a comprehensive and viable farm business plan</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🔒</div>
+          <div class="benefit-title">Collateral</div>
+          <div class="benefit-desc">Farm assets and produce may be used as collateral</div>
+        </div>
+      </div>
+    </div>
 
-        <!-- CTA Section -->
-        <div class="loan-cta-section">
-            <h2>Ready to Grow Your Farm?</h2>
-            <p>Apply for a Wakulima loan today and get the agricultural financing you need to maximize your productivity.</p>
-            <div class="cta-buttons">
-                <a href="membership.html" class="btn-primary">Apply Now →</a>
-                <a href="contact.html" class="btn-secondary">Contact Us</a>
-            </div>
+    <!-- Benefits Section -->
+    <div class="loan-section">
+      <div class="section-title">Why Choose Our Wakulima Loan?</div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">⚡</div>
+          <div class="benefit-title">Seasonal Processing</div>
+          <div class="benefit-desc">Fast approval aligned with farming seasons</div>
         </div>
-    </main>
+        <div class="benefit-item">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-title">Low Interest Rates</div>
+          <div class="benefit-desc">Special agricultural rates to support farmers</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🔧</div>
+          <div class="benefit-title">Flexible Repayment</div>
+          <div class="benefit-desc">Payment schedules that match harvest cycles</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🎯</div>
+          <div class="benefit-title">Expert Support</div>
+          <div class="benefit-desc">Access to agricultural experts and advisors</div>
+        </div>
+      </div>
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <p class="footer-title">&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-            <p class="footer-description">Empowering our members through innovative financial solutions and exceptional service.</p>
-            <p class="footer-contact">Contact us at <a href="mailto:info@goodwaysacco.co.ke" class="footer-link">info@goodwaysacco.co.ke</a> or call <a href="tel:+254795734561" class="footer-link">(254) 795-734-561</a> for more information.</p>
+    <!-- CTA Section -->
+    <div class="loan-cta-section">
+      <h2>Ready to Grow Your Farm?</h2>
+      <p>Apply for a Wakulima loan today and get the agricultural financing you need to maximize your productivity.</p>
+      <div class="cta-buttons">
+        <a href="membership.html" class="btn-primary">Apply Now →</a>
+        <a href="contact.html" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Goodway Sacco empowers members through innovative financial solutions and exceptional service.</p>
         </div>
-    </footer>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:info@goodwaysacco.co.ke">info@goodwaysacco.co.ke</a></p>
+          <p>Phone: <a href="tel:+254795734561">(254) 795-734-561</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Goodway Sacco Society. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
