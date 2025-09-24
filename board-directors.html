@@ -40,86 +40,91 @@
 
         .section-subtitle {
             color: #666;
-            font-size: 1.3rem;
-            max-width: 600px;
+            font-size: 1.2rem;
+            max-width: 500px;
             margin: 0 auto;
             line-height: 1.6;
+            font-weight: 400;
         }
 
         .board-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
             margin-top: 40px;
         }
 
         .board-member {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-top: 4px solid #2e7d32;
             position: relative;
+            text-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        .board-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-image {
+            position: relative;
+            width: 100%;
+            height: 320px;
             overflow: hidden;
         }
 
-        .board-member::before {
-            content: '';
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .board-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #2e7d32, #ff9800);
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .board-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .member-image {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .member-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #2e7d32;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .member-image img:hover {
-            transform: scale(1.05);
-            border-color: #ff9800;
+        .board-member:hover .member-overlay {
+            opacity: 1;
         }
 
         .member-info h3 {
-            color: #2e7d32;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 15px 0 5px;
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .member-role {
-            color: #ff9800;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 15px;
+            background: rgba(46, 125, 50, 0.9);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-
-        .member-description {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         /* Responsive Design */
@@ -183,62 +188,67 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Board Directors</h2>
-                <p class="section-subtitle">Meet the dedicated leaders guiding Goodway Sacco towards excellence and growth. Our board brings together experienced professionals committed to our members' success.</p>
+                <p class="section-subtitle">Meet our board members guiding Goodway Sacco with experience and vision.</p>
             </div>
 
             <div class="board-grid">
                 <div class="board-member">
                     <div class="member-image">
-                        <img src="./images/CHAIRMAN.jpg" alt="Chairman" onerror="this.src='https://via.placeholder.com/150x150/2e7d32/ffffff?text=Chairman'" />
-                    </div>
-                    <div class="member-info">
-                        <h3>John Kabui Mwai</h3>
-                        <p class="member-role">Chairman</p>
-                        <p class="member-description">With over 20 years of experience in financial management and strategic leadership, our Chairman guides the board with vision, integrity, and a deep commitment to member prosperity.</p>
-                    </div>
-                </div>
-
-                <div class="board-member">
-                    <div class="member-image">
-                        <img src="./images/MACHERE.jpg" alt="Vice Chairman" onerror="this.src='https://via.placeholder.com/150x150/2e7d32/ffffff?text=Vice+Chairman'" />
-                    </div>
-                    <div class="member-info">
-                        <h3>David Machere Kabui</h3>
-                        <p class="member-role">Vice Chairman</p>
-                        <p class="member-description">As Vice Chairman, David brings extensive operational expertise and strategic insight, ensuring sustainable growth and effective governance for our Sacco community.</p>
+                        <img src="./images/CHAIRMAN.jpg" alt="Chairman" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=JK'" />
+                        <div class="member-overlay">
+                            <div class="member-info">
+                                <h3>John Kabui Mwai</h3>
+                                <p class="member-role">Chairman</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="board-member">
                     <div class="member-image">
-                        <img src="./images/ROSEMARY.jpg" alt="Secretary" onerror="this.src='https://via.placeholder.com/150x150/2e7d32/ffffff?text=Secretary'" />
-                    </div>
-                    <div class="member-info">
-                        <h3>Rosemary Kinyua</h3>
-                        <p class="member-role">Secretary</p>
-                        <p class="member-description">Rosemary oversees governance, compliance, and transparency in all operations, ensuring our Sacco maintains the highest standards of accountability and member trust.</p>
-                    </div>
-                </div>
-
-                <div class="board-member">
-                    <div class="member-image">
-                        <img src="./images/TREASURER.jpg" alt="Treasurer" onerror="this.src='https://via.placeholder.com/150x150/2e7d32/ffffff?text=Treasurer'" />
-                    </div>
-                    <div class="member-info">
-                        <h3>Fredrick Munyiri Njogu</h3>
-                        <p class="member-role">Treasurer</p>
-                        <p class="member-description">Fredrick manages our financial resources with prudence, expertise, and accountability, ensuring fiscal responsibility and sustainable financial health for all members.</p>
+                        <img src="./images/MACHERE.jpg" alt="Vice Chairman" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=DM'" />
+                        <div class="member-overlay">
+                            <div class="member-info">
+                                <h3>David Machere Kabui</h3>
+                                <p class="member-role">Vice Chairman</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="board-member">
                     <div class="member-image">
-                        <img src="./images/DorcasKabui.jpg" alt="CEO" onerror="this.src='https://via.placeholder.com/150x150/2e7d32/ffffff?text=Member'" />
+                        <img src="./images/ROSEMARY.jpg" alt="Secretary" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=RK'" />
+                        <div class="member-overlay">
+                            <div class="member-info">
+                                <h3>Rosemary Kinyua</h3>
+                                <p class="member-role">Secretary</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="member-info">
-                        <h3>Dorcas Kabui</h3>
-                        <p class="member-role">CEO</p>
-                        <p class="member-description">Dorcas contributes valuable perspectives from community development and member engagement, bringing fresh insights to support our Sacco's mission and growth.</p>
+                </div>
+
+                <div class="board-member">
+                    <div class="member-image">
+                        <img src="./images/TREASURER.jpg" alt="Treasurer" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=FN'" />
+                        <div class="member-overlay">
+                            <div class="member-info">
+                                <h3>Fredrick Munyiri Njogu</h3>
+                                <p class="member-role">Treasurer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="board-member">
+                    <div class="member-image">
+                        <img src="./images/DorcasKabui.jpg" alt="CEO" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=DK'" />
+                        <div class="member-overlay">
+                            <div class="member-info">
+                                <h3>Dorcas Kabui</h3>
+                                <p class="member-role">CEO</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
