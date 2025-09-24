@@ -316,6 +316,7 @@
 @media (max-width: 768px) {
     .header-container {
         padding: 0 1rem;
+        height: 70px;
     }
 
     .nav-list {
@@ -328,6 +329,8 @@
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        gap: 0.5rem;
+        z-index: 1001;
     }
 
     .nav-list.mobile-open {
@@ -386,6 +389,23 @@
 
     .logo-text .tagline {
         font-size: 0.8rem;
+    }
+
+    /* Mobile CTA Button */
+    .cta-button.primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* Ensure images are responsive */
+    .logo-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
     }
 }
 

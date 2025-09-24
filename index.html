@@ -473,11 +473,12 @@
             }
         }
 
-        // Mobile menu functionality
+        // Enhanced mobile menu functionality
         class MobileMenu {
             constructor() {
                 this.menuToggle = document.querySelector('.mobile-menu-toggle');
                 this.nav = document.querySelector('.main-nav');
+                this.navList = document.querySelector('.nav-list');
                 this.isOpen = false;
 
                 this.init();
@@ -485,7 +486,10 @@
 
             init() {
                 if (this.menuToggle) {
-                    this.menuToggle.addEventListener('click', () => this.toggleMenu());
+                    this.menuToggle.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.toggleMenu();
+                    });
                 }
 
                 // Close menu when clicking outside
@@ -494,6 +498,52 @@
                         this.closeMenu();
                     }
                 });
+
+                // Close menu when pressing Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.closeMenu();
+                    }
+                });
+
+                // Close menu when window is resized to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768 && this.isOpen) {
+                        this.closeMenu();
+                    }
+                });
+
+                // Handle dropdown menus in mobile
+                this.initDropdowns();
+            }
+
+            initDropdowns() {
+                const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+                dropdownItems.forEach(item => {
+                    const link = item.querySelector('.nav-link');
+                    if (link) {
+                        link.addEventListener('click', (e) => {
+                            if (window.innerWidth <= 768) {
+                                e.preventDefault();
+                                this.toggleDropdown(item);
+                            }
+                        });
+                    }
+                });
+            }
+
+            toggleDropdown(dropdownItem) {
+                const isCurrentlyOpen = dropdownItem.classList.contains('mobile-open');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+                    item.classList.remove('mobile-open');
+                });
+
+                // Toggle current dropdown
+                if (!isCurrentlyOpen) {
+                    dropdownItem.classList.add('mobile-open');
+                }
             }
 
             toggleMenu() {
@@ -501,15 +551,26 @@
             }
 
             openMenu() {
-                this.nav.classList.add('mobile-open');
+                this.navList.classList.add('mobile-open');
                 this.menuToggle.classList.add('active');
                 this.isOpen = true;
+
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = 'hidden';
             }
 
             closeMenu() {
-                this.nav.classList.remove('mobile-open');
+                this.navList.classList.remove('mobile-open');
                 this.menuToggle.classList.remove('active');
                 this.isOpen = false;
+
+                // Close all dropdowns
+                document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+                    item.classList.remove('mobile-open');
+                });
+
+                // Restore body scroll
+                document.body.style.overflow = '';
             }
         }
 
