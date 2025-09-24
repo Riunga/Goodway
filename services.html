@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Products & Services - Goodway Sacco Society</title>
+    <link rel="stylesheet" href="shared-styles.css">
     <style>
         /* Professional Services Page Styling */
         * {
@@ -23,6 +24,7 @@
             padding: 60px 20px;
             text-align: center;
             margin-bottom: 50px;
+            margin-top: 80px;
             width: 100vw;
             position: relative;
             left: 50%;
@@ -299,264 +301,18 @@
                 align-items: center;
             }
         }
-
-        /* Header Styles */
-        .main-header {
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .logo-text h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-
-        .main-nav {
-            flex: 1;
-            margin: 0 40px;
-        }
-
-        .nav-list {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 30px;
-            justify-content: center;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        .header-cta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .cta-button {
-            background: white;
-            color: #2e7d32;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #f5f7fa;
-            transform: translateY(-2px);
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-wrap: wrap;
-            }
-
-            .main-nav {
-                order: 3;
-                width: 100%;
-                margin: 10px 0 0 0;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .mobile-menu-toggle {
-                display: flex;
-            }
-        }
-
-        /* Footer Styles */
-        .main-footer {
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            color: white;
-            padding: 40px 0 20px;
-            margin-top: 50px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3,
-        .footer-section h4 {
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 8px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 20px;
-            text-align: center;
-        }
-
-        .footer-bottom-content p {
-            margin: 5px 0;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .footer-disclaimer {
-            font-size: 0.8rem;
-            opacity: 0.7;
-            font-style: italic;
-        }
-
-        .ussd-code {
-            background: rgba(255,255,255,0.1);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Professional Header -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="logo">
-                    <img src="images/Logo 1.png" alt="Goodway Sacco Society Logo" class="logo-image" />
-                    <div class="logo-text">
-                        <h1>Goodway Sacco</h1>
-                        <span class="tagline">Your Financial Partner</span>
-                    </div>
-                </div>
-            </div>
-
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="services.html" class="nav-link active">Services</a></li>
-                    <li><a href="news.html" class="nav-link">News</a></li>
-                    <li><a href="membership.html" class="nav-link">Membership</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-cta">
-                <a href="membership.html" class="cta-button primary">Join Now</a>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <!-- Include Shared Header -->
+    <div id="shared-header"></div>
+    <script>
+        fetch('shared-header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('shared-header').innerHTML = data;
+            });
+    </script>
 
     <!-- Hero Section -->
     <section class="services-hero">
@@ -706,67 +462,14 @@
         </div>
     </main>
 
-    <!-- Professional Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3>Goodway Sacco Society</h3>
-                        <p>Your trusted financial partner since 2007</p>
-                    </div>
-                    <div class="footer-contact">
-                        <h4>Contact Information</h4>
-                        <p><strong>Email:</strong> <a href="mailto:info@goodwaysacco.co.ke">info@goodwaysacco.co.ke</a></p>
-                        <p><strong>Phone:</strong> <a href="tel:+254795734561">(254) 795-734-561</a></p>
-                        <p><strong>USSD:</strong> <span class="ussd-code">*667*2#</span></p>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="loans.html">Loan Products</a></li>
-                        <li><a href="savings.html">Savings Plans</a></li>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="news.html">Latest News</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="loans.html">Personal Loans</a></li>
-                        <li><a href="businessloan.html">Business Loans</a></li>
-                        <li><a href="savings.html">Savings Accounts</a></li>
-                        <li><a href="services.html">Mobile Banking</a></li>
-                        <li><a href="services.html">Insurance</a></li>
-                        <li><a href="contact.html">Customer Support</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="contact.html">Privacy Policy</a></li>
-                        <li><a href="about.html">Regulatory Information</a></li>
-                        <li><a href="contact.html">Complaints Procedure</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Goodway Sacco Society. All rights reserved. | Licensed and regulated by SASRA.</p>
-                    <p class="footer-disclaimer">
-                        Goodway Sacco Society is committed to empowering our members through innovative financial solutions and exceptional service.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Include Shared Footer -->
+    <div id="shared-footer"></div>
+    <script>
+        fetch('shared-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('shared-footer').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

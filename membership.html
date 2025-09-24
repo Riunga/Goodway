@@ -14,39 +14,15 @@
     </style>
 </head>
 <body>
-    <!-- Professional Header -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="logo">
-                    <img src="images/Logo 1.png" alt="Goodway Sacco Society Logo" class="logo-image" />
-                    <div class="logo-text">
-                    <h1>Goodway Sacco</h1>
-                    <span class="tagline">Your Financial Partner</span>
-                </div>
-            </div>
-
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="news.html" class="nav-link">News</a></li>
-                    <li><a href="membership.html" class="nav-link active">Membership</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-cta">
-                <a href="membership.html" class="cta-button primary">Join Now</a>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <!-- Include Shared Header -->
+    <div id="shared-header"></div>
+    <script>
+        fetch('shared-header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('shared-header').innerHTML = data;
+            });
+    </script>
 
     <main>
         <section class="membership-intro">

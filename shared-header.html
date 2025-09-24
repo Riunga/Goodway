@@ -43,9 +43,58 @@
                         link.classList.add('active');
                     }
                 });
-            });
 
-            // Dropdown functions removed as per user request
+                // Dropdown functionality
+                const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+
+                dropdownItems.forEach(item => {
+                    const dropdownMenu = item.querySelector('.dropdown-menu');
+                    const navLink = item.querySelector('.nav-link');
+
+                    // Desktop hover functionality
+                    item.addEventListener('mouseenter', () => {
+                        if (window.innerWidth > 768) {
+                            dropdownMenu.style.opacity = '1';
+                            dropdownMenu.style.visibility = 'visible';
+                            dropdownMenu.style.transform = 'translateY(0)';
+                        }
+                    });
+
+                    item.addEventListener('mouseleave', () => {
+                        if (window.innerWidth > 768) {
+                            dropdownMenu.style.opacity = '0';
+                            dropdownMenu.style.visibility = 'hidden';
+                            dropdownMenu.style.transform = 'translateY(-10px)';
+                        }
+                    });
+
+                    // Mobile click functionality
+                    navLink.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            item.classList.toggle('mobile-open');
+                        }
+                    });
+                });
+
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.nav-item.dropdown')) {
+                        dropdownItems.forEach(item => {
+                            item.classList.remove('mobile-open');
+                        });
+                    }
+                });
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        dropdownItems.forEach(item => {
+                            item.classList.remove('mobile-open');
+                        });
+                    }
+                });
+            });
         </script>
 
         <div class="header-cta">
