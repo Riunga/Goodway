@@ -106,6 +106,31 @@
       text-align: center;
       font-size: 1.1rem;
     }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      .container {
+        padding: 30px 25px;
+        width: 95%;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      form input[type="text"],
+      form input[type="email"],
+      form textarea,
+      form select,
+      form input[type="file"] {
+        padding: 12px 15px;
+        font-size: 1rem;
+      }
+      form button {
+        padding: 15px 25px;
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -182,5 +207,8 @@
 
     loadJobs();
   </script>
+
+  <!-- Include Shared Scripts -->
+  <script src="shared-scripts.js"></script>
 </body>
 </html>

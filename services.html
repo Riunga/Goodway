@@ -283,22 +283,259 @@
             transform: translateY(-2px);
         }
 
+        /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
+            .services-hero {
+                padding: 2rem 1rem !important;
+                margin-top: 80px !important;
+                margin-bottom: 2rem !important;
+            }
+
             .services-hero h1 {
-                font-size: 2rem;
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .services-hero p {
+                font-size: 1.1rem !important;
+                line-height: 1.5 !important;
+                max-width: 100% !important;
+            }
+
+            .services-container {
+                padding: 0 1rem !important;
+            }
+
+            .services-intro {
+                margin-bottom: 2rem !important;
+                font-size: 1rem !important;
             }
 
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                margin-bottom: 2rem !important;
+            }
+
+            .service-card {
+                border-radius: 15px !important;
+                padding: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .service-icon {
+                width: 70px !important;
+                height: 70px !important;
+                font-size: 2.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .service-card h3 {
+                font-size: 1.25rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .service-card p {
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+                padding: 0 1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .service-features {
+                padding: 0 1rem 1rem !important;
+            }
+
+            .service-features li {
+                font-size: 0.9rem !important;
+                padding: 0.25rem 0 !important;
+            }
+
+            .service-cta {
+                margin: 1rem auto 1.5rem !important;
+                padding: 0.75rem 1.5rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            .services-benefits {
+                padding: 2rem 1rem !important;
+                margin: 2rem 0 !important;
+                border-radius: 15px !important;
+            }
+
+            .services-benefits h2 {
+                font-size: 1.75rem !important;
+                margin-bottom: 1.5rem !important;
             }
 
             .benefits-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .benefit-item {
+                padding: 1.5rem !important;
+                border-radius: 12px !important;
+            }
+
+            .benefit-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.25rem !important;
+            }
+
+            .benefit-title {
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .benefit-desc {
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .cta-section {
+                padding: 2rem 1rem !important;
+                margin: 2rem 0 !important;
+                border-radius: 12px !important;
+            }
+
+            .cta-section h2 {
+                font-size: 1.75rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .cta-section p {
+                font-size: 1rem !important;
+                margin-bottom: 1.5rem !important;
             }
 
             .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column !important;
+                gap: 1rem !important;
+                width: 100% !important;
+            }
+
+            .cta-buttons .btn-primary,
+            .cta-buttons .btn-secondary {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 1rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-hero {
+                padding: 1.5rem 0.75rem !important;
+                margin-top: 70px !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .services-hero h1 {
+                font-size: 1.75rem !important;
+            }
+
+            .services-hero p {
+                font-size: 1rem !important;
+            }
+
+            .services-container {
+                padding: 0 0.75rem !important;
+            }
+
+            .services-intro {
+                font-size: 0.95rem !important;
+            }
+
+            .services-grid {
+                gap: 1rem !important;
+            }
+
+            .service-card {
+                padding: 1rem !important;
+                margin: 0.5rem 0 !important;
+            }
+
+            .service-icon {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 2rem !important;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem !important;
+            }
+
+            .service-card p {
+                font-size: 0.95rem !important;
+                padding: 0 0.75rem !important;
+            }
+
+            .service-features {
+                padding: 0 0.75rem 0.75rem !important;
+            }
+
+            .service-features li {
+                font-size: 0.85rem !important;
+            }
+
+            .service-cta {
+                margin: 0.75rem auto 1rem !important;
+                padding: 0.6rem 1.25rem !important;
+                font-size: 0.9rem !important;
+            }
+
+            .services-benefits {
+                padding: 1.5rem 0.75rem !important;
+                margin: 1.5rem 0 !important;
+            }
+
+            .services-benefits h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .benefits-grid {
+                gap: 0.75rem !important;
+            }
+
+            .benefit-item {
+                padding: 1rem !important;
+            }
+
+            .benefit-icon {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 1rem !important;
+            }
+
+            .benefit-title {
+                font-size: 0.95rem !important;
+            }
+
+            .benefit-desc {
+                font-size: 0.8rem !important;
+            }
+
+            .cta-section {
+                padding: 1.5rem 0.75rem !important;
+                margin: 1.5rem 0 !important;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .cta-section p {
+                font-size: 0.95rem !important;
+            }
+
+            .cta-buttons .btn-primary,
+            .cta-buttons .btn-secondary {
+                padding: 0.875rem 1.25rem !important;
+                font-size: 0.95rem !important;
             }
         }
     </style>
@@ -307,11 +544,8 @@
     <!-- Include Shared Header -->
     <div id="shared-header"></div>
     <script>
-        fetch('shared-header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('shared-header').innerHTML = data;
-            });
+        // Shared content will be loaded automatically by shared-scripts.js
+        // No need for manual loading - the enhanced shared-scripts.js handles everything
     </script>
 
     <!-- Hero Section -->
@@ -471,5 +705,8 @@
                 document.getElementById('shared-footer').innerHTML = data;
             });
     </script>
+
+    <!-- Include Shared Scripts -->
+    <script src="shared-scripts.js"></script>
 </body>
 </html>

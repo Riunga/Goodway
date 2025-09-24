@@ -415,16 +415,11 @@
   <div id="shared-footer"></div>
 
   <script>
-    async function loadShared(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    }
-
-    loadShared("shared-header", "shared-header.html").then(() => {
-      if (typeof initHeaderInteractions === "function") initHeaderInteractions();
-    });
-    loadShared("shared-footer", "shared-footer.html");
+    // Shared content will be loaded automatically by shared-scripts.js
+    // No need for manual loading - the enhanced shared-scripts.js handles everything
   </script>
+
+  <!-- Include Shared Scripts -->
+  <script src="shared-scripts.js"></script>
 </body>
 </html>

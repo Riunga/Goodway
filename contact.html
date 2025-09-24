@@ -366,30 +366,254 @@
         .social-link.instagram i { color: #E4405F; }
         .social-link.twitter i { color: #1DA1F2; }
 
+        /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 1rem !important;
+                margin-top: 80px !important;
+                margin-bottom: 2rem !important;
+                min-height: 20vh !important;
+            }
+
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
             }
 
             .hero-content p {
-                font-size: 1.2rem;
+                font-size: 1.1rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 1.5rem !important;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
+            .hero-cta a {
+                padding: 0.875rem 1.5rem !important;
+                font-size: 1rem !important;
+                border-radius: 25px !important;
+            }
+
+            .contact-container {
+                margin: 2rem auto !important;
+                padding: 0 1rem !important;
             }
 
             .contact-info-section {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                margin-bottom: 2rem !important;
             }
 
-            .social-grid {
-                grid-template-columns: 1fr;
+            .contact-info-card {
+                padding: 1.5rem !important;
+                margin-bottom: 1rem !important;
+                border-radius: 12px !important;
+            }
+
+            .contact-info-card h3 {
+                font-size: 1.2rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .contact-list li {
+                margin-bottom: 1rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            .map-section {
+                padding: 1.5rem !important;
+                margin: 1rem 0 !important;
+                border-radius: 12px !important;
+            }
+
+            .map-section h3 {
+                font-size: 1.2rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .google-map {
+                height: 250px !important;
+                border-radius: 8px !important;
             }
 
             .map-info {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: column !important;
+                gap: 1rem !important;
+                text-align: center !important;
+            }
+
+            .directions-btn {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 0.9rem !important;
+                border-radius: 20px !important;
+            }
+
+            .contact-form-section {
+                padding: 1.5rem !important;
+                margin: 1rem 0 !important;
+                border-radius: 12px !important;
+            }
+
+            .form-header h2 {
+                font-size: 1.75rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .form-header p {
+                font-size: 1rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 1rem !important;
+                font-size: 1rem !important;
+                border-radius: 8px !important;
+            }
+
+            .submit-btn {
+                padding: 1rem 2rem !important;
+                font-size: 1rem !important;
+                border-radius: 20px !important;
+            }
+
+            .social-media {
+                padding: 2rem 0 !important;
+            }
+
+            .social-media h3 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+
+            .social-link {
+                padding: 1rem !important;
+                border-radius: 12px !important;
+            }
+
+            .social-link i {
+                font-size: 1.75rem !important;
+            }
+
+            .working-hours .hours-grid {
+                gap: 0.75rem !important;
+            }
+
+            .hours-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.5rem !important;
+                padding: 0.75rem 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 1.5rem 0.75rem !important;
+                margin-top: 70px !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .hero-content h1 {
+                font-size: 1.75rem !important;
+            }
+
+            .hero-content p {
+                font-size: 1rem !important;
+            }
+
+            .hero-cta a {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            .contact-container {
+                margin: 1.5rem auto !important;
+                padding: 0 0.75rem !important;
+            }
+
+            .contact-info-section {
+                gap: 1rem !important;
+            }
+
+            .contact-info-card {
+                padding: 1rem !important;
+                margin: 0.5rem 0 !important;
+            }
+
+            .contact-info-card h3 {
+                font-size: 1.1rem !important;
+            }
+
+            .contact-list li {
+                font-size: 0.9rem !important;
+            }
+
+            .map-section {
+                padding: 1rem !important;
+            }
+
+            .google-map {
+                height: 200px !important;
+            }
+
+            .contact-form-section {
+                padding: 1rem !important;
+            }
+
+            .form-header h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .form-header p {
+                font-size: 0.95rem !important;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 0.875rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            .submit-btn {
+                padding: 0.875rem 1.5rem !important;
+                font-size: 0.95rem !important;
+            }
+
+            .social-media {
+                padding: 1.5rem 0 !important;
+            }
+
+            .social-media h3 {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem !important;
+            }
+
+            .social-link {
+                padding: 0.875rem !important;
+            }
+
+            .social-link i {
+                font-size: 1.5rem !important;
+            }
+
+            .hours-item {
+                padding: 0.5rem 0 !important;
             }
         }
     </style>
@@ -398,11 +622,8 @@
     <!-- Include Shared Header -->
     <div id="shared-header"></div>
     <script>
-        fetch('shared-header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('shared-header').innerHTML = data;
-            });
+        // Shared content will be loaded automatically by shared-scripts.js
+        // No need for manual loading - the enhanced shared-scripts.js handles everything
     </script>
 
     <!-- Hero Section -->
@@ -574,13 +795,10 @@
             });
     </script>
 
-    <script>
-        // Toggle navigation menu on mobile
-        function toggleMenu() {
-            const navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
-        }
+    <!-- Include Shared Scripts -->
+    <script src="shared-scripts.js"></script>
 
+    <script>
         // Initialize Google Map with error handling
         function initMap() {
             try {

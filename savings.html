@@ -215,10 +215,209 @@
       line-height: 1.5;
     }
 
+    /* Enhanced Mobile Responsiveness */
     @media (max-width: 768px) {
-      .savings-hero h1 { font-size: 2rem; }
-      .savings-grid { grid-template-columns: 1fr; }
-      .benefits-grid { grid-template-columns: 1fr; }
+      .savings-hero {
+        padding: 2rem 1rem !important;
+        margin-top: 80px !important;
+        margin-bottom: 2rem !important;
+        min-height: 150px !important;
+      }
+
+      .savings-hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .savings-hero p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+        max-width: 100% !important;
+      }
+
+      .savings-container {
+        padding: 0 1rem !important;
+      }
+
+      .savings-intro {
+        margin-bottom: 2rem !important;
+        font-size: 1rem !important;
+      }
+
+      .savings-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-bottom: 2rem !important;
+      }
+
+      .savings-card {
+        border-radius: 15px !important;
+      }
+
+      .savings-card-image {
+        height: 150px !important;
+        font-size: 3rem !important;
+      }
+
+      .savings-card-content {
+        padding: 1.5rem !important;
+      }
+
+      .savings-card h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      .savings-card p {
+        font-size: 0.95rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .savings-features {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .feature-item {
+        padding: 0.5rem !important;
+        font-size: 0.8rem !important;
+      }
+
+      .savings-cta {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.95rem !important;
+      }
+
+      .savings-benefits {
+        padding: 2rem 1rem !important;
+        margin: 2rem 0 !important;
+        border-radius: 15px !important;
+      }
+
+      .savings-benefits h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+      }
+
+      .benefit-item {
+        padding: 1rem !important;
+        border-radius: 10px !important;
+      }
+
+      .benefit-icon {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.25rem !important;
+      }
+
+      .benefit-title {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .benefit-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .savings-hero {
+        padding: 1.5rem 0.75rem !important;
+        margin-top: 70px !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .savings-hero h1 {
+        font-size: 1.75rem !important;
+      }
+
+      .savings-hero p {
+        font-size: 1rem !important;
+      }
+
+      .savings-container {
+        padding: 0 0.75rem !important;
+      }
+
+      .savings-intro {
+        font-size: 0.95rem !important;
+      }
+
+      .savings-grid {
+        gap: 1rem !important;
+      }
+
+      .savings-card-image {
+        height: 120px !important;
+        font-size: 2.5rem !important;
+      }
+
+      .savings-card-content {
+        padding: 1rem !important;
+      }
+
+      .savings-card h3 {
+        font-size: 1.1rem !important;
+      }
+
+      .savings-card p {
+        font-size: 0.9rem !important;
+      }
+
+      .savings-features {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+      }
+
+      .feature-item {
+        padding: 0.4rem !important;
+        font-size: 0.75rem !important;
+      }
+
+      .savings-cta {
+        padding: 0.6rem 1.25rem !important;
+        font-size: 0.9rem !important;
+      }
+
+      .savings-benefits {
+        padding: 1.5rem 0.75rem !important;
+        margin: 1.5rem 0 !important;
+      }
+
+      .savings-benefits h2 {
+        font-size: 1.25rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .benefits-grid {
+        gap: 0.75rem !important;
+      }
+
+      .benefit-item {
+        padding: 0.75rem !important;
+      }
+
+      .benefit-icon {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1rem !important;
+      }
+
+      .benefit-title {
+        font-size: 0.95rem !important;
+      }
+
+      .benefit-desc {
+        font-size: 0.8rem !important;
+      }
     }
   </style>
 </head>
@@ -317,15 +516,11 @@
   <div id="shared-footer"></div>
 
   <script>
-    async function loadShared(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    }
-    loadShared("shared-header", "shared-header.html").then(() => {
-      if (typeof initHeaderInteractions === "function") initHeaderInteractions();
-    });
-    loadShared("shared-footer", "shared-footer.html");
+    // Shared content will be loaded automatically by shared-scripts.js
+    // No need for manual loading - the enhanced shared-scripts.js handles everything
   </script>
+
+  <!-- Include Shared Scripts -->
+  <script src="shared-scripts.js"></script>
 </body>
 </html>

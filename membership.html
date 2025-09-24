@@ -17,11 +17,8 @@
     <!-- Include Shared Header -->
     <div id="shared-header"></div>
     <script>
-        fetch('shared-header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('shared-header').innerHTML = data;
-            });
+        // Shared content will be loaded automatically by shared-scripts.js
+        // No need for manual loading - the enhanced shared-scripts.js handles everything
     </script>
 
     <main>
@@ -155,6 +152,9 @@
             </div>
         </div>
     </footer>
-<script src="membership-form-validation-v4.js"></script>
+
+    <!-- Include Shared Scripts -->
+    <script src="shared-scripts.js"></script>
+    <script src="membership-form-validation-v4.js"></script>
 </body>
 </html>

@@ -75,6 +75,28 @@
     .link a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      .register-container {
+        width: 90%;
+        padding: 25px 20px;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      input[type="text"],
+      input[type="password"] {
+        padding: 10px;
+        font-size: 1rem;
+      }
+      button {
+        padding: 12px;
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -129,5 +151,8 @@
       }
     });
   </script>
+
+  <!-- Include Shared Scripts -->
+  <script src="shared-scripts.js"></script>
 </body>
 </html>

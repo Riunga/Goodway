@@ -130,15 +130,108 @@ footer {
     border-radius: 12px;
 }
 
-/* Responsive adjustments */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
+    header {
+        padding: 1rem !important;
+        flex-wrap: wrap;
+    }
+
+    .about-hero {
+        padding: 3rem 1rem !important;
+    }
+
+    .about-hero h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .about-hero p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+
     .about-section.container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin: 2rem auto !important;
+        gap: 2rem !important;
+        padding: 0 1rem !important;
     }
 
     .about-text, .about-image {
-        min-width: 100%;
+        min-width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .about-text p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .about-text ul li {
+        font-size: 1rem !important;
+        margin-bottom: 0.75rem !important;
+        padding-left: 1.5rem !important;
+    }
+
+    .about-image {
+        border-radius: 8px !important;
+    }
+
+    footer {
+        padding: 1rem 0 !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem !important;
+    }
+
+    .about-hero {
+        padding: 2rem 0.75rem !important;
+    }
+
+    .about-hero h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .about-hero p {
+        font-size: 1rem !important;
+    }
+
+    .about-section.container {
+        margin: 1.5rem auto !important;
+        gap: 1.5rem !important;
+        padding: 0 0.75rem !important;
+    }
+
+    .about-text h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .about-text p {
+        font-size: 0.95rem !important;
+    }
+
+    .about-text ul li {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.6rem !important;
+        padding-left: 1.25rem !important;
+    }
+
+    footer {
+        padding: 0.75rem 0 !important;
+        font-size: 0.85rem !important;
     }
 }
 }

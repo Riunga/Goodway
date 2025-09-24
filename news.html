@@ -6,13 +6,10 @@
     <title>News - Goodway Sacco Society</title>
     <link rel="stylesheet" href="shared-styles.css" />
     <link rel="stylesheet" href="news.css" />
-    <script>
-        // Toggle navigation menu on mobile
-        function toggleMenu() {
-            const navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
-        }
+    <!-- Include Shared Scripts -->
+    <script src="shared-scripts.js"></script>
 
+    <script>
         // Fetch and render careers dynamically
         async function loadCareers() {
             try {
@@ -95,11 +92,8 @@
     <!-- Include Shared Header -->
     <div id="shared-header"></div>
     <script>
-        fetch('shared-header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('shared-header').innerHTML = data;
-            });
+        // Shared content will be loaded automatically by shared-scripts.js
+        // No need for manual loading - the enhanced shared-scripts.js handles everything
     </script>
 
     <main>

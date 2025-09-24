@@ -195,10 +195,182 @@
       margin-top: 5px;
     }
 
+    /* Enhanced Mobile Responsiveness */
     @media (max-width: 768px) {
-      .loans-hero h1 { font-size: 2rem; }
-      .loan-card { padding: 25px; }
-      .loan-features { grid-template-columns: 1fr; }
+      .loans-hero {
+        padding: 2rem 1rem !important;
+        margin-top: 80px !important;
+        margin-bottom: 2rem !important;
+        min-height: 120px !important;
+      }
+
+      .loans-hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .loans-hero p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+        max-width: 100% !important;
+      }
+
+      .loans-container {
+        padding: 0 1rem !important;
+      }
+
+      .loan-card {
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        border-radius: 12px !important;
+      }
+
+      .loan-card h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .loan-card p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .loan-icon {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 1.75rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .loan-features {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .feature-item {
+        padding: 1rem !important;
+        font-size: 0.95rem !important;
+        border-radius: 8px !important;
+      }
+
+      .loan-cta {
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+        border-radius: 20px !important;
+      }
+
+      .loan-stats {
+        padding: 2rem 1rem !important;
+        margin: 2rem 0 !important;
+        border-radius: 12px !important;
+      }
+
+      .loan-stats h2 {
+        font-size: 1.75rem !important;
+        margin-bottom: 2rem !important;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .stat-item {
+        padding: 1.5rem !important;
+        border-radius: 12px !important;
+      }
+
+      .stat-number {
+        font-size: 2rem !important;
+      }
+
+      .stat-label {
+        font-size: 1rem !important;
+      }
+
+      .stat-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .loans-hero {
+        padding: 1.5rem 0.75rem !important;
+        margin-top: 70px !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .loans-hero h1 {
+        font-size: 1.75rem !important;
+      }
+
+      .loans-hero p {
+        font-size: 1rem !important;
+      }
+
+      .loans-container {
+        padding: 0 0.75rem !important;
+      }
+
+      .loan-card {
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .loan-card h3 {
+        font-size: 1.25rem !important;
+      }
+
+      .loan-card p {
+        font-size: 0.95rem !important;
+      }
+
+      .loan-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .feature-item {
+        padding: 0.75rem !important;
+        font-size: 0.9rem !important;
+      }
+
+      .loan-cta {
+        padding: 0.875rem 1.25rem !important;
+        font-size: 0.95rem !important;
+      }
+
+      .loan-stats {
+        padding: 1.5rem 0.75rem !important;
+        margin: 1.5rem 0 !important;
+      }
+
+      .loan-stats h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .stat-item {
+        padding: 1rem !important;
+      }
+
+      .stat-number {
+        font-size: 1.75rem !important;
+      }
+
+      .stat-label {
+        font-size: 0.95rem !important;
+      }
+
+      .stat-desc {
+        font-size: 0.8rem !important;
+      }
     }
   </style>
 </head>
@@ -284,15 +456,11 @@
   <div id="shared-footer"></div>
 
   <script>
-    async function loadShared(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    }
-    loadShared("shared-header", "shared-header.html").then(() => {
-      if (typeof initHeaderInteractions === "function") initHeaderInteractions();
-    });
-    loadShared("shared-footer", "shared-footer.html");
+    // Shared content will be loaded automatically by shared-scripts.js
+    // No need for manual loading - the enhanced shared-scripts.js handles everything
   </script>
+
+  <!-- Include Shared Scripts -->
+  <script src="shared-scripts.js"></script>
 </body>
 </html>

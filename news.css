@@ -286,13 +286,30 @@ main {
     margin-top: 140px; /* increased spacing between header and content */
 }
 
-/* Responsive adjustments */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
+    header {
+        padding: 1rem !important;
+        flex-wrap: wrap;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem !important;
+    }
+
     nav ul {
         flex-direction: column;
         display: none;
         width: 100%;
         background-color: #2e7d32;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        gap: 0.5rem;
+        z-index: 1001;
     }
 
     nav ul.active {
@@ -300,26 +317,135 @@ main {
     }
 
     nav ul li {
-        margin: 12px 0;
+        margin: 0;
         text-align: center;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.75rem;
+        font-size: 0.95rem;
     }
 
     .menu-toggle {
         display: block;
         cursor: pointer;
-        padding: 10px 20px;
+        padding: 0.5rem;
         color: #ffffff;
         font-size: 1.6rem;
+        background: none;
+        border: none;
         -webkit-user-select: none;
         user-select: none;
     }
 
     main {
-        margin: 120px 10px 40px 10px;
-        padding: 0 10px;
+        margin: 100px 1rem 2rem 1rem !important;
+        padding: 1rem !important;
+        border-radius: 15px;
+    }
+
+    main h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    main p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .tabs {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .tab-button {
+        padding: 0.875rem 1.5rem !important;
+        font-size: 1rem !important;
+        width: 100% !important;
+    }
+
+    .tab-content {
+        padding: 0 0 2rem 0 !important;
+    }
+
+    .tab-content h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .tab-content ul {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .tab-content ul li {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+        border-radius: 10px;
+    }
+
+    footer {
+        padding: 1rem 0 !important;
+    }
+
+    .footer-bottom-content p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem !important;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem !important;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem !important;
+        padding: 0.6rem !important;
+    }
+
+    main {
+        margin: 80px 0.75rem 1.5rem 0.75rem !important;
+        padding: 0.75rem !important;
+    }
+
+    main h2 {
+        font-size: 1.75rem !important;
+    }
+
+    main p {
+        font-size: 1rem !important;
+    }
+
+    .tab-button {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .tab-content h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .tab-content ul li {
+        padding: 0.875rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    footer {
+        padding: 0.75rem 0 !important;
+    }
+
+    .footer-bottom-content p {
+        font-size: 0.7rem !important;
     }
 }

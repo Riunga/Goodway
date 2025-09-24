@@ -258,20 +258,152 @@ z-index: 2;
     text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 900px) {
+    .membership-intro {
+        padding: 2rem 1rem !important;
+        margin-top: 70px !important;
+    }
+
+    .membership-intro h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .membership-intro p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+
     .membership-content.container {
-        flex-direction: column;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
     }
 
     .membership-form-container,
     .membership-description,
     .membership-image {
-        flex: 1 1 100%;
-        margin-bottom: 25px;
+        flex: 1 1 100% !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .membership-form-container {
+        padding: 1.5rem !important;
+    }
+
+    .membership-description {
+        padding: 1.5rem !important;
+        font-size: 1.1rem !important;
+    }
+
+    #membership-form {
+        gap: 1rem !important;
+    }
+
+    #membership-form label {
+        font-size: 0.95rem !important;
+    }
+
+    #membership-form input[type="text"],
+    #membership-form input[type="email"],
+    #membership-form input[type="tel"],
+    #membership-form select,
+    #membership-form input[type="file"] {
+        padding: 0.75rem !important;
+        font-size: 0.95rem !important;
     }
 
     #membership-form button[type="submit"] {
-        width: 100%;
+        width: 100% !important;
+        padding: 1rem !important;
+        font-size: 1.1rem !important;
+    }
+
+    header {
+        padding: 1rem !important;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem !important;
+    }
+
+    header nav ul {
+        gap: 1rem !important;
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem !important;
+        padding: 0.5rem 0.75rem !important;
+    }
+
+    main {
+        margin-top: 100px !important;
+        margin-bottom: 100px !important;
+        padding: 1rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .membership-intro {
+        padding: 1.5rem 0.75rem !important;
+        margin-top: 60px !important;
+    }
+
+    .membership-intro h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .membership-intro p {
+        font-size: 1rem !important;
+    }
+
+    .membership-form-container {
+        padding: 1rem !important;
+    }
+
+    .membership-description {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+
+    #membership-form label {
+        font-size: 0.9rem !important;
+    }
+
+    #membership-form input[type="text"],
+    #membership-form input[type="email"],
+    #membership-form input[type="tel"],
+    #membership-form select,
+    #membership-form input[type="file"] {
+        padding: 0.6rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    #membership-form button[type="submit"] {
+        padding: 0.875rem !important;
+        font-size: 1rem !important;
+    }
+
+    header {
+        padding: 0.75rem !important;
+    }
+
+    header .logo h1 {
+        font-size: 1.25rem !important;
+    }
+
+    header nav ul {
+        gap: 0.75rem !important;
+    }
+
+    header nav ul li a {
+        font-size: 0.85rem !important;
+        padding: 0.4rem 0.6rem !important;
+    }
+
+    main {
+        margin-top: 80px !important;
+        margin-bottom: 80px !important;
+        padding: 0.75rem !important;
     }
 }
