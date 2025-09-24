@@ -1,327 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Board Directors - Goodway Sacco</title>
-    <link rel="stylesheet" href="shared-styles.css">
-    <style>
-        /* Board Directors Page Specific Styles */
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Board Directors - Goodway Sacco</title>
+  <link rel="stylesheet" href="shared-styles.css" />
+  <style>
+    /* Board Directors Page Specific Styles */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
 
-        .board-directors-section {
-            padding: 120px 20px 80px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
-            min-height: 100vh;
-        }
+    .board-directors-section {
+      padding: 120px 20px 80px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
+      min-height: 100vh;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-        .section-header h2 {
-            color: #2e7d32;
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .section-header h2 {
+      color: #2e7d32;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        .section-subtitle {
-            color: #666;
-            font-size: 1.2rem;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-            font-weight: 400;
-        }
+    .section-subtitle {
+      color: #666;
+      font-size: 1.2rem;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 400;
+    }
 
-        .board-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
 
-        .board-member {
-            position: relative;
-            text-align: center;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            background: #ffffff;
-        }
+    .board-member {
+      position: relative;
+      text-align: center;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      background: #ffffff;
+    }
 
-        .board-member:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
+    .board-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
 
-        .member-image {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #2e7d32 0%, #e8f5e8 100%);
+    .member-image {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2e7d32 0%, #e8f5e8 100%);
+    }
 
-        }
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: all 0.3s ease;
+    }
 
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: all 0.3s ease;
-        }
+    .board-member:hover .member-image img {
+      transform: scale(1.05);
+    }
 
-        .board-member:hover .member-image img {
-            transform: scale(1.05);
-        }
+    .member-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 70%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-        .member-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.8) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+    .board-member:hover .member-overlay {
+      opacity: 1;
+    }
 
-        .board-member:hover .member-overlay {
-            opacity: 1;
-        }
+    .member-info h3 {
+      color: #ffffff;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-        .member-info h3 {
-            color: #ffffff;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 0 0 8px 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
+    .member-role {
+      background: rgba(46, 125, 50, 0.9);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
 
-        .member-role {
-            background: rgba(46, 125, 50, 0.9);
-            color: #ffffff;
-            font-size: 0.9rem;
-            font-weight: 600;
-            padding: 6px 16px;
-            border-radius: 20px;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .board-directors-section {
-                padding: 100px 15px 60px;
-            }
-
-            .board-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    /* Responsive */
+    @media (max-width: 768px) {
+      .board-directors-section {
+        padding: 100px 15px 60px;
+      }
+      .board-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="logo">
-                    <img src="./images/Logo 1.png" alt="Goodway Sacco Society Logo" class="logo-image" onerror="this.src='https://via.placeholder.com/60x60/2e7d32/ffffff?text=GS'" />
-                    <div class="logo-text">
-                        <h1>Goodway Sacco</h1>
-                        <span class="tagline">Your Financial Partner</span>
-                    </div>
-                </div>
+  <!-- Shared Header -->
+  <div id="header"></div>
+
+  <!-- Board Directors Section -->
+  <section class="board-directors-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Board Directors</h2>
+        <p class="section-subtitle">
+          Meet our board members guiding Goodway Sacco with experience and vision.
+        </p>
+      </div>
+
+      <div class="board-grid">
+        <div class="board-member">
+          <div class="member-image">
+            <img src="./images/CHAIRMAN.jpg" alt="Chairman" />
+            <div class="member-overlay">
+              <div class="member-info">
+                <h3>John Kabui Mwai</h3>
+                <p class="member-role">Chairman</p>
+              </div>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="board-directors.html" class="nav-link active">Our Board Directors</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="news.html" class="nav-link">News</a></li>
-                    <li><a href="membership.html" class="nav-link">Membership</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-cta">
-                <a href="membership.html" class="cta-button primary">Join Now</a>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+          </div>
         </div>
-    </header>
 
-    <!-- Board Directors Section -->
-    <section class="board-directors-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Board Directors</h2>
-                <p class="section-subtitle">Meet our board members guiding Goodway Sacco with experience and vision.</p>
+        <div class="board-member">
+          <div class="member-image">
+            <img src="./images/MACHERE.jpg" alt="Vice Chairman" />
+            <div class="member-overlay">
+              <div class="member-info">
+                <h3>David Machere Kabui</h3>
+                <p class="member-role">Vice Chairman</p>
+              </div>
             </div>
-
-            <div class="board-grid">
-                <div class="board-member">
-                    <div class="member-image">
-                        <img src="./images/CHAIRMAN.jpg" alt="Chairman" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=JK'" />
-                        <div class="member-overlay">
-                            <div class="member-info">
-                                <h3>John Kabui Mwai</h3>
-                                <p class="member-role">Chairman</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-member">
-                    <div class="member-image">
-                        <img src="./images/MACHERE.jpg" alt="Vice Chairman" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=DM'" />
-                        <div class="member-overlay">
-                            <div class="member-info">
-                                <h3>David Machere Kabui</h3>
-                                <p class="member-role">Vice Chairman</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-member">
-                    <div class="member-image">
-                        <img src="./images/ROSEMARY.jpg" alt="Secretary" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=RK'" />
-                        <div class="member-overlay">
-                            <div class="member-info">
-                                <h3>Rosemary Kinyua</h3>
-                                <p class="member-role">Secretary</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-member">
-                    <div class="member-image">
-                        <img src="./images/TREASURER.jpg" alt="Treasurer" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=FN'" />
-                        <div class="member-overlay">
-                            <div class="member-info">
-                                <h3>Fredrick Munyiri Njogu</h3>
-                                <p class="member-role">Treasurer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-member">
-                    <div class="member-image">
-                        <img src="./images/DorcasKabui.jpg" alt="CEO" onerror="this.src='https://via.placeholder.com/120x120/2e7d32/ffffff?text=DK'" />
-                        <div class="member-overlay">
-                            <div class="member-info">
-                                <h3>Dorcas Kabui</h3>
-                                <p class="member-role">CEO</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer Section -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Goodway Sacco</h3>
-                    <p>Your trusted financial partner, committed to empowering communities through innovative financial solutions and member-focused services.</p>
-                    <p><strong>USSD Code:</strong> <span class="ussd-code">*647#</span></p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="board-directors.html">Board Directors</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="news.html">News</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="savings.html">Savings Accounts</a></li>
-                        <li><a href="loans.html">Loan Products</a></li>
-                        <li><a href="digital-banking.html">Digital Banking</a></li>
-                        <li><a href="insurance-services.html">Insurance Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>Phone: +254 795734561</p>
-                    <p>Email: info@goodwaysacco.co.ke</p>
-                    <p>Address: Kerugoya, Kirinyaga</p>
-                </div>
+        <div class="board-member">
+          <div class="member-image">
+            <img src="./images/ROSEMARY.jpg" alt="Secretary" />
+            <div class="member-overlay">
+              <div class="member-info">
+                <h3>Rosemary Kinyua</h3>
+                <p class="member-role">Secretary</p>
+              </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-                    <p class="footer-disclaimer">Licensed and regulated by the Sacco Societies Regulatory Authority (SASRA).</p>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        // Mobile menu toggle functionality
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
-        const navList = document.querySelector('.nav-list');
+        <div class="board-member">
+          <div class="member-image">
+            <img src="./images/TREASURER.jpg" alt="Treasurer" />
+            <div class="member-overlay">
+              <div class="member-info">
+                <h3>Fredrick Munyiri Njogu</h3>
+                <p class="member-role">Treasurer</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        if (mobileToggle && navList) {
-            mobileToggle.addEventListener('click', function() {
-                navList.classList.toggle('mobile-open');
-                mobileToggle.classList.toggle('active');
-            });
-        }
+        <div class="board-member">
+          <div class="member-image">
+            <img src="./images/DorcasKabui.jpg" alt="CEO" />
+            <div class="member-overlay">
+              <div class="member-info">
+                <h3>Dorcas Kabui</h3>
+                <p class="member-role">CEO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navList.classList.remove('mobile-open');
-                mobileToggle.classList.remove('active');
-            });
-        });
-    </script>
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <!-- Load shared header/footer -->
+  <script>
+    async function loadShared(file, elementId) {
+      const response = await fetch(file);
+      const text = await response.text();
+      document.getElementById(elementId).innerHTML = text;
+    }
+    loadShared("shared-header.html", "header");
+    loadShared("shared-footer.html", "footer");
+  </script>
 </body>
 </html>
