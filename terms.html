@@ -3,30 +3,336 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Terms and Conditions</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Terms and Conditions - Goodway Sacco Society</title>
+    <meta name="description" content="Read the comprehensive terms and conditions for membership, loans, and services at Goodway Sacco Society." />
+    <link rel="stylesheet" href="shared-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Enhanced Terms Page Styling */
+        .terms-hero {
+            background: linear-gradient(135deg, #2e7d32, #4caf50, #1b5e20);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .terms-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .terms-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .terms-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .terms-content {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .terms-section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 30px;
+        }
+
+        .terms-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .terms-section h2 {
+            color: #2e7d32;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .terms-section h2::before {
+            content: "📋";
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .terms-section h3 {
+            color: #4caf50;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .terms-section p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .terms-section ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        .terms-section li {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .terms-section li::marker {
+            color: #4caf50;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f1f8e9, #e8f5e8);
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .terms-hero {
+                padding: 60px 20px;
+                margin-top: 80px;
+            }
+
+            .terms-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .terms-hero p {
+                font-size: 1rem;
+            }
+
+            .terms-content {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+
+            .terms-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .terms-section h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-hero {
+                padding: 40px 15px;
+                margin-top: 70px;
+            }
+
+            .terms-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .terms-hero p {
+                font-size: 0.95rem;
+            }
+
+            .terms-content {
+                padding: 20px 15px;
+            }
+
+            .terms-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .terms-section h2::before {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Terms and Conditions</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Eligibility</h2>
-            <p>You must be at least 18 years old to apply for membership.</p>
-        </section>
-        <section>
-            <h2>Shares</h2>
-            <p>Each member is required to purchase at least one share, which is valued at Ksh. 100.</p>
-        </section>
-        <section>
-            <h2>Agreement</h2>
-            <p>By agreeing to the terms and conditions, you acknowledge that you have read and understood the above requirements.</p>
-        </section>
+    <!-- Shared Header -->
+    <div id="shared-header"></div>
+
+    <!-- Hero Section -->
+    <section class="terms-hero">
+        <div class="terms-container">
+            <h1>Terms and Conditions</h1>
+            <p>Understanding your rights and responsibilities as a member of Goodway Sacco Society</p>
+        </div>
+    </section>
+
+    <main class="terms-container">
+        <div class="terms-content">
+            <!-- Introduction -->
+            <section class="terms-section">
+                <h2>Introduction</h2>
+                <p>Welcome to Goodway Sacco Society. These terms and conditions govern your membership and use of our financial services. By becoming a member or using our services, you agree to be bound by these terms.</p>
+                <p>Goodway Sacco Society is a licensed Savings and Credit Cooperative Organization (SACCO) regulated by the SASRA (Sacco Societies Regulatory Authority) of Kenya.</p>
+            </section>
+
+            <!-- Membership Terms -->
+            <section class="terms-section">
+                <h2>Membership Eligibility and Requirements</h2>
+                <h3>Eligibility Criteria</h3>
+                <ul>
+                    <li>You must be at least 18 years old</li>
+                    <li>Valid identification document (National ID, Passport)</li>
+                    <li>Proof of residence in Kenya</li>
+                    <li>Clean criminal record</li>
+                    <li>Minimum share purchase as stipulated</li>
+                </ul>
+
+                <h3>Share Requirements</h3>
+                <p>Each member is required to purchase a minimum of one share, currently valued at KSh 100. Additional shares may be purchased to increase your voting rights and dividend entitlements.</p>
+
+                <h3>Membership Fees</h3>
+                <p>A one-time membership fee of KSh 500 is required upon registration. This fee is non-refundable and covers administrative costs.</p>
+            </section>
+
+            <!-- Loan Terms -->
+            <section class="terms-section">
+                <h2>Loan Terms and Conditions</h2>
+                <h3>Loan Eligibility</h3>
+                <ul>
+                    <li>Active membership for at least 3 months</li>
+                    <li>Regular savings contributions</li>
+                    <li>Good repayment history</li>
+                    <li>Sufficient collateral or guarantors</li>
+                </ul>
+
+                <h3>Loan Types and Terms</h3>
+                <div class="highlight-box">
+                    <h4>Personal Loans</h4>
+                    <p>Up to KSh 500,000 with repayment periods of 6-24 months. Interest rate: 12%-15% per annum.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Business Loans</h4>
+                    <p>Up to KSh 2,000,000 with repayment periods of 12-36 months. Interest rate: 10%-16% per annum.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Wakulima Loans</h4>
+                    <p>Agricultural financing with harvest-aligned repayments. Interest rate: 10-12% per annum.</p>
+                </div>
+
+                <h3>Loan Processing Fees</h3>
+                <p>A processing fee of 1-2% of the loan amount applies, payable upon approval.</p>
+
+                <h3>Default and Penalties</h3>
+                <p>Late payments attract a penalty of 5% per month on outstanding amounts. Persistent default may result in legal action and membership suspension.</p>
+            </section>
+
+            <!-- Savings Terms -->
+            <section class="terms-section">
+                <h2>Savings and Deposit Terms</h2>
+                <h3>Mandatory Savings</h3>
+                <p>Members are required to maintain a minimum monthly savings contribution of KSh 1,000.</p>
+
+                <h3>Interest Rates</h3>
+                <ul>
+                    <li>Fixed Deposits: 5%-10% per annum (depending on term)</li>
+                    <li>Children's Savings: 4% per annum</li>
+                </ul>
+
+                <h3>Withdrawal Terms</h3>
+                <p>Regular savings can be withdrawn at anytime with a convinience of using Digital Banking or in-person transactions. Fixed deposits have lock-in periods and early withdrawal penalties apply.</p>
+            </section>
+
+            <!-- General Terms -->
+            <section class="terms-section">
+                <h2>General Terms and Conditions</h2>
+                <h3>Data Privacy</h3>
+                <p>We are committed to protecting your personal information. Your data is used solely for membership and service provision purposes and is not shared with third parties without your consent.</p>
+
+                <h3>Service Availability</h3>
+                <p>While we strive for 100% uptime, occasional service interruptions may occur due to maintenance or unforeseen circumstances. We will communicate any planned downtime in advance.</p>
+
+                <h3>Amendments</h3>
+                <p>These terms may be amended by the Board of Directors. Members will be notified of any changes via email, SMS, or posted notices at our offices.</p>
+
+                <h3>Governing Law</h3>
+                <p>These terms are governed by the laws of Kenya and subject to the jurisdiction of Kenyan courts.</p>
+            </section>
+
+            <!-- Contact Information -->
+            <section class="contact-info">
+                <h3>Questions About These Terms?</h3>
+                <p>If you have any questions about these terms and conditions, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:info@goodwaysacco.co.ke">info@goodwaysacco.co.ke</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+254795734561">(254) 795-734-561</a></p>
+                <p><strong>USSD:</strong> <span style="color: #4caf50; font-weight: bold;">*667*2#</span></p>
+                <p><strong>Office Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM</p>
+            </section>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Goodway Sacco Society. All rights reserved.</p>
-    </footer>
+
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
 
     <!-- Include Shared Scripts -->
     <script src="shared-scripts.js"></script>
